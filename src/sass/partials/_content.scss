@@ -1,0 +1,38 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/---  CONTENT   CONTENT   CONTENT   CONTENT   CONTENT   CONTENT   CONTENT   ---/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.content {
+  padding: 70px 0 0 0;
+  background-color: #0A101A;
+
+  &.boxed {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
+  .work-zone {
+    position: relative;
+    height: calc(100vh - 70px);
+    background: linear-gradient(120deg, #273740 0%, #1E232D 45%, #1E232D 50%, #432C33 100%);
+    overflow-y: hidden;
+
+    header {
+
+      h1 {
+        float: left;
+      }
+
+      .search-field {
+        float: right;
+        width: 472px;
+        margin: 30px 0;
+      }
+    }
+  }
+}

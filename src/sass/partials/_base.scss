@@ -1,0 +1,26 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/----     BASE STYLES      BASE STYLES      BASE STYLES      BASE STYLES    ---/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+body {
+  font-family: $body-font;
+  font-size: $body-font-size;
+  color: $body-color;
+}
+
+a, button {
+  outline: 0!important;
+  text-decoration: none!important;
+}
+
+@media(min-width: 1200px) {
+
+  .container {
+    max-width: 1256px;
+  }
+}
