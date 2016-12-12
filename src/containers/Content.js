@@ -9,7 +9,7 @@ import nicescroll from '../../node_modules/jquery.nicescroll/jquery.nicescroll.j
 class ContentComponent extends React.Component {
 
     componentDidMount() {
-        $('.work-zone').niceScroll({
+        $(this.workZoneElement).niceScroll({
                 cursorcolor:'rgba(255,255,255,.05)',
                 cursorborder: 'none'
             })
@@ -18,7 +18,7 @@ class ContentComponent extends React.Component {
     render() {
         return (
             <article className="content boxed">
-                <div className="work-zone">
+                <div className="work-zone" ref={workZoneElement=>this.workZoneElement=workZoneElement}>
                     <Header />
                     <ItemList />
                 </div>

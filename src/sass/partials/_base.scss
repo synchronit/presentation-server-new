@@ -18,9 +18,22 @@ a, button {
   text-decoration: none!important;
 }
 
-@media(min-width: 1200px) {
+.container {
+  max-width: 1296px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
 
+@media (min-width: 544px) {
   .container {
-    max-width: 1256px;
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+}
+
+@media (min-width: 768px) {
+  .boxed {
+    padding-left: 35px!important;
+    padding-right: 35px!important;
   }
 }

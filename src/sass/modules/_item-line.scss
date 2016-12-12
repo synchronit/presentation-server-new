@@ -1,0 +1,90 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/----   ITEM LINE  ITEM LINE  ITEM LINE  ITEM LINE  ITEM LINE  ITEM LINE   ----/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.item-line {
+  width: 100%;
+  margin: auto;
+  border-radius: 3px;
+  padding: 5px;
+  border: solid 1px #6A676E;
+  border-radius: 3px;
+  overflow: hidden;
+  background: linear-gradient(-90deg, #6A676E 85%, #ffffff 100%) no-repeat,
+  linear-gradient(0deg, #ffffff 70%, #6A676E 100%) no-repeat,
+  linear-gradient(90deg, #6A676E 85%, #ffffff 100%) no-repeat,
+  linear-gradient(180deg, #ffffff 70%, #6A676E 100%) no-repeat;
+  background-position: top left, top right, bottom left, top left;
+  background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+
+  + .item-line {
+    margin-top: 10px;
+  }
+
+  &:last-child {
+    margin-bottom: 30px;
+  }
+
+  .left {
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, .2);
+    padding: 1px 5px;
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    width: 628px;
+
+    .left {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      float: left;
+      width: 374px;
+      margin-right: 2px;
+    }
+
+    .right {
+      height: 26px;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+      background-color: rgba(255, 255, 255, .2);
+      float: left;
+      box-shadow: inset 1px 0 0 #7B7C82;
+
+      span {
+        font-size: 14px;
+        position: relative;
+        text-align: center;
+        display: inline-block;
+        padding: 0 10px 0 33px;
+        margin-bottom: 2px;
+        width: 120px;
+
+        &:last-child {
+          border-left: solid 2px #3B3A40;
+          box-shadow: inset 1px 0 0 #7B7C82;
+        }
+
+        [class^="icon-"], [class*=" icon-"] {
+          font-size: 30px;
+          position: absolute;
+          top: -5px;
+          left: 12px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 992px) {
+    width: 776px;
+
+    .left {
+      width: 522px;
+    }
+  }
+}

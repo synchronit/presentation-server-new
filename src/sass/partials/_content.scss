@@ -11,11 +11,6 @@
   padding: 70px 0 0 0;
   background-color: #0A101A;
 
-  &.boxed {
-    padding-left: 35px;
-    padding-right: 35px;
-  }
-
   .work-zone {
     position: relative;
     height: calc(100vh - 70px);
@@ -25,13 +20,42 @@
     header {
 
       h1 {
-        float: left;
+        text-align: center;
       }
 
       .search-field {
+        width: 100%;
         float: right;
-        width: 472px;
-        margin: 30px 0;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .work-zone {
+      header {
+        h1 {
+          text-align: left;
+          float: left;
+          margin: 35px 0;
+        }
+        .search-field {
+          width: 330px;
+          margin: 30px 0;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 992px) {
+    .work-zone {
+      header {
+        h1 {
+          margin: 33px 0;
+        }
+        .search-field {
+          width: 474px;
+        }
       }
     }
   }

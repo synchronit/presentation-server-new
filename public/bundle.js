@@ -23235,31 +23235,31 @@
 /* 208 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	var FORMS = [["cuba_team", "1", "id", "NUMBER", "0", "false", null, null, null, null], ["cuba_team", "1", "name", "TEXT", "1", "false", null, null, null, null], ["cuba_team", "1", "fnac", "DATE", "2", "false", null, null, null, null], ["projects", "1", "id", "NUMBER", "0", "false", null, null, null, null], ["projects", "1", "name", "TEXT", "1", "false", null, null, null, null], ["projects", "1", "project_leader", "TEXT", "2", "true", "cuba_team", "name", "0", "1"], ["MYTEST", "1", "MYNUM", "NUMBER", "0", "false", null, null, null, null], ["MYTEST", "1", "MYTEXT", "TEXT", "1", "false", null, null, null, null], ["MYTEST", "1", "MYBOOL", "BOOLEAN", "2", "false", null, null, null, null], ["SEX", "1", "SEX", "TEXT", "0", "false", null, null, null, null], ["GENDER_VALUES", "1", "GENDER", "TEXT", "0", "false", null, null, null, null], ["tickets", "1", "id", "NUMBER", "0", "false", null, null, null, null], ["tickets", "1", "description", "TEXT", "1", "false", null, null, null, null], ["tickets", "1", "project", "NUMBER", "2", "true", "projects", "id", "0", "1"], ["tickets", "1", "project", "TEXT", "3", "true", "projects", "name", "0", "1"], ["tickets", "1", "project", "TEXT", "4", "true", "projects", "project_leader", "0", "1"], ["Ramon", "1", "c1", "NUMBER", "0", "false", null, null, null, null], ["Ramon", "1", "foto", "IMAGE", "1", "false", null, null, null, null], ["Visitor", "1", "id", "NUMBER", "0", "false", null, null, null, null], ["Visitor", "1", "name", "TEXT", "1", "false", null, null, null, null], ["Visitor", "1", "country", "TEXT", "2", "false", null, null, null, null], ["Visitor", "1", "language", "TEXT", "3", "false", null, null, null, null], ["SUBSCRIPTIONS", "1", "name", "TEXT", "0", "false", null, null, null, null], ["SUBSCRIPTIONS", "1", "email", "TEXT", "1", "false", null, null, null, null], ["BOOKS", "1", "title", "TEXT", "0", "false", null, null, null, null], ["BOOKS", "1", "author", "TEXT", "1", "false", null, null, null, null], ["BOOKS", "1", "authorLink", "TEXT", "2", "false", null, null, null, null], ["BOOKS", "1", "summary", "TEXT", "3", "false", null, null, null, null], ["BOOKS", "1", "comments", "TEXT", "4", "false", null, null, null, null], ["BOOKS", "1", "level", "TEXT", "5", "false", null, null, null, null], ["BOOKS", "1", "audience", "TEXT", "6", "false", null, null, null, null], ["BOOKS", "1", "learnTip", "TEXT", "7", "false", null, null, null, null], ["BOOKS", "1", "picture", "TEXT", "8", "false", null, null, null, null], ["T_TEST", "1", "field1", "TEXT", "0", "false", null, null, null, null], ["T_TEST", "1", "field2", "NUMBER", "1", "false", null, null, null, null], ["T_TEST", "1", "field3", "BOOLEAN", "2", "false", null, null, null, null], ["TEAM_MEMBERS2", "1", "name", "TEXT", "0", "false", null, null, null, null], ["TEAM_MEMBERS2", "1", "lastName", "TEXT", "1", "false", null, null, null, null], ["TEAM_MEMBERS2", "1", "email", "TEXT", "2", "false", null, null, null, null], ["TEAM_MEMBERS2", "1", "title", "TEXT", "3", "false", null, null, null, null], ["TEAM_MEMBERS2", "1", "picture", "IMAGE", "4", "false", null, null, null, null], ["TEAM_MEMBERS2", "1", "picture2", "IMAGE", "5", "false", null, null, null, null], ["TEAM_MEMBERS2", "1", "pictureBlur", "IMAGE", "6", "false", null, null, null, null], ["TEAM_MEMBERS2", "1", "pictureBlur2", "IMAGE", "7", "false", null, null, null, null], ["TEAM_MEMBERS2", "1", "pitch", "TEXT", "8", "false", null, null, null, null], ["TEAM_MEMBERS2", "1", "invarianId", "TEXT", "9", "false", null, null, null, null], ["TEAM_MEMBERS2", "1", "isActive", "BOOLEAN", "10", "false", null, null, null, null], ["FORM_IMAGE", "1", "NAME", "TEXT", "0", "false", null, null, null, null], ["FORM_IMAGE", "1", "PICTURE", "IMAGE", "1", "false", null, null, null, null], ["null_form_test", "1", "c1", "TEXT", "0", "false", null, null, null, null], ["CREATE_CASE", "1", "fieldText", "TEXT", "0", "false", null, null, null, null], ["CREATE_CASE", "1", "FieldNumber", "NUMBER", "1", "false", null, null, null, null], ["CREATE_CASE", "1", "FieldBoolean", "BOOLEAN", "2", "false", null, null, null, null], ["TEAM_MEMBERS", "1", "name", "TEXT", "0", "false", null, null, null, null], ["TEAM_MEMBERS", "1", "lastName", "TEXT", "1", "false", null, null, null, null], ["TEAM_MEMBERS", "1", "email", "TEXT", "2", "false", null, null, null, null], ["TEAM_MEMBERS", "1", "title", "TEXT", "3", "false", null, null, null, null], ["TEAM_MEMBERS", "1", "picture", "IMAGE", "4", "false", null, null, null, null], ["TEAM_MEMBERS", "1", "picture2", "IMAGE", "5", "false", null, null, null, null], ["TEAM_MEMBERS", "1", "pictureBlur", "IMAGE", "6", "false", null, null, null, null], ["TEAM_MEMBERS", "1", "pictureBlur2", "IMAGE", "7", "false", null, null, null, null], ["TEAM_MEMBERS", "1", "pitch", "TEXT", "8", "false", null, null, null, null], ["TEAM_MEMBERS", "1", "invarianId", "TEXT", "9", "false", null, null, null, null], ["TEAM_MEMBERS", "1", "birthDate", "DATE", "10", "false", null, null, null, null], ["TEAM_MEMBERS", "1", "startDate", "DATE", "11", "false", null, null, null, null], ["TEAM_MEMBERS", "1", "endDate", "DATE", "12", "false", null, null, null, null], ["TEAM_MEMBERS", "1", "isActive", "BOOLEAN", "13", "false", null, null, null, null], ["CURRENCIES", "1", "iso_name", "TEXT", "0", "false", null, null, null, null], ["CURRENCIES", "1", "iso_code", "TEXT", "1", "false", null, null, null, null], ["CURRENCIES", "1", "iso_number", "NUMBER", "2", "false", null, null, null, null], ["COUNTRIES", "1", "iso_name", "TEXT", "0", "false", null, null, null, null], ["COUNTRIES", "1", "iso_code_3", "TEXT", "1", "false", null, null, null, null], ["COUNTRIES", "1", "iso_code_2", "TEXT", "2", "false", null, null, null, null], ["COUNTRIES", "1", "iso_code_number", "NUMBER", "3", "false", null, null, null, null], ["COUNTRIES", "1", "country_flag", "TEXT", "4", "false", null, null, null, null], ["MAPPING", "1", "SOURCE_NAME", "TEXT", "0", "false", null, null, null, null], ["MAPPING", "1", "FILE_TYPE", "TEXT", "1", "false", null, null, null, null], ["MAPPING", "1", "FORM_NAME", "TEXT", "2", "false", null, null, null, null], ["MAPPING", "1", "IS_FIRST_COL_HEAD", "BOOLEAN", "3", "false", null, null, null, null], ["PEOPLE2", "1", "ID", "NUMBER", "0", "false", null, null, null, null], ["PEOPLE2", "1", "NAME", "TEXT", "1", "false", null, null, null, null], ["PEOPLE2", "1", "SEX1", "TEXT", "2", "true", "GENDER_VALUES", "GENDER", "0", "1"], ["PEOPLE2", "1", "SEX2", "TEXT", "3", "true", "SEX", "SEX", "0", "1"], ["MAPPING_PROPERTIES", "1", "FILE_COL_START", "NUMBER", "0", "false", null, null, null, null], ["MAPPING_PROPERTIES", "1", "FILE_COL_END", "NUMBER", "1", "false", null, null, null, null], ["MAPPING_PROPERTIES", "1", "FILE_COL_INDEX", "NUMBER", "2", "false", null, null, null, null], ["MAPPING_PROPERTIES", "1", "FILE_COL_IGNORED", "BOOLEAN", "3", "false", null, null, null, null], ["MAPPING_PROPERTIES", "1", "FORM_COL_NAME", "TEXT", "4", "false", null, null, null, null], ["MAPPING_PROPERTIES", "1", "FORM_COL_TYPE", "TEXT", "5", "false", null, null, null, null], ["MAPPING_PROPERTIES", "1", "FORM_COL_ORDER", "NUMBER", "6", "false", null, null, null, null], ["MAPPING_PROPERTIES", "1", "IS_REFERENCE", "BOOLEAN", "7", "false", null, null, null, null], ["MAPPING_PROPERTIES", "1", "FORM_REFERENCED", "TEXT", "8", "false", null, null, null, null], ["MAPPING_PROPERTIES", "1", "DATA_REFERENCED", "TEXT", "9", "false", null, null, null, null], ["MAPPING_PROPERTIES", "1", "MAPPING", "TEXT", "10", "true", "MAPPING", "SOURCE_NAME", "0", "1"], ["BANKS", "1", "name", "TEXT", "0", "false", null, null, null, null], ["BANKS", "1", "country", "TEXT", "1", "true", "COUNTRIES", "iso_name", "0", "1"], ["BANKS", "1", "address", "TEXT", "2", "false", null, null, null, null], ["BANKS", "1", "contact_person", "TEXT", "3", "false", null, null, null, null], ["BANKS", "1", "tel", "TEXT", "4", "false", null, null, null, null], ["ORGANIZATIONS", "1", "name", "TEXT", "0", "false", null, null, null, null], ["ORGANIZATIONS", "1", "address", "TEXT", "1", "false", null, null, null, null], ["ORGANIZATIONS", "1", "country", "TEXT", "2", "true", "COUNTRIES", "iso_name", "0", "1"], ["FER", "1", "C1", "TEXT", "0", "false", null, null, null, null], ["ACCOUNTS", "1", "bank", "TEXT", "0", "true", "BANKS", "name", "0", "1"], ["ACCOUNTS", "1", "currency", "TEXT", "1", "true", "CURRENCIES", "iso_code", "0", "1"], ["ACCOUNTS", "1", "amount", "NUMBER", "2", "false", null, null, null, null], ["RATES", "1", "name", "TEXT", "0", "true", "TEAM_MEMBERS", "name", "0", "1"], ["RATES", "1", "startdate", "DATE", "1", "false", null, null, null, null], ["RATES", "1", "enddate", "DATE", "2", "false", null, null, null, null], ["RATES", "1", "hourly_rate", "NUMBER", "3", "false", null, null, null, null], ["RATES", "1", "monthly_rate", "NUMBER", "4", "false", null, null, null, null], ["WORKED_TIME", "1", "name", "TEXT", "0", "true", "TEAM_MEMBERS", "name", "0", "1"], ["WORKED_TIME", "1", "month", "DATE", "1", "false", null, null, null, null], ["WORKED_TIME", "1", "hours", "NUMBER", "2", "false", null, null, null, null], ["WORKED_TIME", "1", "days", "NUMBER", "3", "false", null, null, null, null], ["EXPENSES", "1", "concept", "TEXT", "0", "false", null, null, null, null], ["TRANSACTIONS", "1", "day", "DATE", "0", "false", null, null, null, null], ["TRANSACTIONS", "1", "account", "TEXT", "1", "true", "ACCOUNTS", "bank", "0", "1"], ["TRANSACTIONS", "1", "account", "TEXT", "2", "true", "ACCOUNTS", "currency", "0", "1"], ["TRANSACTIONS", "1", "description", "TEXT", "3", "false", null, null, null, null], ["TRANSACTIONS", "1", "debit", "NUMBER", "4", "false", null, null, null, null], ["TRANSACTIONS", "1", "credit", "NUMBER", "5", "false", null, null, null, null], ["TRANSACTIONS", "1", "debit_estimated", "NUMBER", "6", "false", null, null, null, null], ["TRANSACTIONS", "1", "credit_estimated", "NUMBER", "7", "false", null, null, null, null], ["TRANSACTIONS", "1", "org", "TEXT", "8", "true", "ORGANIZATIONS", "name", "0", "1"], ["TRANSACTIONS", "1", "consultant", "TEXT", "9", "true", "TEAM_MEMBERS", "name", "0", "1"], ["TRANSACTIONS", "1", "expense", "TEXT", "10", "true", "EXPENSES", "concept", "0", "1"], ["TEAM_MEMBERS3", "1", "name", "TEXT", "0", "false", null, null, null, null], ["TEAM_MEMBERS3", "1", "lastname", "TEXT", "1", "false", null, null, null, null], ["TEAM_MEMBERS3", "1", "email", "TEXT", "2", "false", null, null, null, null], ["TEAM_MEMBERS3", "1", "title", "TEXT", "3", "false", null, null, null, null], ["TEAM_MEMBERS3", "1", "picture", "IMAGE", "4", "false", null, null, null, null], ["TEAM_MEMBERS3", "1", "picture2", "IMAGE", "5", "false", null, null, null, null], ["TEAM_MEMBERS3", "1", "pictureblur", "IMAGE", "6", "false", null, null, null, null], ["TEAM_MEMBERS3", "1", "pictureblur2", "IMAGE", "7", "false", null, null, null, null], ["TEAM_MEMBERS3", "1", "pitch", "TEXT", "8", "false", null, null, null, null], ["TEAM_MEMBERS3", "1", "invarianid", "TEXT", "9", "false", null, null, null, null], ["TEAM_MEMBERS3", "1", "birthdate", "DATE", "10", "false", null, null, null, null], ["TEAM_MEMBERS3", "1", "startdate", "DATE", "11", "false", null, null, null, null], ["TEAM_MEMBERS3", "1", "enddate", "DATE", "12", "false", null, null, null, null], ["TEAM_MEMBERS3", "1", "isactive", "BOOLEAN", "13", "false", null, null, null, null], ["HD_Proyects", "1", "title", "TEXT", "0", "false", null, null, null, null], ["HD_Proyects", "1", "description", "TEXT", "1", "false", null, null, null, null], ["TEST", "1", "title", "TEXT", "0", "false", null, null, null, null], ["Contact_Messages", "1", "Name", "TEXT", "0", "false", null, null, null, null], ["Contact_Messages", "1", "message", "TEXT", "1", "false", null, null, null, null], ["BIKES", "1", "MAKE", "TEXT", "0", "false", null, null, null, null], ["BIKES", "1", "YEAR", "NUMBER", "1", "false", null, null, null, null], ["BIKES", "1", "ID", "NUMBER", "2", "false", null, null, null, null], ["BIKES", "1", "NAME", "TEXT", "3", "false", null, null, null, null], ["MIFORMCONDECIMALES", "1", "NUM1", "NUMBER", "0", "false", null, null, null, null], ["MIFORMCONDECIMALES2", "1", "NUM2", "NUMBER", "0", "true", "MIFORMCONDECIMALES", "NUM1", "0", "1"], ["MARCOS_FANS", "1", "ID", "NUMBER", "0", "false", null, null, null, null], ["MARCOS_FANS", "1", "NAME", "TEXT", "1", "false", null, null, null, null], ["SYNCHRONIT_TEAM", "1", "ID", "NUMBER", "0", "false", null, null, null, null], ["SYNCHRONIT_TEAM", "1", "NAME", "TEXT", "1", "false", null, null, null, null], ["SYNCHRONIT_TEAM", "1", "BIRTHDAY", "DATE", "2", "false", null, null, null, null], ["SYNCHRONIT_TEAM", "1", "CELLPHONE", "TEXT", "3", "false", null, null, null, null], ["SYNCHRONIT_TEAM", "1", "PICTURE", "TEXT", "4", "false", null, null, null, null], ["SYNCHRONIT_QUESTIONS", "1", "QUESTION", "TEXT", "0", "false", null, null, null, null], ["SYNCHRONIT_ANSWERS", "1", "PEOPLE", "NUMBER", "0", "true", "SYNCHRONIT_TEAM", "ID", "0", "1"], ["SYNCHRONIT_ANSWERS", "1", "PEOPLE", "TEXT", "1", "true", "SYNCHRONIT_TEAM", "NAME", "0", "1"], ["SYNCHRONIT_ANSWERS", "1", "QUESTION", "TEXT", "2", "true", "SYNCHRONIT_QUESTIONS", "QUESTION", "0", "1"], ["SYNCHRONIT_ANSWERS", "1", "RESPONSE", "TEXT", "3", "false", null, null, null, null], ["FORM_WITH_FILE", "1", "NAME", "TEXT", "0", "false", null, null, null, null], ["FORM_WITH_FILE", "1", "MYFILE", "FILE", "1", "false", null, null, null, null], ["PEOPLE", "1", "name", "TEXT", "0", "false", null, null, null, null], ["PEOPLE", "1", "lastName", "TEXT", "1", "false", null, null, null, null], ["PEOPLE", "1", "email", "TEXT", "2", "false", null, null, null, null], ["PEOPLE", "1", "title", "TEXT", "3", "false", null, null, null, null], ["PEOPLE", "1", "picture", "IMAGE", "4", "false", null, null, null, null], ["PEOPLE", "1", "picture2", "IMAGE", "5", "false", null, null, null, null], ["PEOPLE", "1", "pitch", "TEXT", "6", "false", null, null, null, null], ["PEOPLE", "1", "invarianId", "TEXT", "7", "false", null, null, null, null], ["PEOPLE", "1", "isActive", "BOOLEAN", "8", "false", null, null, null, null]];
+	var initialState = {
+	    searchQuery: '',
+	    view: 'LIST_VIEW'
+	};
 
-	var search = function search() {
-	    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : FORMS;
+	var forms = function forms() {
+	    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
 	    var action = arguments[1];
 
 	    switch (action.type) {
 	        case 'SEARCH_FORM':
-	            state = FORMS;
-	            var newState = state.filter(function (item) {
-	                var patt = new RegExp(action.text, 'i');
-	                return patt.test(item[0]);
-	            });
-	            return newState;
+	            return Object.assign({}, state, { searchQuery: action.searchQuery });
+	        case 'CHANGE_VIEW':
+	            return Object.assign({}, state, { view: action.view });
 	        default:
 	            return state;
 	    }
 	};
 
-	exports.default = search;
+	exports.default = forms;
 
 /***/ },
 /* 209 */
@@ -23285,7 +23285,7 @@
 
 	var _BottomBar2 = _interopRequireDefault(_BottomBar);
 
-	var _Content = __webpack_require__(214);
+	var _Content = __webpack_require__(215);
 
 	var _Content2 = _interopRequireDefault(_Content);
 
@@ -23362,7 +23362,7 @@
 	        value: function render() {
 	            return _react2.default.createElement(
 	                "nav",
-	                { className: "topbar" },
+	                { className: "topbar boxed" },
 	                _react2.default.createElement(
 	                    "div",
 	                    { className: "container" },
@@ -23376,10 +23376,30 @@
 	                        { className: "user", href: "", title: "" },
 	                        _react2.default.createElement(
 	                            "span",
-	                            null,
+	                            { className: "hidden-xs-down" },
 	                            "Hi, Jhon Doe"
 	                        ),
 	                        _react2.default.createElement("img", { src: "images/test/1.png", alt: "" })
+	                    ),
+	                    _react2.default.createElement(
+	                        "a",
+	                        { className: "btn btn-icon btn-badge", href: "", title: "" },
+	                        _react2.default.createElement("span", { className: "icon-notification" }),
+	                        _react2.default.createElement(
+	                            "span",
+	                            { className: "hidden-sm-down" },
+	                            "NOTIFICATIONS"
+	                        ),
+	                        _react2.default.createElement(
+	                            "span",
+	                            { className: "badge" },
+	                            "3"
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        "a",
+	                        { className: "btn btn-icon", href: "", title: "" },
+	                        _react2.default.createElement("span", { className: "icon-home" })
 	                    )
 	                )
 	            );
@@ -23411,7 +23431,7 @@
 
 	var _Views2 = _interopRequireDefault(_Views);
 
-	var _CreateNewForm = __webpack_require__(213);
+	var _CreateNewForm = __webpack_require__(214);
 
 	var _CreateNewForm2 = _interopRequireDefault(_CreateNewForm);
 
@@ -23437,7 +23457,7 @@
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'nav',
-	                { className: 'bottombar' },
+	                { className: 'bottombar boxed' },
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: 'container' },
@@ -23457,7 +23477,7 @@
 /* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -23468,6 +23488,10 @@
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRedux = __webpack_require__(199);
+
+	var _actions = __webpack_require__(213);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23481,31 +23505,57 @@
 	    _inherits(ViewsComponent, _React$Component);
 
 	    function ViewsComponent() {
+	        var _ref;
+
+	        var _temp, _this, _ret;
+
 	        _classCallCheck(this, ViewsComponent);
 
-	        return _possibleConstructorReturn(this, (ViewsComponent.__proto__ || Object.getPrototypeOf(ViewsComponent)).apply(this, arguments));
+	        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	            args[_key] = arguments[_key];
+	        }
+
+	        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ViewsComponent.__proto__ || Object.getPrototypeOf(ViewsComponent)).call.apply(_ref, [this].concat(args))), _this), _this.changeViewToList = function (e) {
+	            e.preventDefault();
+	            _this.props.dispatch((0, _actions.changeView)('LIST_VIEW'));
+	        }, _this.changeViewToBoxes = function (e) {
+	            e.preventDefault();
+	            _this.props.dispatch((0, _actions.changeView)('BOXES_VIEW'));
+	        }, _this.changeViewToCarousel = function (e) {
+	            e.preventDefault();
+	            _this.props.dispatch((0, _actions.changeView)('CAROUSEL_VIEW'));
+	        }, _temp), _possibleConstructorReturn(_this, _ret);
 	    }
 
 	    _createClass(ViewsComponent, [{
-	        key: "render",
+	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
-	                "ul",
-	                { className: "views" },
+	                'ul',
+	                { className: 'views' },
 	                _react2.default.createElement(
-	                    "li",
+	                    'li',
 	                    null,
-	                    _react2.default.createElement("a", { className: "icon-list", href: "", title: true })
+	                    _react2.default.createElement('a', { className: "icon-list " + (this.props.view == 'LIST_VIEW' ? 'active' : ''),
+	                        href: '',
+	                        title: '',
+	                        onClick: this.changeViewToList })
 	                ),
 	                _react2.default.createElement(
-	                    "li",
+	                    'li',
 	                    null,
-	                    _react2.default.createElement("a", { className: "icon-boxes active", href: "", title: true })
+	                    _react2.default.createElement('a', { className: "icon-boxes " + (this.props.view == 'BOXES_VIEW' ? 'active' : ''),
+	                        href: '',
+	                        title: '',
+	                        onClick: this.changeViewToBoxes })
 	                ),
 	                _react2.default.createElement(
-	                    "li",
+	                    'li',
 	                    null,
-	                    _react2.default.createElement("a", { className: "icon-carousel", href: "", title: true })
+	                    _react2.default.createElement('a', { className: "icon-carousel " + (this.props.view == 'CAROUSEL_VIEW' ? 'active' : ''),
+	                        href: '',
+	                        title: '',
+	                        onClick: this.changeViewToCarousel })
 	                )
 	            );
 	        }
@@ -23514,10 +23564,41 @@
 	    return ViewsComponent;
 	}(_react2.default.Component);
 
-	exports.default = ViewsComponent;
+	var mapStateToProps = function mapStateToProps(state) {
+	    return {
+	        view: state.view
+	    };
+	};
+
+	var Views = (0, _reactRedux.connect)(mapStateToProps)(ViewsComponent);
+
+	exports.default = Views;
 
 /***/ },
 /* 213 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	var searchForm = exports.searchForm = function searchForm(searchQuery) {
+	    return {
+	        type: 'SEARCH_FORM',
+	        searchQuery: searchQuery
+	    };
+	};
+
+	var changeView = exports.changeView = function changeView(view) {
+	    return {
+	        type: 'CHANGE_VIEW',
+	        view: view
+	    };
+	};
+
+/***/ },
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -23557,10 +23638,10 @@
 	                { className: "create-new-form" },
 	                _react2.default.createElement(
 	                    "span",
-	                    { className: "text" },
+	                    { className: "text hidden-sm-down" },
 	                    "CREATE NEW FORM!"
 	                ),
-	                _react2.default.createElement("span", { className: "icon-arrow" }),
+	                _react2.default.createElement("span", { className: "icon-arrow hidden-sm-down" }),
 	                _react2.default.createElement(
 	                    "a",
 	                    { id: "add-form", href: "", title: "" },
@@ -23576,7 +23657,7 @@
 	exports.default = CreateNewFormComponent;
 
 /***/ },
-/* 214 */
+/* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23591,19 +23672,19 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Header = __webpack_require__(219);
+	var _Header = __webpack_require__(216);
 
 	var _Header2 = _interopRequireDefault(_Header);
 
-	var _ItemList = __webpack_require__(215);
+	var _ItemList = __webpack_require__(219);
 
 	var _ItemList2 = _interopRequireDefault(_ItemList);
 
-	var _jquery = __webpack_require__(217);
+	var _jquery = __webpack_require__(222);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
-	var _jqueryNicescroll = __webpack_require__(218);
+	var _jqueryNicescroll = __webpack_require__(223);
 
 	var _jqueryNicescroll2 = _interopRequireDefault(_jqueryNicescroll);
 
@@ -23627,7 +23708,7 @@
 	    _createClass(ContentComponent, [{
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
-	            (0, _jquery2.default)('.work-zone').niceScroll({
+	            (0, _jquery2.default)(this.workZoneElement).niceScroll({
 	                cursorcolor: 'rgba(255,255,255,.05)',
 	                cursorborder: 'none'
 	            });
@@ -23635,12 +23716,16 @@
 	    }, {
 	        key: 'render',
 	        value: function render() {
+	            var _this2 = this;
+
 	            return _react2.default.createElement(
 	                'article',
 	                { className: 'content boxed' },
 	                _react2.default.createElement(
 	                    'div',
-	                    { className: 'work-zone' },
+	                    { className: 'work-zone', ref: function ref(workZoneElement) {
+	                            return _this2.workZoneElement = workZoneElement;
+	                        } },
 	                    _react2.default.createElement(_Header2.default, null),
 	                    _react2.default.createElement(_ItemList2.default, null)
 	                )
@@ -23654,7 +23739,119 @@
 	exports.default = ContentComponent;
 
 /***/ },
-/* 215 */
+/* 216 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Heading = __webpack_require__(217);
+
+	var _Heading2 = _interopRequireDefault(_Heading);
+
+	var _SearchField = __webpack_require__(218);
+
+	var _SearchField2 = _interopRequireDefault(_SearchField);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var HeaderComponent = function (_React$Component) {
+	    _inherits(HeaderComponent, _React$Component);
+
+	    function HeaderComponent() {
+	        _classCallCheck(this, HeaderComponent);
+
+	        return _possibleConstructorReturn(this, (HeaderComponent.__proto__ || Object.getPrototypeOf(HeaderComponent)).apply(this, arguments));
+	    }
+
+	    _createClass(HeaderComponent, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'header',
+	                { className: 'container' },
+	                _react2.default.createElement(_Heading2.default, null),
+	                _react2.default.createElement(_SearchField2.default, null)
+	            );
+	        }
+	    }]);
+
+	    return HeaderComponent;
+	}(_react2.default.Component);
+
+	exports.default = HeaderComponent;
+
+/***/ },
+/* 217 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var HeadingComponent = function (_React$Component) {
+	    _inherits(HeadingComponent, _React$Component);
+
+	    function HeadingComponent() {
+	        _classCallCheck(this, HeadingComponent);
+
+	        return _possibleConstructorReturn(this, (HeadingComponent.__proto__ || Object.getPrototypeOf(HeadingComponent)).apply(this, arguments));
+	    }
+
+	    _createClass(HeadingComponent, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'h1',
+	                null,
+	                'MY FORMS ',
+	                _react2.default.createElement(
+	                    'small',
+	                    null,
+	                    '(85 CREATED FORMS)'
+	                )
+	            );
+	        }
+	    }]);
+
+	    return HeadingComponent;
+	}(_react2.default.Component);
+
+	exports.default = HeadingComponent;
+
+/***/ },
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23671,9 +23868,7 @@
 
 	var _reactRedux = __webpack_require__(199);
 
-	var _Item = __webpack_require__(216);
-
-	var _Item2 = _interopRequireDefault(_Item);
+	var _actions = __webpack_require__(213);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23682,6 +23877,84 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SearchField = function (_React$Component) {
+	    _inherits(SearchField, _React$Component);
+
+	    function SearchField() {
+	        _classCallCheck(this, SearchField);
+
+	        return _possibleConstructorReturn(this, (SearchField.__proto__ || Object.getPrototypeOf(SearchField)).apply(this, arguments));
+	    }
+
+	    _createClass(SearchField, [{
+	        key: 'render',
+	        value: function render() {
+	            var _this2 = this;
+
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'input-group search-field' },
+	                _react2.default.createElement('input', {
+	                    className: 'form-control',
+	                    type: 'search',
+	                    ref: 'input',
+	                    placeholder: 'Search...',
+	                    onChange: function onChange() {
+	                        _this2.props.dispatch((0, _actions.searchForm)(_this2.refs.input.value));
+	                    }
+	                }),
+	                _react2.default.createElement(
+	                    'button',
+	                    { className: 'input-group-addon' },
+	                    _react2.default.createElement('span', { className: 'icon-search' })
+	                )
+	            );
+	        }
+	    }]);
+
+	    return SearchField;
+	}(_react2.default.Component);
+
+	var searchField = (0, _reactRedux.connect)()(SearchField);
+
+	exports.default = searchField;
+
+/***/ },
+/* 219 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRedux = __webpack_require__(199);
+
+	var _ItemLine = __webpack_require__(220);
+
+	var _ItemLine2 = _interopRequireDefault(_ItemLine);
+
+	var _ItemBox = __webpack_require__(221);
+
+	var _ItemBox2 = _interopRequireDefault(_ItemBox);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var data = [["cuba_team", "1", "id", "NUMBER", "0", "false", null, null, null, null], ["cuba_team", "1", "name", "TEXT", "1", "false", null, null, null, null], ["cuba_team", "1", "fnac", "DATE", "2", "false", null, null, null, null], ["projects", "1", "id", "NUMBER", "0", "false", null, null, null, null], ["projects", "1", "name", "TEXT", "1", "false", null, null, null, null], ["projects", "1", "project_leader", "TEXT", "2", "true", "cuba_team", "name", "0", "1"], ["MYTEST", "1", "MYNUM", "NUMBER", "0", "false", null, null, null, null], ["MYTEST", "1", "MYTEXT", "TEXT", "1", "false", null, null, null, null], ["MYTEST", "1", "MYBOOL", "BOOLEAN", "2", "false", null, null, null, null], ["SEX", "1", "SEX", "TEXT", "0", "false", null, null, null, null], ["GENDER_VALUES", "1", "GENDER", "TEXT", "0", "false", null, null, null, null], ["tickets", "1", "id", "NUMBER", "0", "false", null, null, null, null], ["tickets", "1", "description", "TEXT", "1", "false", null, null, null, null], ["tickets", "1", "project", "NUMBER", "2", "true", "projects", "id", "0", "1"], ["tickets", "1", "project", "TEXT", "3", "true", "projects", "name", "0", "1"], ["tickets", "1", "project", "TEXT", "4", "true", "projects", "project_leader", "0", "1"], ["Ramon", "1", "c1", "NUMBER", "0", "false", null, null, null, null], ["Ramon", "1", "foto", "IMAGE", "1", "false", null, null, null, null], ["Visitor", "1", "id", "NUMBER", "0", "false", null, null, null, null], ["Visitor", "1", "name", "TEXT", "1", "false", null, null, null, null], ["Visitor", "1", "country", "TEXT", "2", "false", null, null, null, null], ["Visitor", "1", "language", "TEXT", "3", "false", null, null, null, null], ["SUBSCRIPTIONS", "1", "name", "TEXT", "0", "false", null, null, null, null], ["SUBSCRIPTIONS", "1", "email", "TEXT", "1", "false", null, null, null, null], ["BOOKS", "1", "title", "TEXT", "0", "false", null, null, null, null], ["BOOKS", "1", "author", "TEXT", "1", "false", null, null, null, null], ["BOOKS", "1", "authorLink", "TEXT", "2", "false", null, null, null, null], ["BOOKS", "1", "summary", "TEXT", "3", "false", null, null, null, null], ["BOOKS", "1", "comments", "TEXT", "4", "false", null, null, null, null], ["BOOKS", "1", "level", "TEXT", "5", "false", null, null, null, null], ["BOOKS", "1", "audience", "TEXT", "6", "false", null, null, null, null], ["BOOKS", "1", "learnTip", "TEXT", "7", "false", null, null, null, null], ["BOOKS", "1", "picture", "TEXT", "8", "false", null, null, null, null], ["T_TEST", "1", "field1", "TEXT", "0", "false", null, null, null, null], ["T_TEST", "1", "field2", "NUMBER", "1", "false", null, null, null, null], ["T_TEST", "1", "field3", "BOOLEAN", "2", "false", null, null, null, null], ["TEAM_MEMBERS2", "1", "name", "TEXT", "0", "false", null, null, null, null], ["TEAM_MEMBERS2", "1", "lastName", "TEXT", "1", "false", null, null, null, null], ["TEAM_MEMBERS2", "1", "email", "TEXT", "2", "false", null, null, null, null], ["TEAM_MEMBERS2", "1", "title", "TEXT", "3", "false", null, null, null, null], ["TEAM_MEMBERS2", "1", "picture", "IMAGE", "4", "false", null, null, null, null], ["TEAM_MEMBERS2", "1", "picture2", "IMAGE", "5", "false", null, null, null, null], ["TEAM_MEMBERS2", "1", "pictureBlur", "IMAGE", "6", "false", null, null, null, null], ["TEAM_MEMBERS2", "1", "pictureBlur2", "IMAGE", "7", "false", null, null, null, null], ["TEAM_MEMBERS2", "1", "pitch", "TEXT", "8", "false", null, null, null, null], ["TEAM_MEMBERS2", "1", "invarianId", "TEXT", "9", "false", null, null, null, null], ["TEAM_MEMBERS2", "1", "isActive", "BOOLEAN", "10", "false", null, null, null, null], ["FORM_IMAGE", "1", "NAME", "TEXT", "0", "false", null, null, null, null], ["FORM_IMAGE", "1", "PICTURE", "IMAGE", "1", "false", null, null, null, null], ["null_form_test", "1", "c1", "TEXT", "0", "false", null, null, null, null], ["CREATE_CASE", "1", "fieldText", "TEXT", "0", "false", null, null, null, null], ["CREATE_CASE", "1", "FieldNumber", "NUMBER", "1", "false", null, null, null, null], ["CREATE_CASE", "1", "FieldBoolean", "BOOLEAN", "2", "false", null, null, null, null], ["TEAM_MEMBERS", "1", "name", "TEXT", "0", "false", null, null, null, null], ["TEAM_MEMBERS", "1", "lastName", "TEXT", "1", "false", null, null, null, null], ["TEAM_MEMBERS", "1", "email", "TEXT", "2", "false", null, null, null, null], ["TEAM_MEMBERS", "1", "title", "TEXT", "3", "false", null, null, null, null], ["TEAM_MEMBERS", "1", "picture", "IMAGE", "4", "false", null, null, null, null], ["TEAM_MEMBERS", "1", "picture2", "IMAGE", "5", "false", null, null, null, null], ["TEAM_MEMBERS", "1", "pictureBlur", "IMAGE", "6", "false", null, null, null, null], ["TEAM_MEMBERS", "1", "pictureBlur2", "IMAGE", "7", "false", null, null, null, null], ["TEAM_MEMBERS", "1", "pitch", "TEXT", "8", "false", null, null, null, null], ["TEAM_MEMBERS", "1", "invarianId", "TEXT", "9", "false", null, null, null, null], ["TEAM_MEMBERS", "1", "birthDate", "DATE", "10", "false", null, null, null, null], ["TEAM_MEMBERS", "1", "startDate", "DATE", "11", "false", null, null, null, null], ["TEAM_MEMBERS", "1", "endDate", "DATE", "12", "false", null, null, null, null], ["TEAM_MEMBERS", "1", "isActive", "BOOLEAN", "13", "false", null, null, null, null], ["CURRENCIES", "1", "iso_name", "TEXT", "0", "false", null, null, null, null], ["CURRENCIES", "1", "iso_code", "TEXT", "1", "false", null, null, null, null], ["CURRENCIES", "1", "iso_number", "NUMBER", "2", "false", null, null, null, null], ["COUNTRIES", "1", "iso_name", "TEXT", "0", "false", null, null, null, null], ["COUNTRIES", "1", "iso_code_3", "TEXT", "1", "false", null, null, null, null], ["COUNTRIES", "1", "iso_code_2", "TEXT", "2", "false", null, null, null, null], ["COUNTRIES", "1", "iso_code_number", "NUMBER", "3", "false", null, null, null, null], ["COUNTRIES", "1", "country_flag", "TEXT", "4", "false", null, null, null, null], ["MAPPING", "1", "SOURCE_NAME", "TEXT", "0", "false", null, null, null, null], ["MAPPING", "1", "FILE_TYPE", "TEXT", "1", "false", null, null, null, null], ["MAPPING", "1", "FORM_NAME", "TEXT", "2", "false", null, null, null, null], ["MAPPING", "1", "IS_FIRST_COL_HEAD", "BOOLEAN", "3", "false", null, null, null, null], ["PEOPLE2", "1", "ID", "NUMBER", "0", "false", null, null, null, null], ["PEOPLE2", "1", "NAME", "TEXT", "1", "false", null, null, null, null], ["PEOPLE2", "1", "SEX1", "TEXT", "2", "true", "GENDER_VALUES", "GENDER", "0", "1"], ["PEOPLE2", "1", "SEX2", "TEXT", "3", "true", "SEX", "SEX", "0", "1"], ["MAPPING_PROPERTIES", "1", "FILE_COL_START", "NUMBER", "0", "false", null, null, null, null], ["MAPPING_PROPERTIES", "1", "FILE_COL_END", "NUMBER", "1", "false", null, null, null, null], ["MAPPING_PROPERTIES", "1", "FILE_COL_INDEX", "NUMBER", "2", "false", null, null, null, null], ["MAPPING_PROPERTIES", "1", "FILE_COL_IGNORED", "BOOLEAN", "3", "false", null, null, null, null], ["MAPPING_PROPERTIES", "1", "FORM_COL_NAME", "TEXT", "4", "false", null, null, null, null], ["MAPPING_PROPERTIES", "1", "FORM_COL_TYPE", "TEXT", "5", "false", null, null, null, null], ["MAPPING_PROPERTIES", "1", "FORM_COL_ORDER", "NUMBER", "6", "false", null, null, null, null], ["MAPPING_PROPERTIES", "1", "IS_REFERENCE", "BOOLEAN", "7", "false", null, null, null, null], ["MAPPING_PROPERTIES", "1", "FORM_REFERENCED", "TEXT", "8", "false", null, null, null, null], ["MAPPING_PROPERTIES", "1", "DATA_REFERENCED", "TEXT", "9", "false", null, null, null, null], ["MAPPING_PROPERTIES", "1", "MAPPING", "TEXT", "10", "true", "MAPPING", "SOURCE_NAME", "0", "1"], ["BANKS", "1", "name", "TEXT", "0", "false", null, null, null, null], ["BANKS", "1", "country", "TEXT", "1", "true", "COUNTRIES", "iso_name", "0", "1"], ["BANKS", "1", "address", "TEXT", "2", "false", null, null, null, null], ["BANKS", "1", "contact_person", "TEXT", "3", "false", null, null, null, null], ["BANKS", "1", "tel", "TEXT", "4", "false", null, null, null, null], ["ORGANIZATIONS", "1", "name", "TEXT", "0", "false", null, null, null, null], ["ORGANIZATIONS", "1", "address", "TEXT", "1", "false", null, null, null, null], ["ORGANIZATIONS", "1", "country", "TEXT", "2", "true", "COUNTRIES", "iso_name", "0", "1"], ["FER", "1", "C1", "TEXT", "0", "false", null, null, null, null], ["ACCOUNTS", "1", "bank", "TEXT", "0", "true", "BANKS", "name", "0", "1"], ["ACCOUNTS", "1", "currency", "TEXT", "1", "true", "CURRENCIES", "iso_code", "0", "1"], ["ACCOUNTS", "1", "amount", "NUMBER", "2", "false", null, null, null, null], ["RATES", "1", "name", "TEXT", "0", "true", "TEAM_MEMBERS", "name", "0", "1"], ["RATES", "1", "startdate", "DATE", "1", "false", null, null, null, null], ["RATES", "1", "enddate", "DATE", "2", "false", null, null, null, null], ["RATES", "1", "hourly_rate", "NUMBER", "3", "false", null, null, null, null], ["RATES", "1", "monthly_rate", "NUMBER", "4", "false", null, null, null, null], ["WORKED_TIME", "1", "name", "TEXT", "0", "true", "TEAM_MEMBERS", "name", "0", "1"], ["WORKED_TIME", "1", "month", "DATE", "1", "false", null, null, null, null], ["WORKED_TIME", "1", "hours", "NUMBER", "2", "false", null, null, null, null], ["WORKED_TIME", "1", "days", "NUMBER", "3", "false", null, null, null, null], ["EXPENSES", "1", "concept", "TEXT", "0", "false", null, null, null, null], ["TRANSACTIONS", "1", "day", "DATE", "0", "false", null, null, null, null], ["TRANSACTIONS", "1", "account", "TEXT", "1", "true", "ACCOUNTS", "bank", "0", "1"], ["TRANSACTIONS", "1", "account", "TEXT", "2", "true", "ACCOUNTS", "currency", "0", "1"], ["TRANSACTIONS", "1", "description", "TEXT", "3", "false", null, null, null, null], ["TRANSACTIONS", "1", "debit", "NUMBER", "4", "false", null, null, null, null], ["TRANSACTIONS", "1", "credit", "NUMBER", "5", "false", null, null, null, null], ["TRANSACTIONS", "1", "debit_estimated", "NUMBER", "6", "false", null, null, null, null], ["TRANSACTIONS", "1", "credit_estimated", "NUMBER", "7", "false", null, null, null, null], ["TRANSACTIONS", "1", "org", "TEXT", "8", "true", "ORGANIZATIONS", "name", "0", "1"], ["TRANSACTIONS", "1", "consultant", "TEXT", "9", "true", "TEAM_MEMBERS", "name", "0", "1"], ["TRANSACTIONS", "1", "expense", "TEXT", "10", "true", "EXPENSES", "concept", "0", "1"], ["TEAM_MEMBERS3", "1", "name", "TEXT", "0", "false", null, null, null, null], ["TEAM_MEMBERS3", "1", "lastname", "TEXT", "1", "false", null, null, null, null], ["TEAM_MEMBERS3", "1", "email", "TEXT", "2", "false", null, null, null, null], ["TEAM_MEMBERS3", "1", "title", "TEXT", "3", "false", null, null, null, null], ["TEAM_MEMBERS3", "1", "picture", "IMAGE", "4", "false", null, null, null, null], ["TEAM_MEMBERS3", "1", "picture2", "IMAGE", "5", "false", null, null, null, null], ["TEAM_MEMBERS3", "1", "pictureblur", "IMAGE", "6", "false", null, null, null, null], ["TEAM_MEMBERS3", "1", "pictureblur2", "IMAGE", "7", "false", null, null, null, null], ["TEAM_MEMBERS3", "1", "pitch", "TEXT", "8", "false", null, null, null, null], ["TEAM_MEMBERS3", "1", "invarianid", "TEXT", "9", "false", null, null, null, null], ["TEAM_MEMBERS3", "1", "birthdate", "DATE", "10", "false", null, null, null, null], ["TEAM_MEMBERS3", "1", "startdate", "DATE", "11", "false", null, null, null, null], ["TEAM_MEMBERS3", "1", "enddate", "DATE", "12", "false", null, null, null, null], ["TEAM_MEMBERS3", "1", "isactive", "BOOLEAN", "13", "false", null, null, null, null], ["HD_Proyects", "1", "title", "TEXT", "0", "false", null, null, null, null], ["HD_Proyects", "1", "description", "TEXT", "1", "false", null, null, null, null], ["TEST", "1", "title", "TEXT", "0", "false", null, null, null, null], ["Contact_Messages", "1", "Name", "TEXT", "0", "false", null, null, null, null], ["Contact_Messages", "1", "message", "TEXT", "1", "false", null, null, null, null], ["BIKES", "1", "MAKE", "TEXT", "0", "false", null, null, null, null], ["BIKES", "1", "YEAR", "NUMBER", "1", "false", null, null, null, null], ["BIKES", "1", "ID", "NUMBER", "2", "false", null, null, null, null], ["BIKES", "1", "NAME", "TEXT", "3", "false", null, null, null, null], ["MIFORMCONDECIMALES", "1", "NUM1", "NUMBER", "0", "false", null, null, null, null], ["MIFORMCONDECIMALES2", "1", "NUM2", "NUMBER", "0", "true", "MIFORMCONDECIMALES", "NUM1", "0", "1"], ["MARCOS_FANS", "1", "ID", "NUMBER", "0", "false", null, null, null, null], ["MARCOS_FANS", "1", "NAME", "TEXT", "1", "false", null, null, null, null], ["SYNCHRONIT_TEAM", "1", "ID", "NUMBER", "0", "false", null, null, null, null], ["SYNCHRONIT_TEAM", "1", "NAME", "TEXT", "1", "false", null, null, null, null], ["SYNCHRONIT_TEAM", "1", "BIRTHDAY", "DATE", "2", "false", null, null, null, null], ["SYNCHRONIT_TEAM", "1", "CELLPHONE", "TEXT", "3", "false", null, null, null, null], ["SYNCHRONIT_TEAM", "1", "PICTURE", "TEXT", "4", "false", null, null, null, null], ["SYNCHRONIT_QUESTIONS", "1", "QUESTION", "TEXT", "0", "false", null, null, null, null], ["SYNCHRONIT_ANSWERS", "1", "PEOPLE", "NUMBER", "0", "true", "SYNCHRONIT_TEAM", "ID", "0", "1"], ["SYNCHRONIT_ANSWERS", "1", "PEOPLE", "TEXT", "1", "true", "SYNCHRONIT_TEAM", "NAME", "0", "1"], ["SYNCHRONIT_ANSWERS", "1", "QUESTION", "TEXT", "2", "true", "SYNCHRONIT_QUESTIONS", "QUESTION", "0", "1"], ["SYNCHRONIT_ANSWERS", "1", "RESPONSE", "TEXT", "3", "false", null, null, null, null], ["FORM_WITH_FILE", "1", "NAME", "TEXT", "0", "false", null, null, null, null], ["FORM_WITH_FILE", "1", "MYFILE", "FILE", "1", "false", null, null, null, null], ["PEOPLE", "1", "name", "TEXT", "0", "false", null, null, null, null], ["PEOPLE", "1", "lastName", "TEXT", "1", "false", null, null, null, null], ["PEOPLE", "1", "email", "TEXT", "2", "false", null, null, null, null], ["PEOPLE", "1", "title", "TEXT", "3", "false", null, null, null, null], ["PEOPLE", "1", "picture", "IMAGE", "4", "false", null, null, null, null], ["PEOPLE", "1", "picture2", "IMAGE", "5", "false", null, null, null, null], ["PEOPLE", "1", "pitch", "TEXT", "6", "false", null, null, null, null], ["PEOPLE", "1", "invarianId", "TEXT", "7", "false", null, null, null, null], ["PEOPLE", "1", "isActive", "BOOLEAN", "8", "false", null, null, null, null]];
 
 	var ItemListComponent = function (_React$Component) {
 	    _inherits(ItemListComponent, _React$Component);
@@ -23693,14 +23966,40 @@
 	    }
 
 	    _createClass(ItemListComponent, [{
+	        key: 'filterList',
+	        value: function filterList() {
+	            var originalList = data;
+	            var searchQuery = this.props.searchQuery;
+
+	            return originalList.filter(function (item) {
+	                var patt = new RegExp(searchQuery, 'i');
+	                return patt.test(item[0]);
+	            });
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
+	            var _this2 = this;
+
 	            var items = [];
 	            var name = '';
 	            var key = 0;
-	            this.props.forms.forEach(function (form) {
+	            var filteredList = this.filterList();
+
+	            filteredList.forEach(function (form) {
 	                if (form[0] !== name) {
-	                    items.push(_react2.default.createElement(_Item2.default, { form: form, key: key++ }));
+	                    var component;
+	                    switch (_this2.props.view) {
+	                        case 'LIST_VIEW':
+	                            component = _react2.default.createElement(_ItemLine2.default, { form: form, key: key++ });
+	                            break;
+	                        case 'BOXES_VIEW':
+	                            component = _react2.default.createElement(_ItemBox2.default, { form: form, key: key++ });
+	                            break;
+	                        default:
+	                            component = _react2.default.createElement(_ItemBox2.default, { form: form, key: key++ });
+	                    }
+	                    items.push(component);
 	                }
 	                name = form[0];
 	            });
@@ -23710,7 +24009,7 @@
 	                { className: 'item-list container' },
 	                _react2.default.createElement(
 	                    'div',
-	                    { className: 'row' },
+	                    { className: this.props.view == 'BOXES_VIEW' ? 'row' : '' },
 	                    items
 	                )
 	            );
@@ -23722,7 +24021,8 @@
 
 	var mapStateToProps = function mapStateToProps(state) {
 	    return {
-	        forms: state
+	        searchQuery: state.searchQuery,
+	        view: state.view
 	    };
 	};
 
@@ -23731,7 +24031,7 @@
 	exports.default = ItemList;
 
 /***/ },
-/* 216 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -23754,16 +24054,89 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var ItemComponent = function (_React$Component) {
-	    _inherits(ItemComponent, _React$Component);
+	var ItemLineComponent = function (_React$Component) {
+	    _inherits(ItemLineComponent, _React$Component);
 
-	    function ItemComponent() {
-	        _classCallCheck(this, ItemComponent);
+	    function ItemLineComponent() {
+	        _classCallCheck(this, ItemLineComponent);
 
-	        return _possibleConstructorReturn(this, (ItemComponent.__proto__ || Object.getPrototypeOf(ItemComponent)).apply(this, arguments));
+	        return _possibleConstructorReturn(this, (ItemLineComponent.__proto__ || Object.getPrototypeOf(ItemLineComponent)).apply(this, arguments));
 	    }
 
-	    _createClass(ItemComponent, [{
+	    _createClass(ItemLineComponent, [{
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement(
+	                "div",
+	                { className: "item-line" },
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "left" },
+	                    _react2.default.createElement(
+	                        "span",
+	                        { className: "name" },
+	                        this.props.form[0]
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "right hidden-sm-down" },
+	                    _react2.default.createElement(
+	                        "span",
+	                        null,
+	                        _react2.default.createElement("i", { className: "icon-date" }),
+	                        " 13/6/2017"
+	                    ),
+	                    _react2.default.createElement(
+	                        "span",
+	                        null,
+	                        _react2.default.createElement("i", { className: "icon-user" }),
+	                        " 57 CASES"
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return ItemLineComponent;
+	}(_react2.default.Component);
+
+	exports.default = ItemLineComponent;
+
+/***/ },
+/* 221 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ItemBoxComponent = function (_React$Component) {
+	    _inherits(ItemBoxComponent, _React$Component);
+
+	    function ItemBoxComponent() {
+	        _classCallCheck(this, ItemBoxComponent);
+
+	        return _possibleConstructorReturn(this, (ItemBoxComponent.__proto__ || Object.getPrototypeOf(ItemBoxComponent)).apply(this, arguments));
+	    }
+
+	    _createClass(ItemBoxComponent, [{
 	        key: "render",
 	        value: function render() {
 	            return _react2.default.createElement(
@@ -23803,13 +24176,13 @@
 	        }
 	    }]);
 
-	    return ItemComponent;
+	    return ItemBoxComponent;
 	}(_react2.default.Component);
 
-	exports.default = ItemComponent;
+	exports.default = ItemBoxComponent;
 
 /***/ },
-/* 217 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*eslint-disable no-unused-vars*/
@@ -33889,7 +34262,7 @@
 
 
 /***/ },
-/* 218 */
+/* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* jquery.nicescroll
@@ -33905,7 +34278,7 @@
 	(function(factory) {
 	  if (true) {
 	    // AMD. Register as anonymous module.
-	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(217)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(222)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	  } else if (typeof exports === 'object') {
 	    // Node/CommonJS.
 	    module.exports = factory(require('jquery'));
@@ -37610,204 +37983,6 @@
 	}));
 
 
-
-/***/ },
-/* 219 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _Heading = __webpack_require__(222);
-
-	var _Heading2 = _interopRequireDefault(_Heading);
-
-	var _SearchField = __webpack_require__(220);
-
-	var _SearchField2 = _interopRequireDefault(_SearchField);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var HeaderComponent = function (_React$Component) {
-	    _inherits(HeaderComponent, _React$Component);
-
-	    function HeaderComponent() {
-	        _classCallCheck(this, HeaderComponent);
-
-	        return _possibleConstructorReturn(this, (HeaderComponent.__proto__ || Object.getPrototypeOf(HeaderComponent)).apply(this, arguments));
-	    }
-
-	    _createClass(HeaderComponent, [{
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                'header',
-	                { className: 'container' },
-	                _react2.default.createElement(_Heading2.default, null),
-	                _react2.default.createElement(_SearchField2.default, null)
-	            );
-	        }
-	    }]);
-
-	    return HeaderComponent;
-	}(_react2.default.Component);
-
-	exports.default = HeaderComponent;
-
-/***/ },
-/* 220 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactRedux = __webpack_require__(199);
-
-	var _actions = __webpack_require__(221);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var SearchField = function (_React$Component) {
-	    _inherits(SearchField, _React$Component);
-
-	    function SearchField() {
-	        _classCallCheck(this, SearchField);
-
-	        return _possibleConstructorReturn(this, (SearchField.__proto__ || Object.getPrototypeOf(SearchField)).apply(this, arguments));
-	    }
-
-	    _createClass(SearchField, [{
-	        key: 'render',
-	        value: function render() {
-	            var _this2 = this;
-
-	            return _react2.default.createElement(
-	                'div',
-	                { className: 'input-group search-field' },
-	                _react2.default.createElement('input', {
-	                    className: 'form-control',
-	                    type: 'search',
-	                    ref: 'input',
-	                    placeholder: 'Search...',
-	                    onChange: function onChange() {
-	                        _this2.props.dispatch((0, _actions.searchForm)(_this2.refs.input.value));
-	                    }
-	                }),
-	                _react2.default.createElement(
-	                    'button',
-	                    { className: 'input-group-addon' },
-	                    _react2.default.createElement('span', { className: 'icon-search' })
-	                )
-	            );
-	        }
-	    }]);
-
-	    return SearchField;
-	}(_react2.default.Component);
-
-	var searchField = (0, _reactRedux.connect)()(SearchField);
-
-	exports.default = searchField;
-
-/***/ },
-/* 221 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	var searchForm = exports.searchForm = function searchForm(text) {
-	    return {
-	        type: 'SEARCH_FORM',
-	        text: text
-	    };
-	};
-
-/***/ },
-/* 222 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var HeadingComponent = function (_React$Component) {
-	    _inherits(HeadingComponent, _React$Component);
-
-	    function HeadingComponent() {
-	        _classCallCheck(this, HeadingComponent);
-
-	        return _possibleConstructorReturn(this, (HeadingComponent.__proto__ || Object.getPrototypeOf(HeadingComponent)).apply(this, arguments));
-	    }
-
-	    _createClass(HeadingComponent, [{
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                'h1',
-	                null,
-	                'MY FORMS ',
-	                _react2.default.createElement(
-	                    'small',
-	                    null,
-	                    '(85 CREATED FORMS)'
-	                )
-	            );
-	        }
-	    }]);
-
-	    return HeadingComponent;
-	}(_react2.default.Component);
-
-	exports.default = HeadingComponent;
 
 /***/ }
 /******/ ]);

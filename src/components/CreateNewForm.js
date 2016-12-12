@@ -4,8 +4,8 @@ class CreateNewFormComponent extends React.Component {
     render() {
         return (
             <div className="create-new-form">
-                <span className="text">CREATE NEW FORM!</span>
-                <span className="icon-arrow"></span>
+                <span className="text hidden-sm-down">CREATE NEW FORM!</span>
+                <span className="icon-arrow hidden-sm-down"></span>
                 <a id="add-form" href="" title=""><span className="icon-plus"></span></a>
             </div>
         );

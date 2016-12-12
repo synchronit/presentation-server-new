@@ -32,7 +32,11 @@
       a {
         color: #808080;
 
-        &:hover, &.active {
+        &:hover {
+          color: white;
+        }
+
+        &.active {
           color: #FF5E54;
         }
       }
@@ -41,6 +45,8 @@
 
   .create-new-form {
     float: right;
+    position: relative;
+    padding-right: 70px;
     margin-top: -6px;
 
     .text {
@@ -58,15 +64,20 @@
     }
 
     #add-form {
-      margin: -40px -15px 0 0;
       width: 84px;
       height: 84px;
-      display: inline-block;
-      position: relative;
-      top: -7px;
+      position: absolute;
+      top: -33px;
+      right: -15px;
       border-radius: 50%;
       padding: 15px;
       background-color: rgba(23, 28, 35, .3);
+
+      &:hover {
+        span {
+          background-color: #FF5E54;
+        }
+      }
 
       span {
         width: 54px;
@@ -79,7 +90,7 @@
         color: #0A101A;
         padding: 8px 0;
         box-shadow: 0 4px 0 rgba(0, 0, 0, .8);
-        border-top: solid 4px #AEECEB;
+        border-top: solid 4px rgba(255,255,255,.4);
       }
     }
   }

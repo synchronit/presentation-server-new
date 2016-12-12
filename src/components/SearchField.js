@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { searchForm } from '../actions'
 
 class SearchField extends React.Component {
+
     render() {
         return (
             <div className="input-group search-field">
@@ -15,7 +16,9 @@ class SearchField extends React.Component {
                     this.props.dispatch(searchForm(this.refs.input.value))
                 }}
                 />
-                <button className="input-group-addon"><span className="icon-search"></span></button>
+                <button className="input-group-addon">
+                    <span className="icon-search"></span>
+                </button>
             </div>
         );
     }

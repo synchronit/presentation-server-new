@@ -25,6 +25,23 @@
     }
   }
 
+  .btn {
+    float: right;
+    margin-top: 15px;
+    margin-right: 5px;
+    letter-spacing: 1px;
+    font-size: 14px;
+
+    &.btn-badge {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    + .btn {
+      margin-right: 10px;
+    }
+  }
+
   .user {
     margin-top: 4px;
     float: right;
@@ -46,6 +63,25 @@
       border-radius: 50%;
       border: solid 1px white;
       margin-left: 13px;
+    }
+  }
+
+  @media (min-width: 544px) {
+    .btn {
+      margin-right: 25px;
+
+      + .btn {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .btn {
+      &.btn-badge {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
     }
   }
 }

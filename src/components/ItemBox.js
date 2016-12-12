@@ -1,6 +1,6 @@
 import React from 'react'
 
-class ItemComponent extends React.Component {
+class ItemBoxComponent extends React.Component {
     render() {
         return (
             <div className="item-box">
@@ -19,4 +19,4 @@ class ItemComponent extends React.Component {
     }
 }
 
-export default ItemComponent
+export default ItemBoxComponent

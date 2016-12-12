@@ -5,7 +5,7 @@ import CreateNewForm from './CreateNewForm.js'
 class BottomBarComponent extends React.Component {
     render() {
         return (
-            <nav className="bottombar">
+            <nav className="bottombar boxed">
                 <div className="container">
                     <Views />
                     <CreateNewForm />

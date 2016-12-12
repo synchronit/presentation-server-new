@@ -1,4 +1,9 @@
-export const searchForm = (text) => ({
+export const searchForm = (searchQuery) => ({
     type: 'SEARCH_FORM',
-    text
+    searchQuery
+})
+
+export const changeView = (view) => ({
+    type: 'CHANGE_VIEW',
+    view
 })

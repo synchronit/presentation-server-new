@@ -15,8 +15,12 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1, .h1 {
-  font-size: $h1-size - 6;
+  font-size: $h1-size - 8;
   margin: 30px 0;
+
+  small {
+    font-size: $h1-size - 14;
+  }
 }
 
 h2, .h2 {
@@ -58,21 +62,19 @@ h6, .h6 {
 
 @media(min-width: 768px) {
   h1, .h1 {
-    font-size: $h1-size - 2;
+    font-size: $h1-size - 4;
   }
+
   h2, .h2 {
-    font-size: $h2-size - 2;
+    font-size: $h2-size - 4;
   }
 }
 
 @media(min-width: 992px) {
   h1, .h1 {
     font-size: $h1-size;
-
-    small {
-      font-size: $h1-size - 14;
-    }
   }
+
   h2, .h2 {
     font-size: $h2-size;
   }

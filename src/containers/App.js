@@ -1,7 +1,7 @@
 import React from 'react'
-import TopBar from './TopBar'
-import BottomBar from './BottomBar.js'
-import Content from '../containers/Content.js'
+import TopBar from '../components/TopBar'
+import BottomBar from '../components/BottomBar.js'
+import Content from './Content.js'
 
 class AppComponent extends React.Component {
     render() {
