@@ -1,0 +1,167 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/----   ITEM CAROUSEL    ITEM CAROUSEL    ITEM CAROUSEL    ITEM CAROUSEL   ----/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.items-carousel-list {
+  padding-bottom: 55px;
+
+  .slick-list {
+    width: 320px;
+    margin: auto;
+    padding: 0 0 !important;
+
+    .item-carousel {
+      height: 419px;
+      max-height: calc(100vh - 140px);
+      overflow: hidden;
+      padding: 5px;
+      border: solid 1px #6A676E;
+      border-radius: 3px;
+      background: linear-gradient(-90deg, #6A676E 85%, #ffffff 100%) no-repeat,
+      linear-gradient(0deg, #ffffff 70%, #6A676E 100%) no-repeat,
+      linear-gradient(90deg, #6A676E 85%, #ffffff 100%) no-repeat,
+      linear-gradient(180deg, #ffffff 70%, #6A676E 100%) no-repeat;
+      background-position: top left, top right, bottom left, top left;
+      background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+      margin: 0 15px;
+      opacity: .1;
+
+      &.slick-active {
+        opacity: 1;
+      }
+
+      .item {
+        height: 100%;
+        text-align: center;
+        background-color: rgba(255, 255, 255, .1);
+        padding: 0 15px;
+        overflow: hidden;
+
+        header {
+          height: 60px;
+          display: table;
+          width: 100%;
+
+          span {
+            display: table-cell;
+            vertical-align: middle;
+          }
+        }
+
+        .row {
+          margin: 0 -5px;
+
+          .stats {
+            padding: 0 5px;
+
+            > div {
+              font-size: 14px;
+              padding: 7px 2px 10px 2px;
+              border: solid 1px #6A676E;
+              border-radius: 3px;
+              background: linear-gradient(-90deg, #6A676E 85%, #ffffff 100%) no-repeat,
+              linear-gradient(0deg, #ffffff 70%, #6A676E 100%) no-repeat,
+              linear-gradient(90deg, #6A676E 85%, #ffffff 100%) no-repeat,
+              linear-gradient(180deg, #ffffff 70%, #6A676E 100%) no-repeat;
+              background-position: top left, top right, bottom left, top left;
+              background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+
+              span {
+                font-size: 36px;
+                display: block;
+              }
+            }
+          }
+        }
+
+        img {
+          width: calc(100% + 18px);
+          margin-left: -18px;
+          margin-top: 18px;
+        }
+      }
+    }
+  }
+
+  @media(min-width: 544px) {
+    margin: 0 -160px;
+
+    .slick-list {
+      width: 100%;
+      padding: 30px 0 !important;
+
+      .item-carousel {
+        height: 345px;
+        max-height: calc(100vh - 195px);
+        margin: 0 5px;
+
+        &.slick-active {
+          opacity: .1;
+        }
+
+        &.slick-current {
+          height: 400px;
+          max-height: calc(100vh - 140px);
+          margin-top: -30px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  @media(min-width: 768px) {
+    margin: 0 -100px;
+  }
+
+  @media(min-width: 992px) {
+    margin: 0;
+
+    .slick-list {
+      padding: 30px 25px !important;
+
+      .item-carousel {
+        &.slick-active {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  @media(min-width: 1200px) {
+    margin: 0;
+
+    .slick-list {
+      padding: 30px 120px !important;
+
+      .item-carousel {
+        height: calc(100vh - 285px);
+        margin: 0 10px;
+
+        &.slick-current {
+          height: calc(100vh - 235px);
+        }
+      }
+    }
+  }
+
+  .slick-arrow {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
+    &.slick-next {
+      right: 35px;
+    }
+
+    &.slick-prev {
+      left: 35px;
+    }
+  }
+}

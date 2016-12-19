@@ -24,21 +24,21 @@ class ViewsComponent extends React.Component {
             <ul className="views">
                 <li>
                     <a className={"icon-list " + (this.props.view == 'LIST_VIEW' ? 'active' : '')}
-                       href=""
+                       href="#"
                        title=""
                        onClick={this.changeViewToList}>
                     </a>
                 </li>
                 <li>
                     <a className={"icon-boxes " + (this.props.view == 'BOXES_VIEW' ? 'active' : '')}
-                       href=""
+                       href="#"
                        title=""
                        onClick={this.changeViewToBoxes}>
                     </a>
                 </li>
                 <li>
                     <a className={"icon-carousel " + (this.props.view == 'CAROUSEL_VIEW' ? 'active' : '')}
-                       href=""
+                       href="#"
                        title=""
                        onClick={this.changeViewToCarousel}>
                     </a>

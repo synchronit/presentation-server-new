@@ -1,5 +1,6 @@
 //vendors
 @import "vendors/bootstrap-custom";
+@import "vendors/slick-custom";
 
 //variables
 @import "partials/variables";
@@ -13,6 +14,7 @@
 @import "modules/forms";
 @import "modules/item-line";
 @import "modules/item-box";
+@import "modules/item-carousel";
 
 //partials
 @import "partials/base";

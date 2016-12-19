@@ -1,6 +1,6 @@
 const initialState = {
     searchQuery: '',
-    view: 'LIST_VIEW'
+    view: 'CAROUSEL_VIEW'
 }
 
 const forms = (state=initialState, action) => {
