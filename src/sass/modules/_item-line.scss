@@ -14,12 +14,31 @@
   border: solid 1px #6A676E;
   border-radius: 3px;
   overflow: hidden;
+  position: relative;
   background: linear-gradient(-90deg, #6A676E 85%, #ffffff 100%) no-repeat,
   linear-gradient(0deg, #ffffff 70%, #6A676E 100%) no-repeat,
   linear-gradient(90deg, #6A676E 85%, #ffffff 100%) no-repeat,
   linear-gradient(180deg, #ffffff 70%, #6A676E 100%) no-repeat;
   background-position: top left, top right, bottom left, top left;
   background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+
+  &:hover {
+    border: solid 1px #405D63;
+    background: linear-gradient(-90deg, #405D63 85%, #73DDDB 100%) no-repeat,
+    linear-gradient(0deg, #73DDDB 70%, #405D63 100%) no-repeat,
+    linear-gradient(90deg, #405D63 85%, #73DDDB 100%) no-repeat,
+    linear-gradient(180deg, #73DDDB 70%, #405D63 100%) no-repeat;
+    background-position: top left, top right, bottom left, top left;
+    background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+
+    .left, .right {
+      filter: blur(2px);
+    }
+
+    .options {
+      display: block;
+    }
+  }
 
   + .item-line {
     margin-top: 10px;
@@ -34,6 +53,73 @@
     background-color: rgba(255, 255, 255, .2);
     padding: 1px 5px;
     width: 100%;
+  }
+
+  .options {
+    padding: 3px 0;
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    margin: auto;
+    background-color: rgba(40,77,98,.65);
+    display: none;
+    text-align: center;
+
+    li {
+      height: 100%;
+      display: inline-block;
+
+      a {
+        position: relative;
+        top: -3px;
+        color: #73DDDB;
+        font-size: 14px;
+
+        &:hover {
+          color: white;
+
+          [class^="icon-"], [class*=" icon-"] {
+            transform: scale(1.1);
+          }
+        }
+
+        [class^="icon-"], [class*=" icon-"] {
+          font-size: 30px;
+          display: inline-block;
+          vertical-align: middle;
+          position: relative;
+          top: -2px;
+        }
+
+        i {
+          display: none;
+        }
+      }
+
+      + li {
+        margin-left: 20px;
+        border-left: solid 2px #263945;
+        padding-left: 15px;
+        box-shadow: inset 1px 0 0 #6B7E8A;
+      }
+    }
+  }
+
+  @media (min-width: 544px) {
+    .options {
+      li {
+        a {
+          i {
+            display: inline-block;
+            span {
+              display: none;
+            }
+          }
+        }
+      }
+    }
   }
 
   @media (min-width: 768px) {
@@ -74,6 +160,19 @@
           position: absolute;
           top: -5px;
           left: 12px;
+        }
+      }
+    }
+
+    .options {
+      li {
+        a {
+          i {
+            display: inline-block;
+            span {
+              display: inline-block;
+            }
+          }
         }
       }
     }

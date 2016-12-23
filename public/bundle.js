@@ -34171,6 +34171,90 @@
 	                        _react2.default.createElement("i", { className: "icon-user" }),
 	                        " 57 CASES"
 	                    )
+	                ),
+	                _react2.default.createElement(
+	                    "ul",
+	                    { className: "options" },
+	                    _react2.default.createElement(
+	                        "li",
+	                        null,
+	                        _react2.default.createElement(
+	                            "a",
+	                            { href: "#" },
+	                            _react2.default.createElement("span", { className: "icon-build" }),
+	                            " ",
+	                            _react2.default.createElement(
+	                                "i",
+	                                null,
+	                                _react2.default.createElement(
+	                                    "span",
+	                                    null,
+	                                    "Form"
+	                                ),
+	                                " Builder"
+	                            )
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        "li",
+	                        null,
+	                        _react2.default.createElement(
+	                            "a",
+	                            { href: "#" },
+	                            _react2.default.createElement("span", { className: "icon-edit" }),
+	                            " ",
+	                            _react2.default.createElement(
+	                                "i",
+	                                null,
+	                                "Edit ",
+	                                _react2.default.createElement(
+	                                    "span",
+	                                    null,
+	                                    "Form"
+	                                )
+	                            )
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        "li",
+	                        null,
+	                        _react2.default.createElement(
+	                            "a",
+	                            { href: "#" },
+	                            _react2.default.createElement("span", { className: "icon-copy" }),
+	                            " ",
+	                            _react2.default.createElement(
+	                                "i",
+	                                null,
+	                                "Duplicate ",
+	                                _react2.default.createElement(
+	                                    "span",
+	                                    null,
+	                                    "Form"
+	                                )
+	                            )
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        "li",
+	                        null,
+	                        _react2.default.createElement(
+	                            "a",
+	                            { href: "#" },
+	                            _react2.default.createElement("span", { className: "icon-delete" }),
+	                            " ",
+	                            _react2.default.createElement(
+	                                "i",
+	                                null,
+	                                "Delete ",
+	                                _react2.default.createElement(
+	                                    "span",
+	                                    null,
+	                                    "Form"
+	                                )
+	                            )
+	                        )
+	                    )
 	                )
 	            );
 	        }
@@ -34316,6 +34400,90 @@
 	                            null,
 	                            _react2.default.createElement("i", { className: "icon-user" }),
 	                            " 57 CASES"
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        "ul",
+	                        { className: "options" },
+	                        _react2.default.createElement(
+	                            "li",
+	                            null,
+	                            _react2.default.createElement(
+	                                "a",
+	                                { href: "#" },
+	                                _react2.default.createElement("span", { className: "icon-build" }),
+	                                " ",
+	                                _react2.default.createElement(
+	                                    "i",
+	                                    null,
+	                                    _react2.default.createElement(
+	                                        "span",
+	                                        null,
+	                                        "Form"
+	                                    ),
+	                                    " Builder"
+	                                )
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            "li",
+	                            null,
+	                            _react2.default.createElement(
+	                                "a",
+	                                { href: "#" },
+	                                _react2.default.createElement("span", { className: "icon-edit" }),
+	                                " ",
+	                                _react2.default.createElement(
+	                                    "i",
+	                                    null,
+	                                    "Edit ",
+	                                    _react2.default.createElement(
+	                                        "span",
+	                                        null,
+	                                        "Form"
+	                                    )
+	                                )
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            "li",
+	                            null,
+	                            _react2.default.createElement(
+	                                "a",
+	                                { href: "#" },
+	                                _react2.default.createElement("span", { className: "icon-copy" }),
+	                                " ",
+	                                _react2.default.createElement(
+	                                    "i",
+	                                    null,
+	                                    "Duplicate ",
+	                                    _react2.default.createElement(
+	                                        "span",
+	                                        null,
+	                                        "Form"
+	                                    )
+	                                )
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            "li",
+	                            null,
+	                            _react2.default.createElement(
+	                                "a",
+	                                { href: "#" },
+	                                _react2.default.createElement("span", { className: "icon-delete" }),
+	                                " ",
+	                                _react2.default.createElement(
+	                                    "i",
+	                                    null,
+	                                    "Delete ",
+	                                    _react2.default.createElement(
+	                                        "span",
+	                                        null,
+	                                        "Form"
+	                                    )
+	                                )
+	                            )
 	                        )
 	                    )
 	                )
@@ -34508,7 +34676,91 @@
 	                            )
 	                        )
 	                    ),
-	                    _react2.default.createElement("img", { src: "images/form.png", alt: "" })
+	                    _react2.default.createElement("img", { src: "images/form.png", alt: "" }),
+	                    _react2.default.createElement(
+	                        "ul",
+	                        { className: "options" },
+	                        _react2.default.createElement(
+	                            "li",
+	                            null,
+	                            _react2.default.createElement(
+	                                "a",
+	                                { href: "#" },
+	                                _react2.default.createElement("span", { className: "icon-build" }),
+	                                " ",
+	                                _react2.default.createElement(
+	                                    "i",
+	                                    null,
+	                                    _react2.default.createElement(
+	                                        "span",
+	                                        null,
+	                                        "Form"
+	                                    ),
+	                                    " Builder"
+	                                )
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            "li",
+	                            null,
+	                            _react2.default.createElement(
+	                                "a",
+	                                { href: "#" },
+	                                _react2.default.createElement("span", { className: "icon-edit" }),
+	                                " ",
+	                                _react2.default.createElement(
+	                                    "i",
+	                                    null,
+	                                    "Edit ",
+	                                    _react2.default.createElement(
+	                                        "span",
+	                                        null,
+	                                        "Form"
+	                                    )
+	                                )
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            "li",
+	                            null,
+	                            _react2.default.createElement(
+	                                "a",
+	                                { href: "#" },
+	                                _react2.default.createElement("span", { className: "icon-copy" }),
+	                                " ",
+	                                _react2.default.createElement(
+	                                    "i",
+	                                    null,
+	                                    "Duplicate ",
+	                                    _react2.default.createElement(
+	                                        "span",
+	                                        null,
+	                                        "Form"
+	                                    )
+	                                )
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            "li",
+	                            null,
+	                            _react2.default.createElement(
+	                                "a",
+	                                { href: "#" },
+	                                _react2.default.createElement("span", { className: "icon-delete" }),
+	                                " ",
+	                                _react2.default.createElement(
+	                                    "i",
+	                                    null,
+	                                    "Delete ",
+	                                    _react2.default.createElement(
+	                                        "span",
+	                                        null,
+	                                        "Form"
+	                                    )
+	                                )
+	                            )
+	                        )
+	                    )
 	                )
 	            );
 	        }
