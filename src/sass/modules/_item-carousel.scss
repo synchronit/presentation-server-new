@@ -147,6 +147,7 @@
 
   @media(min-width: 544px) {
     margin: 0 -160px;
+    padding-bottom: 30px;
 
     .slick-list {
       width: 100%;
@@ -206,19 +207,97 @@
     }
   }
 
-  .slick-arrow {
+  .arrow {
     position: absolute;
     z-index: 10;
     top: 0;
     bottom: 0;
     margin: auto;
+    background: none;
+    border: none;
+    font-size: 50px;
+    color: #73DDDB;
+    height: 30px;
 
-    &.slick-next {
-      right: 35px;
+    &:hover {
+      color: #FF5E54;
     }
 
-    &.slick-prev {
-      left: 35px;
+    &.next {
+      right: 10px;
+
+      &:hover:after {
+        display: block;
+      }
+
+      &:after {
+        content: '';
+        width: 34px;
+        height: 2px;
+        background-color: #FF5E54;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        display: none;
+      }
+    }
+
+    &.prev {
+      left: 10px;
+
+      &:hover:after {
+        display: block;
+      }
+
+      &:after {
+        content: '';
+        width: 34px;
+        height: 2px;
+        background-color: #FF5E54;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        display: none;
+      }
+    }
+
+    [class^="icon-"], [class*=" icon-"] {
+      position: relative;
+      top: -18px;
+    }
+
+    @media(min-width: 544px) {
+      &.next {
+        right: 170px;
+      }
+
+      &.prev {
+        left: 170px;
+      }
+    }
+
+    @media(min-width: 768px) {
+      &.next {
+        right: 110px;
+      }
+
+      &.prev {
+        left: 110px;
+      }
+    }
+
+    @media(min-width: 992px) {
+      &.next {
+        right: 10px;
+      }
+
+      &.prev {
+        left: 10px;
+      }
     }
   }
 }

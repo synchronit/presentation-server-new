@@ -34538,12 +34538,35 @@
 	    _createClass(ItemsCarouselListComponent, [{
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
+	            this.initCarousel();
+	        }
+	    }, {
+	        key: 'componentWillUpdate',
+	        value: function componentWillUpdate() {
+	            this.destroyCarousel();
+	        }
+	    }, {
+	        key: 'componentDidUpdate',
+	        value: function componentDidUpdate() {
+	            this.initCarousel();
+	        }
+	    }, {
+	        key: 'componentWillUnmount',
+	        value: function componentWillUnmount() {
+	            this.destroyCarousel();
+	        }
+	    }, {
+	        key: 'initCarousel',
+	        value: function initCarousel() {
+
 	            this.carousel = $(this.carouselElement).slick({
 	                slidesToShow: 1,
 	                centerMode: true,
 	                arrows: true,
 	                waitForAnimate: false,
 	                mobileFirst: true,
+	                prevArrow: '<button type="button" class="arrow prev"><span class="icon-chevron-left"></span></button>',
+	                nextArrow: '<button type="button" class="arrow next"><span class="icon-chevron-right"></span></button>',
 	                responsive: [{
 	                    breakpoint: 543,
 	                    settings: {
@@ -34553,8 +34576,8 @@
 	            });
 	        }
 	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {
+	        key: 'destroyCarousel',
+	        value: function destroyCarousel() {
 	            this.carousel.slick('unslick');
 	        }
 	    }, {
@@ -34567,11 +34590,14 @@
 	            var name = '';
 	            var filteredList = this.props.forms;
 
-	            filteredList.forEach(function (form) {
+	            this.newlist = filteredList.filter(function (form) {
+	                var result = false;
 	                if (form[0] !== name) {
 	                    items.push(_react2.default.createElement(_ItemCarousel2.default, { form: form, key: key++ }));
+	                    result = true;
 	                }
 	                name = form[0];
+	                return result;
 	            });
 
 	            return _react2.default.createElement(
