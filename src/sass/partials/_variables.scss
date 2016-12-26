@@ -1,12 +1,18 @@
 //COLORS
 //------------------------------------------------------------------------------
 
+$color1:                        white;
+$color2:                        #333333;
+$color3:                        #73DDDB;
+
 //backgrounds
-$bg-color1:                     white;          //white
+$bg-color1:                     $color1;
+$bg-color3:                     $color3;
 
 //text
-$text-color1:                   white;          //white
-$text-color2:                   #333333;        //black
+$text-color1:                   $color1;
+$text-color2:                   $color2;
+$text-color3:                   $color3;
 
 
 //FONTS FAMILY
@@ -34,9 +40,12 @@ $headings-color:                $text-color1;
 
 //buttons
 $btn-color:                     $text-color1;
+$btn-color-hover:               $text-color3;
 $btn-radius:                    3px;
 $btn-padding:                   7px 10px;
 $btn-bg:                        #020407;
+$btn-bg-primary:                $bg-color3;
+$btn-bg-primary-hover:          #FF5E54;
 
 //badges
 $badge-color:                   #0A101A;

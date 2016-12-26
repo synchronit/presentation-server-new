@@ -6608,6 +6608,19 @@ h6, .h6 {
   position: relative;
 }
 
+.btn:hover {
+  color: #73DDDB;
+}
+
+.btn.btn-primary {
+  background-color: #73DDDB;
+  color: #0A101A;
+}
+
+.btn.btn-primary:hover {
+  background-color: #FF5E54;
+}
+
 .btn.btn-icon {
   padding-top: 3px;
   padding-bottom: 3px;
@@ -7429,25 +7442,95 @@ a, button {
 .topbar .user {
   margin-top: 4px;
   float: right;
-  color: #ffffff;
   position: relative;
 }
 
-.topbar .user:after {
-  content: '';
-  width: 51px;
-  height: 51px;
-  border: solid 10px linear-gradient(0deg, #273740 0%, #432C33 100%);
-  position: absolute;
-  right: 5px;
+.topbar .user a {
+  display: block;
+  color: white;
 }
 
-.topbar .user img {
+.topbar .user a:after {
+  display: none !important;
+}
+
+.topbar .user a:focus .image-container {
+  border: solid 2px #232831;
+}
+
+.topbar .user a .image-container {
+  display: inline-block;
+  margin-top: -4px;
+  margin-left: 8px;
+  border-radius: 50%;
+  padding: 3px;
+  border: solid 2px transparent;
+}
+
+.topbar .user a .image-container img {
   width: 51px;
   height: 51px;
+  border: solid 1px white;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+.topbar .user .dropdown-menu {
+  width: 100vw;
+  background-color: rgba(10, 16, 26, 0.9);
+  box-shadow: inset 0 3px 0 #ffffff;
+  border-left: solid 1px #5B595C;
+  border-right: solid 1px #5B595C;
+  border-bottom: solid 3px rgba(0, 0, 0, 0.9);
+  border-radius: 0;
+  padding: 0;
+  margin-top: 4px;
+  left: auto;
+  right: -15px;
+}
+
+.topbar .user .dropdown-menu .dropdown-menu-body {
+  padding: 15px;
+}
+
+.topbar .user .dropdown-menu .dropdown-menu-body img {
+  background-color: white;
+  width: 94px;
+  height: 94px;
   border-radius: 50%;
   border: solid 1px white;
-  margin-left: 13px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.topbar .user .dropdown-menu .dropdown-menu-body p {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 20px;
+  font-size: 20px;
+  color: white;
+}
+
+.topbar .user .dropdown-menu .dropdown-menu-body p small {
+  display: block;
+  color: #5B595C;
+}
+
+.topbar .user .dropdown-menu .dropdown-menu-footer {
+  padding: 15px;
+  border-top: solid 2px rgba(0, 0, 0, 0.9);
+  box-shadow: inset 0 1px 0 #525052;
+}
+
+.topbar .user .dropdown-menu .dropdown-menu-footer .btn {
+  margin: 0;
+  float: none;
+  width: 110px;
+  font-weight: 700;
+}
+
+.topbar .user .dropdown-menu .dropdown-menu-footer .btn:last-child {
+  float: right;
 }
 
 @media (min-width: 544px) {
@@ -7456,6 +7539,10 @@ a, button {
   }
   .topbar .btn + .btn {
     margin-right: 20px;
+  }
+  .topbar .user .dropdown-menu {
+    width: 310px;
+    right: -35px;
   }
 }
 

@@ -17,6 +17,19 @@
   letter-spacing: 1px;
   position: relative;
 
+  &:hover {
+    color: $btn-color-hover;
+  }
+
+  &.btn-primary {
+    background-color: $btn-bg-primary;
+    color: #0A101A;
+
+    &:hover {
+      background-color: $btn-bg-primary-hover;
+    }
+  }
+
   &.btn-icon {
     padding-top: 3px;
     padding-bottom: 3px;

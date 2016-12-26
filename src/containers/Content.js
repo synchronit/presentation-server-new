@@ -2115,19 +2115,21 @@ class ContentComponent extends React.Component {
 
     componentDidMount() {
         $(this.workZoneElement).niceScroll({
-                cursorcolor:'rgba(255,255,255,.05)',
-                cursorborder: 'none'
-            })
+            cursorcolor:'rgba(255,255,255,.05)',
+            cursorborder: 'none'
+        })
     }
 
     filterList() {
         const originalList = data
         const searchQuery = this.props.searchQuery
 
-        return originalList.filter(function(item){
+        var filteredList = originalList.filter(function(item){
             var patt = new RegExp(searchQuery, 'i')
             return patt.test(item[0])
         })
+
+        return filteredList
     }
 
     render() {
