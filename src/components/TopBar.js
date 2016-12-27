@@ -24,7 +24,7 @@ class TopBarComponent extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <a className="btn btn-icon btn-badge" href="" title="">
+                    <a className="btn btn-icon btn-badge" href="" title="" data-toggle="modal" data-target="#modal-notifications">
                         <span className="icon-notification"></span>
                         <span className="hidden-sm-down">NOTIFICATIONS</span>
                         <span className="badge">3</span>
@@ -32,7 +32,7 @@ class TopBarComponent extends React.Component {
                     <a className="btn btn-icon" href="" title=""><span className="icon-home"></span></a>
                 </div>
             </nav>
-        );
+        )
     }
 }
 

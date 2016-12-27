@@ -4,10 +4,14 @@
 $color1:                        white;
 $color2:                        #333333;
 $color3:                        #73DDDB;
+$color4:                        #874A4A;
+$color5:                        #633636;
 
 //backgrounds
 $bg-color1:                     $color1;
 $bg-color3:                     $color3;
+$bg-color4:                     $color4;
+$bg-color5:                     $color5;
 
 //text
 $text-color1:                   $color1;
@@ -44,8 +48,12 @@ $btn-color-hover:               $text-color3;
 $btn-radius:                    3px;
 $btn-padding:                   7px 10px;
 $btn-bg:                        #020407;
+
 $btn-bg-primary:                $bg-color3;
 $btn-bg-primary-hover:          #FF5E54;
+
+$btn-bg-secundary:              $bg-color4;
+$btn-bg-secundary-hover:        $bg-color5;
 
 //badges
 $badge-color:                   #0A101A;

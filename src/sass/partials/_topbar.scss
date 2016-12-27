@@ -92,6 +92,11 @@
       left: auto;
       right: -15px;
 
+      &:before {
+        @include triangle-top-right(5px, 5px, 5px, 5px, white);
+        right: 40px;
+      }
+
       .dropdown-menu-body {
         padding: 15px;
 
@@ -151,6 +156,10 @@
       .dropdown-menu {
         width: 310px;
         right: -35px;
+
+        &:before {
+          right: 59px;
+        }
       }
     }
   }

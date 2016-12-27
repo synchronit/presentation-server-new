@@ -1,0 +1,52 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/----   MODAL NOTIFICATIONS    MODAL NOTIFICATIONS    MODAL NOTIFICATIONS   ---/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+#modal-notifications {
+
+  .modal-dialog {
+    .modal-content {
+      .modal-body {
+        padding: 15px 30px;
+
+        .notification-list {
+          margin: 0;
+          padding: 0;
+
+          li {
+            overflow: hidden;
+            display: block;
+            padding: 20px 0;
+            position: relative;
+
+            + li {
+              border-top: solid 2px #EBEBEB;
+            }
+
+            p {
+              display: inline-block;
+              margin: 0;
+              vertical-align: middle;
+              padding-right: 70px;
+            }
+
+            .btn {
+              position: absolute;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              margin: auto;
+              width: 60px;
+              height: 35px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

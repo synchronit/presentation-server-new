@@ -5,6 +5,9 @@
 //variables
 @import "partials/variables";
 
+//mixins
+@import "mixins/triangles";
+
 //modules
 @import "modules/fonts";
 @import "modules/icons";
@@ -12,6 +15,7 @@
 @import "modules/buttons";
 @import "modules/badges";
 @import "modules/forms";
+@import "modules/modal";
 @import "modules/item-line";
 @import "modules/item-box";
 @import "modules/item-carousel";
@@ -22,3 +26,5 @@
 @import "partials/content";
 @import "partials/item-list";
 @import "partials/bottombar";
+@import "partials/modal-notifications";
+@import "partials/modal-delete";

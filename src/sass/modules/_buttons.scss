@@ -17,7 +17,7 @@
   letter-spacing: 1px;
   position: relative;
 
-  &:hover {
+  &:hover, &:focus {
     color: $btn-color-hover;
   }
 
@@ -27,6 +27,24 @@
 
     &:hover {
       background-color: $btn-bg-primary-hover;
+    }
+  }
+
+  &.btn-primary-2 {
+    background-color: darken($btn-bg-primary, 20%);
+    color: white;
+
+    &:hover {
+      background-color: darken($btn-bg-primary, 30%);
+    }
+  }
+
+  &.btn-secundary {
+    background-color: $btn-bg-secundary;
+    color: white;
+
+    &:hover {
+      background-color: $btn-bg-secundary-hover;
     }
   }
 

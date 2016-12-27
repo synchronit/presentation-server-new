@@ -38723,7 +38723,7 @@
 	});
 	var initialState = {
 	    searchQuery: '',
-	    view: 'CAROUSEL_VIEW'
+	    view: 'LIST_VIEW'
 	};
 
 	var forms = function forms() {
@@ -38770,6 +38770,10 @@
 
 	var _Content2 = _interopRequireDefault(_Content);
 
+	var _Modal = __webpack_require__(231);
+
+	var _Modal2 = _interopRequireDefault(_Modal);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -38795,7 +38799,9 @@
 	                null,
 	                _react2.default.createElement(_TopBar2.default, null),
 	                _react2.default.createElement(_Content2.default, null),
-	                _react2.default.createElement(_BottomBar2.default, null)
+	                _react2.default.createElement(_BottomBar2.default, null),
+	                _react2.default.createElement(_Modal2.default, { id: 'modal-notifications', title: 'NOTIFICATIONS', icon: 'icon-notification' }),
+	                _react2.default.createElement(_Modal2.default, { id: 'modal-delete', title: 'Do you really want to delete this form?', icon: 'icon-delete' })
 	            );
 	        }
 	    }]);
@@ -38905,7 +38911,7 @@
 	                    ),
 	                    _react2.default.createElement(
 	                        "a",
-	                        { className: "btn btn-icon btn-badge", href: "", title: "" },
+	                        { className: "btn btn-icon btn-badge", href: "", title: "", "data-toggle": "modal", "data-target": "#modal-notifications" },
 	                        _react2.default.createElement("span", { className: "icon-notification" }),
 	                        _react2.default.createElement(
 	                            "span",
@@ -39734,9 +39740,8 @@
 	                    null,
 	                    _react2.default.createElement(
 	                        "a",
-	                        { href: "#" },
+	                        { href: "#", "data-toggle": "modal", "data-target": "#modal-delete" },
 	                        _react2.default.createElement("span", { className: "icon-delete" }),
-	                        " ",
 	                        _react2.default.createElement(
 	                            "i",
 	                            null,
@@ -46752,6 +46757,245 @@
 	}));
 
 
+
+/***/ },
+/* 231 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(4);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _ModalNotifications = __webpack_require__(232);
+
+	var _ModalNotifications2 = _interopRequireDefault(_ModalNotifications);
+
+	var _ModalDelete = __webpack_require__(233);
+
+	var _ModalDelete2 = _interopRequireDefault(_ModalDelete);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ModalComponent = function (_React$Component) {
+	    _inherits(ModalComponent, _React$Component);
+
+	    function ModalComponent() {
+	        _classCallCheck(this, ModalComponent);
+
+	        return _possibleConstructorReturn(this, (ModalComponent.__proto__ || Object.getPrototypeOf(ModalComponent)).apply(this, arguments));
+	    }
+
+	    _createClass(ModalComponent, [{
+	        key: 'render',
+	        value: function render() {
+	            var content = null;
+
+	            switch (this.props.id) {
+	                case 'modal-notifications':
+	                    content = _react2.default.createElement(_ModalNotifications2.default, null);
+	                    break;
+	                case 'modal-delete':
+	                    content = _react2.default.createElement(_ModalDelete2.default, null);
+	                    break;
+	            }
+
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'modal fade', id: this.props.id },
+	                _react2.default.createElement('button', { type: 'button', className: 'icon-close', 'data-dismiss': 'modal' }),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'modal-dialog' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'modal-content' },
+	                        _react2.default.createElement('span', { className: this.props.icon }),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'modal-header' },
+	                            _react2.default.createElement(
+	                                'h4',
+	                                { className: 'modal-title' },
+	                                this.props.title
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'modal-body' },
+	                            content
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return ModalComponent;
+	}(_react2.default.Component);
+
+	exports.default = ModalComponent;
+
+/***/ },
+/* 232 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(4);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ModalNotificationsComponent = function (_React$Component) {
+	    _inherits(ModalNotificationsComponent, _React$Component);
+
+	    function ModalNotificationsComponent() {
+	        _classCallCheck(this, ModalNotificationsComponent);
+
+	        return _possibleConstructorReturn(this, (ModalNotificationsComponent.__proto__ || Object.getPrototypeOf(ModalNotificationsComponent)).apply(this, arguments));
+	    }
+
+	    _createClass(ModalNotificationsComponent, [{
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement(
+	                "ul",
+	                { className: "notification-list" },
+	                _react2.default.createElement(
+	                    "li",
+	                    null,
+	                    _react2.default.createElement(
+	                        "p",
+	                        null,
+	                        "Lorem ipsum dolor sit amet consercuter secter"
+	                    ),
+	                    _react2.default.createElement(
+	                        "button",
+	                        { type: "button", className: "btn btn-primary-2" },
+	                        "OK"
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    "li",
+	                    null,
+	                    _react2.default.createElement(
+	                        "p",
+	                        null,
+	                        "Dolor sit amet consercuter secter"
+	                    ),
+	                    _react2.default.createElement(
+	                        "button",
+	                        { type: "button", className: "btn btn-primary-2" },
+	                        "OK"
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    "li",
+	                    null,
+	                    _react2.default.createElement(
+	                        "p",
+	                        null,
+	                        "Ipsum dolor sit amet consercuter secter loremsy"
+	                    ),
+	                    _react2.default.createElement(
+	                        "button",
+	                        { type: "button", className: "btn btn-primary-2" },
+	                        "OK"
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return ModalNotificationsComponent;
+	}(_react2.default.Component);
+
+	exports.default = ModalNotificationsComponent;
+
+/***/ },
+/* 233 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(4);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ModalDeleteComponent = function (_React$Component) {
+	    _inherits(ModalDeleteComponent, _React$Component);
+
+	    function ModalDeleteComponent() {
+	        _classCallCheck(this, ModalDeleteComponent);
+
+	        return _possibleConstructorReturn(this, (ModalDeleteComponent.__proto__ || Object.getPrototypeOf(ModalDeleteComponent)).apply(this, arguments));
+	    }
+
+	    _createClass(ModalDeleteComponent, [{
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement(
+	                "div",
+	                null,
+	                _react2.default.createElement(
+	                    "button",
+	                    { type: "button", className: "btn btn-secundary", "data-dismiss": "modal" },
+	                    "CANCEL"
+	                ),
+	                _react2.default.createElement(
+	                    "button",
+	                    { type: "button", className: "btn btn-primary-2" },
+	                    "ACCEPT"
+	                )
+	            );
+	        }
+	    }]);
+
+	    return ModalDeleteComponent;
+	}(_react2.default.Component);
+
+	exports.default = ModalDeleteComponent;
 
 /***/ }
 /******/ ]);
