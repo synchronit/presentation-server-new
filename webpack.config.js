@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 
 module.exports = {
-    entry: "./src/app.js",
+    entry: ["babel-polyfill","./src/app.js"],
     output: {
         path: __dirname,
         filename: "./public/bundle.js"

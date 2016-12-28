@@ -1,3 +1,5 @@
+import fetch from 'isomorphic-fetch'
+
 export function fetchForms() {
     return dispatch => {
         dispatch({ type: 'FETCH_FORMS_REQUEST' });
