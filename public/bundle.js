@@ -31746,24 +31746,16 @@
 /* 515 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	/* WEBPACK VAR INJECTION */(function(fetch) {'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.changeView = exports.deleteForm = exports.searchForm = undefined;
 	exports.fetchForms = fetchForms;
-
-	var _isomorphicFetch = __webpack_require__(516);
-
-	var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 	function fetchForms() {
 	    return function (dispatch) {
 	        dispatch({ type: 'FETCH_FORMS_REQUEST' });
-	        return (0, _isomorphicFetch2.default)("http://dev.synchronit.com/appbase-webconsole/json?command=show forms", {}).then(function (resp) {
+	        return fetch("http://dev.synchronit.com/appbase-webconsole/json?command=show forms", {}).then(function (resp) {
 	            return resp.json();
 	        }).then(function (json) {
 	            return dispatch({ type: 'FETCH_FORMS_SUCCESS', request: json });
@@ -31794,6 +31786,7 @@
 	        view: view
 	    };
 	};
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(516)))
 
 /***/ },
 /* 516 */
@@ -42627,6 +42620,8 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRedux = __webpack_require__(496);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -42654,7 +42649,9 @@
 	                _react2.default.createElement(
 	                    'small',
 	                    null,
-	                    '(85 CREATED FORMS)'
+	                    '(',
+	                    this.props.message ? this.props.message : '0 forms found',
+	                    ')'
 	                )
 	            );
 	        }
@@ -42663,7 +42660,15 @@
 	    return HeadingComponent;
 	}(_react2.default.Component);
 
-	exports.default = HeadingComponent;
+	var mapStateToProps = function mapStateToProps(state) {
+	    return {
+	        message: state.fetchForms.request.message
+	    };
+	};
+
+	var Heading = (0, _reactRedux.connect)(mapStateToProps)(HeadingComponent);
+
+	exports.default = Heading;
 
 /***/ },
 /* 523 */

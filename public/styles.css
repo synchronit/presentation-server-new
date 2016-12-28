@@ -5733,6 +5733,7 @@ h1, .h1 {
 
 h1 small, .h1 small {
   font-size: 14px;
+  text-transform: uppercase;
 }
 
 h2, .h2 {
