@@ -1,17 +1,15 @@
-const initialState = {
-    searchQuery: '',
-    view: 'LIST_VIEW'
-}
+import { combineReducers } from 'redux'
 
-const forms = (state=initialState, action) => {
-    switch (action.type) {
-        case 'SEARCH_FORM':
-            return Object.assign({}, state, { searchQuery: action.searchQuery });
-        case 'CHANGE_VIEW':
-            return Object.assign({}, state, { view: action.view });
-        default:
-            return state
-    }
-}
+import fetchForms from './fetchForms.js'
+import searchQuery from './searchForms.js'
+import view from './changeFormsView.js'
+import deleteForms from './deleteForms.js'
 
-export default forms
+const reducer = combineReducers({
+    fetchForms,
+    searchQuery,
+    view,
+    deleteForms
+})
+
+export default reducer

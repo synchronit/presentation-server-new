@@ -4,13 +4,12 @@ import ItemLine from '../components/ItemLine.js'
 class ItemsLineListComponent extends React.Component {
     render() {
         var items = [];
-        var key = 0;
         var name = '';
         var filteredList = this.props.forms
 
-        filteredList.forEach((form) => {
+        filteredList.forEach((form, index) => {
             if (form[0] !== name) {
-                items.push(<ItemLine form={form} key={key++} />)
+                items.push(<ItemLine form={form} key={index} id={index}/>)
             }
             name = form[0]
         })

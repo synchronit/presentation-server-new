@@ -22,7 +22,7 @@ class ItemCarouselComponent extends React.Component {
                         </div>
                     </div>
                     <img src="images/form.png" alt="" />
-                    <ItemOptions/>
+                    <ItemOptions form={this.props.form[0]}/>
                 </div>
             </div>
         );

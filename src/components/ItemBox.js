@@ -14,7 +14,7 @@ class ItemBoxComponent extends React.Component {
                         <span><i className="icon-date"></i> 13/6/2017</span>
                         <span><i className="icon-user"></i> 57 CASES</span>
                     </div>
-                    <ItemOptions/>
+                    <ItemOptions form={this.props.form[0]}/>
                 </div>
             </div>
         );
