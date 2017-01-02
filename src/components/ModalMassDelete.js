@@ -2,11 +2,11 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { deleteForm } from '../actions'
 
-class ModalDeleteComponent extends React.Component {
+class ModalMassDeleteComponent extends React.Component {
 
     deleteItem = (e) => {
         e.preventDefault()
-        this.props.dispatch(deleteForm(this.props.form))
+        //this.props.dispatch(deleteForm(this.props.form))
     }
 
     render() {
@@ -29,8 +29,8 @@ const mapStateToProps = (state) => ({
     form: state.confirmDeleteForm
 })
 
-const ModalDelete = connect(
+const ModalMassDelete = connect(
     mapStateToProps
-)(ModalDeleteComponent)
+)(ModalMassDeleteComponent)
 
-export default ModalDelete
+export default ModalMassDelete

@@ -1,12 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { deleteForm } from '../actions'
+import { confirmDeleteForm } from '../actions'
 
 class ItemOptionsComponent extends React.Component {
 
     deleteItem = (e) => {
         e.preventDefault()
-        this.props.dispatch(deleteForm(this.props.form, 'NO'))
+        this.props.dispatch(confirmDeleteForm(this.props.form))
     }
 
     render() {

@@ -18,7 +18,6 @@
     .item-carousel {
       height: 419px;
       max-height: calc(100vh - 140px);
-      overflow: hidden;
       padding: 5px;
       border: solid 1px #6A676E;
       border-radius: 3px;
@@ -42,6 +41,10 @@
             background-color: rgba(40, 77, 98, .9);
           }
         }
+      }
+
+      &.slick-cloned {
+        opacity: 0!important;
       }
 
       .item {
@@ -102,7 +105,7 @@
           right: 0;
           margin: auto;
           padding: 8px 0;
-          background-color: rgba(40,77,98,.8);
+          background-color: rgba(40, 77, 98, .8);
 
           li {
             display: block;
@@ -139,6 +142,83 @@
               border-left: solid 2px #263945;
               box-shadow: inset 1px 0 0 #6B7E8A;
             }
+          }
+        }
+      }
+
+      &.selectable {
+        background: none;
+        border-style: dotted;
+        border-color: #6A676E;
+        position: relative;
+
+        &.selected {
+          .item {
+            background-color: rgba(40, 77, 98, .65)!important;
+          }
+        }
+
+        &.slick-current {
+          .item {
+            .options {
+              bottom: -59px;
+            }
+          }
+        }
+
+        &:before, &:after {
+          content: '';
+          width: 70px;
+          height: 70px;
+          position: absolute;
+          top: -2px;
+          margin: auto;
+          border: solid 2px $color3;
+          border-bottom: none;
+        }
+
+        &:before {
+          left: -2px;
+          border-right: none;
+          border-radius: 3px 0 0 0;
+        }
+
+        &:after {
+          right: -2px;
+          border-left: none;
+          border-radius: 0 3px 0 0;
+        }
+
+        .selection-mask {
+          position: absolute;
+          z-index: 100;
+          top: 5px;
+          bottom: 5px;
+          left: 5px;
+          right: 5px;
+          border-radius: 3px;
+
+          &:before, &:after {
+            content: '';
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            bottom: -7px;
+            margin: auto;
+            border: solid 2px $color3;
+            border-top: none;
+          }
+
+          &:before {
+            left: -7px;
+            border-right: none;
+            border-radius: 0 0 0 3px;
+          }
+
+          &:after {
+            right: -7px;
+            border-left: none;
+            border-radius: 0 0 3px 0;
           }
         }
       }
@@ -194,7 +274,7 @@
     margin: 0;
 
     .slick-list {
-      padding: 30px 120px !important;
+      padding: 32px 120px !important;
 
       .item-carousel {
         height: calc(100vh - 285px);

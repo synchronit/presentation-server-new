@@ -21,24 +21,13 @@ class ContentComponent extends React.Component {
     }
 
     filterList() {
-        var originalList = this.props.formList
-        const searchQuery = this.props.searchQuery
+        var name = '';
 
-        if(this.props.confirm == 'YES') {
-            originalList = this.deleteForm(originalList, this.props.form)
-        }
-
-        var filteredList = originalList.filter(function(item){
-            var patt = new RegExp(searchQuery, 'i')
-            return patt.test(item[0])
-        })
-
-        return filteredList
-    }
-
-    deleteForm(originalList, form) {
-        return originalList.filter(function(item){
-            return item[0] != form
+        return this.props.formList.filter((item) => {
+            var patt = new RegExp(this.props.searchQuery, 'i')
+            var result = (item[0] !== name && patt.test(item[0]))
+            name = item[0]
+            return result
         })
     }
 
@@ -47,16 +36,16 @@ class ContentComponent extends React.Component {
 
         switch (this.props.view) {
             case 'LIST_VIEW':
-                component = <ItemsLineList forms={this.filterList()} />
+                component = <ItemsLineList forms={this.filterList()} massFormsSelection={this.props.massFormsSelection}/>
                 break
             case 'BOXES_VIEW':
-                component = <ItemsBoxList forms={this.filterList()} />
+                component = <ItemsBoxList forms={this.filterList()} massFormsSelection={this.props.massFormsSelection}/>
                 break
             case 'CAROUSEL_VIEW':
-                component = <ItemsCarouselList forms={this.filterList()} />
+                component = <ItemsCarouselList forms={this.filterList()} massFormsSelection={this.props.massFormsSelection}/>
                 break
             default:
-                component = <ItemsLineList forms={this.filterList()} />
+                component = <ItemsLineList forms={this.filterList()} massFormsSelection={this.props.massFormsSelection}/>
         }
 
         return (
@@ -71,12 +60,14 @@ class ContentComponent extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+    console.log(state)
     return {
         formList: state.fetchForms.request.resultSet.rows,
         searchQuery: state.searchQuery,
         view: state.view,
-        form: state.deleteForms.form,
-        confirm: state.deleteForms.confirm
+        form: state.confirmDeleteForm,
+        isFetching: state.fetchForms.isFetching,
+        massFormsSelection: state.massFormsSelection
     }
 }
 

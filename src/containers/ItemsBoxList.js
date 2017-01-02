@@ -4,15 +4,11 @@ import ItemBox from '../components/ItemBox.js'
 class ItemsBoxListComponent extends React.Component {
     render() {
         var items = [];
-        var key = 0;
-        var name = '';
-        var filteredList = this.props.forms
 
-        filteredList.forEach((form) => {
-            if (form[0] !== name) {
-                items.push(<ItemBox form={form} key={key++} />)
-            }
-            name = form[0]
+        this.props.forms.forEach((form, index) => {
+            items.push(
+                <ItemBox form={form} key={index} id={index} massFormsSelection={this.props.massFormsSelection} />
+            )
         })
 
         return (

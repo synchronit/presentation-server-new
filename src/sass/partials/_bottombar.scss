@@ -8,12 +8,18 @@
 /------------------------------(  )--(  )--------------------------------------/
 /*                             (_)    (_)                                     */
 .bottombar {
-  background-color: rgba(10,16,26,.95);
+  background-color: rgba(10, 16, 26, .95);
   height: 40px;
   width: 100%;
   position: fixed;
   bottom: 0;
   z-index: 100;
+
+  &:hover {
+    .mass-form-delete {
+      bottom: -18px;
+    }
+  }
 
   .views {
     margin-left: -5px;
@@ -24,7 +30,7 @@
       display: inline-block;
       font-size: 26px;
 
-      +li {
+      + li {
         padding-left: 8px;
         margin-left: 8px;
       }
@@ -40,6 +46,41 @@
           color: #FF5E54;
         }
       }
+    }
+  }
+
+  .mass-form-delete {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    background: none;
+    border: none;
+    left: 0;
+    right: 0;
+    bottom: -40px;
+    margin: auto;
+    font-size: 30px;
+    color: #808080;
+    transition: .3s;
+
+    &:hover {
+      bottom: 0;
+      color: white;
+    }
+
+    &.selected {
+      bottom: 0;
+      color: $color3;
+
+      &:hover {
+        color: #FF5E54;
+      }
+    }
+
+    .amount {
+      font-size: 16px;
+      position: relative;
+      top: -6px;
     }
   }
 
@@ -90,7 +131,7 @@
         color: #0A101A;
         padding: 8px 0;
         box-shadow: 0 4px 0 rgba(0, 0, 0, .8);
-        border-top: solid 4px rgba(255,255,255,.4);
+        border-top: solid 4px rgba(255, 255, 255, .4);
       }
     }
   }

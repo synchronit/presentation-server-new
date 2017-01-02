@@ -2,16 +2,14 @@ import React from 'react'
 import ItemLine from '../components/ItemLine.js'
 
 class ItemsLineListComponent extends React.Component {
+
     render() {
         var items = [];
-        var name = '';
-        var filteredList = this.props.forms
 
-        filteredList.forEach((form, index) => {
-            if (form[0] !== name) {
-                items.push(<ItemLine form={form} key={index} id={index}/>)
-            }
-            name = form[0]
+        this.props.forms.forEach((form, index) => {
+            items.push(
+                <ItemLine form={form} key={index} id={index} massFormsSelection={this.props.massFormsSelection} />
+            )
         })
 
         return (

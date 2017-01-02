@@ -1,6 +1,7 @@
 import React from 'react'
 import ModalNotifications from './ModalNotifications.js'
 import ModalDelete from './ModalDelete.js'
+import ModalMassDelete from './ModalMassDelete.js'
 
 class ModalComponent extends React.Component {
 
@@ -9,10 +10,13 @@ class ModalComponent extends React.Component {
 
         switch (this.props.id) {
             case 'modal-notifications':
-                content = <ModalNotifications/>
+                content = <ModalNotifications />
                 break
             case 'modal-delete':
-                content = <ModalDelete/>
+                content = <ModalDelete />
+                break
+            case 'modal-mass-delete':
+                content = <ModalMassDelete />
                 break
         }
 
