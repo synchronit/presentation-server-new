@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { fetchForms } from '../actions'
+import { fetchForms, loading } from '../actions'
 import Header from './Header.js'
 import ItemsLineList from './ItemsLineList.js'
 import ItemsBoxList from './ItemsBoxList.js'
@@ -12,11 +12,6 @@ import '../../node_modules/jquery.nicescroll/jquery.nicescroll.js'
 class ContentComponent extends React.Component {
 
     componentDidMount() {
-        $(this.workZoneElement).niceScroll({
-            cursorcolor:'rgba(255,255,255,.05)',
-            cursorborder: 'none'
-        })
-
         this.props.dispatch(fetchForms())
     }
 
@@ -59,7 +54,7 @@ class ContentComponent extends React.Component {
                 component = <ItemsLineList
                     forms={this.filterList()}
                     massFormsSelection={this.props.massFormsSelection}
-                    orderForms={this.props.orderForms}
+                orderForms
                 />
                 break
             case 'BOXES_VIEW':
@@ -74,7 +69,8 @@ class ContentComponent extends React.Component {
 
         return (
             <article className="content boxed">
-                <div className="work-zone" ref={workZoneElement=>this.workZoneElement=workZoneElement}>
+                <div className="background"></div>
+                <div className="work-zone">
                     <Header />
                     {component}
                 </div>
@@ -84,7 +80,7 @@ class ContentComponent extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state)
+    //console.log(state)
     return {
         formList: state.fetchForms.request.resultSet.rows,
         searchQuery: state.searchQuery,
@@ -92,7 +88,8 @@ const mapStateToProps = (state) => {
         form: state.confirmDeleteForm,
         isFetching: state.fetchForms.isFetching,
         massFormsSelection: state.massFormsSelection,
-        orderForms: state.orderForms
+        orderForms: state.orderForms,
+        loading: state.loading
     }
 }
 

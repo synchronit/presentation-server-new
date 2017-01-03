@@ -58,8 +58,8 @@ class ItemsLineListComponent extends React.Component {
 
         return (
             <section className = "container">
-                <div className="items-container">
-                    <div className="markers">{markers}</div>
+                <div className="items-container items-container-markers">
+                    <div className="markers hidden-md-down">{markers}</div>
                     {items}
                 </div>
             </section>

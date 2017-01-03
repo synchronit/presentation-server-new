@@ -57,3 +57,7 @@ export const orderForms = (order) => ({
     type: 'ORDER_FORMS',
     order
 })
+
+export const loading = () => ({
+    type: 'LOADING'
+})

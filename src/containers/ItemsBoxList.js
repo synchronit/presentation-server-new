@@ -13,7 +13,7 @@ class ItemsBoxListComponent extends React.Component {
 
         return (
             <section className="container">
-                <div className="row">
+                <div className="items-container row">
                     {items}
                 </div>
             </section>

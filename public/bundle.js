@@ -31269,6 +31269,10 @@
 
 	var _orderForms2 = _interopRequireDefault(_orderForms);
 
+	var _loading = __webpack_require__(546);
+
+	var _loading2 = _interopRequireDefault(_loading);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var reducer = (0, _redux.combineReducers)({
@@ -31278,7 +31282,8 @@
 	    confirmDeleteForm: _confirmDeleteForm2.default,
 	    massFormsSelection: _massFormsSelection2.default,
 	    formSelection: _formSelection2.default,
-	    orderForms: _orderForms2.default
+	    orderForms: _orderForms2.default,
+	    loading: _loading2.default
 	});
 
 	exports.default = reducer;
@@ -31511,7 +31516,7 @@
 /* 513 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	/* WEBPACK VAR INJECTION */(function($) {'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -31522,6 +31527,12 @@
 	var _react = __webpack_require__(299);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRedux = __webpack_require__(496);
+
+	var _Loader = __webpack_require__(545);
+
+	var _Loader2 = _interopRequireDefault(_Loader);
 
 	var _TopBar = __webpack_require__(514);
 
@@ -31557,11 +31568,21 @@
 	    }
 
 	    _createClass(AppComponent, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            $('body').niceScroll({
+	                cursorcolor: 'rgba(255,255,255,.05)',
+	                cursorborder: 'none',
+	                zindex: 9999
+	            });
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
 	                null,
+	                _react2.default.createElement(_Loader2.default, { loading: this.props.loading }),
 	                _react2.default.createElement(_TopBar2.default, null),
 	                _react2.default.createElement(_Content2.default, null),
 	                _react2.default.createElement(_BottomBar2.default, null),
@@ -31575,7 +31596,16 @@
 	    return AppComponent;
 	}(_react2.default.Component);
 
-	exports.default = AppComponent;
+	var mapStateToProps = function mapStateToProps(state) {
+	    return {
+	        loading: state.loading
+	    };
+	};
+
+	var App = (0, _reactRedux.connect)(mapStateToProps)(AppComponent);
+
+	exports.default = App;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(516)))
 
 /***/ },
 /* 514 */
@@ -42176,6 +42206,12 @@
 	        order: order
 	    };
 	};
+
+	var loading = exports.loading = function loading() {
+	    return {
+	        type: 'LOADING'
+	    };
+	};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(521)))
 
 /***/ },
@@ -42658,7 +42694,7 @@
 /* 523 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function($) {'use strict';
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -42712,11 +42748,6 @@
 	    _createClass(ContentComponent, [{
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
-	            $(this.workZoneElement).niceScroll({
-	                cursorcolor: 'rgba(255,255,255,.05)',
-	                cursorborder: 'none'
-	            });
-
 	            this.props.dispatch((0, _actions.fetchForms)());
 	        }
 	    }, {
@@ -42760,8 +42791,6 @@
 	    }, {
 	        key: 'render',
 	        value: function render() {
-	            var _this3 = this;
-
 	            var component = null;
 
 	            switch (this.props.view) {
@@ -42769,7 +42798,7 @@
 	                    component = _react2.default.createElement(_ItemsLineList2.default, {
 	                        forms: this.filterList(),
 	                        massFormsSelection: this.props.massFormsSelection,
-	                        orderForms: this.props.orderForms
+	                        orderForms: true
 	                    });
 	                    break;
 	                case 'BOXES_VIEW':
@@ -42785,11 +42814,10 @@
 	            return _react2.default.createElement(
 	                'article',
 	                { className: 'content boxed' },
+	                _react2.default.createElement('div', { className: 'background' }),
 	                _react2.default.createElement(
 	                    'div',
-	                    { className: 'work-zone', ref: function ref(workZoneElement) {
-	                            return _this3.workZoneElement = workZoneElement;
-	                        } },
+	                    { className: 'work-zone' },
 	                    _react2.default.createElement(_Header2.default, null),
 	                    component
 	                )
@@ -42801,7 +42829,7 @@
 	}(_react2.default.Component);
 
 	var mapStateToProps = function mapStateToProps(state) {
-	    console.log(state);
+	    //console.log(state)
 	    return {
 	        formList: state.fetchForms.request.resultSet.rows,
 	        searchQuery: state.searchQuery,
@@ -42809,14 +42837,14 @@
 	        form: state.confirmDeleteForm,
 	        isFetching: state.fetchForms.isFetching,
 	        massFormsSelection: state.massFormsSelection,
-	        orderForms: state.orderForms
+	        orderForms: state.orderForms,
+	        loading: state.loading
 	    };
 	};
 
 	var Content = (0, _reactRedux.connect)(mapStateToProps)(ContentComponent);
 
 	exports.default = Content;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(516)))
 
 /***/ },
 /* 524 */
@@ -43143,10 +43171,10 @@
 	                { className: 'container' },
 	                _react2.default.createElement(
 	                    'div',
-	                    { className: 'items-container' },
+	                    { className: 'items-container items-container-markers' },
 	                    _react2.default.createElement(
 	                        'div',
-	                        { className: 'markers' },
+	                        { className: 'markers hidden-md-down' },
 	                        markers
 	                    ),
 	                    items
@@ -43474,7 +43502,7 @@
 	                { className: 'container' },
 	                _react2.default.createElement(
 	                    'div',
-	                    { className: 'row' },
+	                    { className: 'items-container row' },
 	                    items
 	                )
 	            );
@@ -56386,6 +56414,85 @@
 	}(_react2.default.Component);
 
 	exports.default = MarkerComponent;
+
+/***/ },
+/* 545 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(299);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRedux = __webpack_require__(496);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var LoaderComponent = function (_React$Component) {
+	    _inherits(LoaderComponent, _React$Component);
+
+	    function LoaderComponent() {
+	        _classCallCheck(this, LoaderComponent);
+
+	        return _possibleConstructorReturn(this, (LoaderComponent.__proto__ || Object.getPrototypeOf(LoaderComponent)).apply(this, arguments));
+	    }
+
+	    _createClass(LoaderComponent, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement('div', { className: "loader" + (!this.props.isFetching ? " invisible" : "") });
+	        }
+	    }]);
+
+	    return LoaderComponent;
+	}(_react2.default.Component);
+
+	var mapStateToProps = function mapStateToProps(state) {
+	    console.log(state);
+	    return {
+	        isFetching: state.fetchForms.isFetching
+	    };
+	};
+
+	var Loader = (0, _reactRedux.connect)(mapStateToProps)(LoaderComponent);
+
+	exports.default = Loader;
+
+/***/ },
+/* 546 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	var loading = function loading() {
+	    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+	    var action = arguments[1];
+
+	    switch (action.type) {
+	        case 'LOADING':
+	            return !state;
+	        default:
+	            return state;
+	    }
+	};
+
+	exports.default = loading;
 
 /***/ }
 /******/ ]);
