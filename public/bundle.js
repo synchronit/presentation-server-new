@@ -31265,6 +31265,10 @@
 
 	var _formSelection2 = _interopRequireDefault(_formSelection);
 
+	var _orderForms = __webpack_require__(543);
+
+	var _orderForms2 = _interopRequireDefault(_orderForms);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var reducer = (0, _redux.combineReducers)({
@@ -31273,7 +31277,8 @@
 	    view: _changeFormsView2.default,
 	    confirmDeleteForm: _confirmDeleteForm2.default,
 	    massFormsSelection: _massFormsSelection2.default,
-	    formSelection: _formSelection2.default
+	    formSelection: _formSelection2.default,
+	    orderForms: _orderForms2.default
 	});
 
 	exports.default = reducer;
@@ -42164,6 +42169,13 @@
 	        form: form
 	    };
 	};
+
+	var orderForms = exports.orderForms = function orderForms(order) {
+	    return {
+	        type: 'ORDER_FORMS',
+	        order: order
+	    };
+	};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(521)))
 
 /***/ },
@@ -42714,12 +42726,36 @@
 
 	            var name = '';
 
-	            return this.props.formList.filter(function (item) {
+	            var filteredList = this.props.formList.filter(function (item) {
 	                var patt = new RegExp(_this2.props.searchQuery, 'i');
 	                var result = item[0] !== name && patt.test(item[0]);
 	                name = item[0];
 	                return result;
 	            });
+
+	            switch (this.props.orderForms) {
+	                case 'A-Z':
+	                    filteredList = filteredList.sort(function (a, b) {
+	                        var x = a[0].toLowerCase(),
+	                            y = b[0].toLowerCase();
+	                        return x < y ? -1 : x > y ? 1 : 0;
+	                    });
+	                    break;
+	                case 'Z-A':
+	                    filteredList = filteredList.sort(function (a, b) {
+	                        var x = a[0].toLowerCase(),
+	                            y = b[0].toLowerCase();
+	                        return x > y ? -1 : x < y ? 1 : 0;
+	                    });
+	                    break;
+	                case 'Recent':
+	                    filteredList = filteredList.sort(function (a, b) {
+	                        return a - b;
+	                    });
+	                    break;
+	            }
+
+	            return filteredList;
 	        }
 	    }, {
 	        key: 'render',
@@ -42730,7 +42766,11 @@
 
 	            switch (this.props.view) {
 	                case 'LIST_VIEW':
-	                    component = _react2.default.createElement(_ItemsLineList2.default, { forms: this.filterList(), massFormsSelection: this.props.massFormsSelection });
+	                    component = _react2.default.createElement(_ItemsLineList2.default, {
+	                        forms: this.filterList(),
+	                        massFormsSelection: this.props.massFormsSelection,
+	                        orderForms: this.props.orderForms
+	                    });
 	                    break;
 	                case 'BOXES_VIEW':
 	                    component = _react2.default.createElement(_ItemsBoxList2.default, { forms: this.filterList(), massFormsSelection: this.props.massFormsSelection });
@@ -42768,7 +42808,8 @@
 	        view: state.view,
 	        form: state.confirmDeleteForm,
 	        isFetching: state.fetchForms.isFetching,
-	        massFormsSelection: state.massFormsSelection
+	        massFormsSelection: state.massFormsSelection,
+	        orderForms: state.orderForms
 	    };
 	};
 
@@ -42793,13 +42834,21 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRedux = __webpack_require__(496);
+
 	var _Heading = __webpack_require__(525);
 
 	var _Heading2 = _interopRequireDefault(_Heading);
 
+	var _OrderForms = __webpack_require__(542);
+
+	var _OrderForms2 = _interopRequireDefault(_OrderForms);
+
 	var _SearchField = __webpack_require__(526);
 
 	var _SearchField2 = _interopRequireDefault(_SearchField);
+
+	var _actions = __webpack_require__(520);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -42813,9 +42862,25 @@
 	    _inherits(HeaderComponent, _React$Component);
 
 	    function HeaderComponent() {
+	        var _ref;
+
+	        var _temp, _this, _ret;
+
 	        _classCallCheck(this, HeaderComponent);
 
-	        return _possibleConstructorReturn(this, (HeaderComponent.__proto__ || Object.getPrototypeOf(HeaderComponent)).apply(this, arguments));
+	        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	            args[_key] = arguments[_key];
+	        }
+
+	        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = HeaderComponent.__proto__ || Object.getPrototypeOf(HeaderComponent)).call.apply(_ref, [this].concat(args))), _this), _this.orderAZ = function (e) {
+	            _this.props.dispatch((0, _actions.orderForms)('A-Z'));
+	        }, _this.orderZA = function (e) {
+	            _this.props.dispatch((0, _actions.orderForms)('Z-A'));
+	        }, _this.orderRecent = function (e) {
+	            _this.props.dispatch((0, _actions.orderForms)('Recent'));
+	        }, _this.orderOlder = function (e) {
+	            _this.props.dispatch((0, _actions.orderForms)('Older'));
+	        }, _temp), _possibleConstructorReturn(_this, _ret);
 	    }
 
 	    _createClass(HeaderComponent, [{
@@ -42824,8 +42889,15 @@
 	            return _react2.default.createElement(
 	                'header',
 	                { className: 'container' },
-	                _react2.default.createElement(_Heading2.default, null),
-	                _react2.default.createElement(_SearchField2.default, null)
+	                _react2.default.createElement(_Heading2.default, { title: 'MY FORMS', subtitle: this.props.message }),
+	                _react2.default.createElement(_SearchField2.default, null),
+	                _react2.default.createElement(_OrderForms2.default, {
+	                    orderForms: this.props.orderForms,
+	                    orderAZ: this.orderAZ,
+	                    orderZA: this.orderZA,
+	                    orderRecent: this.orderRecent,
+	                    orderOlder: this.orderOlder
+	                })
 	            );
 	        }
 	    }]);
@@ -42833,7 +42905,16 @@
 	    return HeaderComponent;
 	}(_react2.default.Component);
 
-	exports.default = HeaderComponent;
+	var mapStateToProps = function mapStateToProps(state) {
+	    return {
+	        message: state.fetchForms.request.message,
+	        orderForms: state.orderForms
+	    };
+	};
+
+	var Header = (0, _reactRedux.connect)(mapStateToProps)(HeaderComponent);
+
+	exports.default = Header;
 
 /***/ },
 /* 525 */
@@ -42850,8 +42931,6 @@
 	var _react = __webpack_require__(299);
 
 	var _react2 = _interopRequireDefault(_react);
-
-	var _reactRedux = __webpack_require__(496);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -42876,12 +42955,13 @@
 	            return _react2.default.createElement(
 	                'h1',
 	                null,
-	                'MY FORMS ',
+	                this.props.title,
+	                ' ',
 	                _react2.default.createElement(
 	                    'small',
 	                    null,
 	                    '(',
-	                    this.props.message,
+	                    this.props.subtitle,
 	                    ')'
 	                )
 	            );
@@ -42891,15 +42971,7 @@
 	    return HeadingComponent;
 	}(_react2.default.Component);
 
-	var mapStateToProps = function mapStateToProps(state) {
-	    return {
-	        message: state.fetchForms.request.message
-	    };
-	};
-
-	var Heading = (0, _reactRedux.connect)(mapStateToProps)(HeadingComponent);
-
-	exports.default = Heading;
+	exports.default = HeadingComponent;
 
 /***/ },
 /* 526 */
@@ -42991,6 +43063,10 @@
 
 	var _ItemLine2 = _interopRequireDefault(_ItemLine);
 
+	var _Marker = __webpack_require__(544);
+
+	var _Marker2 = _interopRequireDefault(_Marker);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -43014,15 +43090,67 @@
 	            var _this2 = this;
 
 	            var items = [];
+	            var markers = [];
+	            var char = "";
+	            var count = 1;
+	            var first = true;
+	            var filteredList = this.props.forms;
 
 	            this.props.forms.forEach(function (form, index) {
 	                items.push(_react2.default.createElement(_ItemLine2.default, { form: form, key: index, id: index, massFormsSelection: _this2.props.massFormsSelection }));
 	            });
 
+	            switch (this.props.orderForms) {
+	                case 'A-Z':
+	                    filteredList = filteredList.sort(function (a, b) {
+	                        var x = a[0].toLowerCase(),
+	                            y = b[0].toLowerCase();
+	                        return x < y ? -1 : x > y ? 1 : 0;
+	                    });
+	                    break;
+	                case 'Z-A':
+	                    filteredList = filteredList.sort(function (a, b) {
+	                        var x = a[0].toLowerCase(),
+	                            y = b[0].toLowerCase();
+	                        return x > y ? -1 : x < y ? 1 : 0;
+	                    });
+	                    break;
+	            }
+
+	            filteredList.forEach(function (form, index) {
+	                var temp = form[0].charAt(0);
+	                if (_this2.props.orderForms == "Recent" || _this2.props.orderForms == "Older") {
+	                    markers.push(_react2.default.createElement(_Marker2.default, { className: ' marker-date', char: 'JAN, 2017', count: 1, key: index }));
+	                } else if (char.toLowerCase() != temp.toLowerCase()) {
+	                    if (!first) {
+	                        markers.push(_react2.default.createElement(_Marker2.default, { char: char.toUpperCase(), count: count, key: index - 1 }));
+	                        count = 1;
+	                    }
+	                    if (char == "") {
+	                        first = false;
+	                    }
+	                    char = temp;
+	                } else {
+	                    count++;
+	                }
+	                if (index == filteredList.length - 1 && _this2.props.orderForms != "Recent" && _this2.props.orderForms != "Older") {
+	                    markers.push(_react2.default.createElement(_Marker2.default, { char: temp.toUpperCase(), count: count, key: index }));
+	                }
+	            });
+
 	            return _react2.default.createElement(
 	                'section',
 	                { className: 'container' },
-	                items
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'items-container' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'markers' },
+	                        markers
+	                    ),
+	                    items
+	                )
 	            );
 	        }
 	    }]);
@@ -56094,6 +56222,170 @@
 
 	}));
 
+
+/***/ },
+/* 542 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(299);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var OrderFormsComponent = function (_React$Component) {
+	    _inherits(OrderFormsComponent, _React$Component);
+
+	    function OrderFormsComponent() {
+	        _classCallCheck(this, OrderFormsComponent);
+
+	        return _possibleConstructorReturn(this, (OrderFormsComponent.__proto__ || Object.getPrototypeOf(OrderFormsComponent)).apply(this, arguments));
+	    }
+
+	    _createClass(OrderFormsComponent, [{
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement(
+	                "div",
+	                { className: "order-forms dropdown" },
+	                _react2.default.createElement(
+	                    "span",
+	                    { className: "" },
+	                    "ORDER: "
+	                ),
+	                _react2.default.createElement(
+	                    "a",
+	                    { className: "dropdown-toggle", href: "#", title: "", "data-toggle": "dropdown" },
+	                    this.props.orderForms
+	                ),
+	                _react2.default.createElement(
+	                    "ul",
+	                    { className: "dropdown-menu" },
+	                    _react2.default.createElement(
+	                        "li",
+	                        { onClick: this.props.orderAZ },
+	                        "A-Z"
+	                    ),
+	                    _react2.default.createElement(
+	                        "li",
+	                        { onClick: this.props.orderZA },
+	                        "Z-A"
+	                    ),
+	                    _react2.default.createElement(
+	                        "li",
+	                        { onClick: this.props.orderRecent },
+	                        "Recent"
+	                    ),
+	                    _react2.default.createElement(
+	                        "li",
+	                        { onClick: this.props.orderOlder },
+	                        "Older"
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return OrderFormsComponent;
+	}(_react2.default.Component);
+
+	exports.default = OrderFormsComponent;
+
+/***/ },
+/* 543 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	var orderForms = function orderForms() {
+	    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'A-Z';
+	    var action = arguments[1];
+
+	    switch (action.type) {
+	        case 'ORDER_FORMS':
+	            return action.order;
+	        default:
+	            return state;
+	    }
+	};
+
+	exports.default = orderForms;
+
+/***/ },
+/* 544 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(299);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var MarkerComponent = function (_React$Component) {
+	    _inherits(MarkerComponent, _React$Component);
+
+	    function MarkerComponent() {
+	        _classCallCheck(this, MarkerComponent);
+
+	        return _possibleConstructorReturn(this, (MarkerComponent.__proto__ || Object.getPrototypeOf(MarkerComponent)).apply(this, arguments));
+	    }
+
+	    _createClass(MarkerComponent, [{
+	        key: 'render',
+	        value: function render() {
+
+	            return _react2.default.createElement(
+	                'div',
+	                { className: "marker " + this.props.className,
+	                    style: { height: 38 * this.props.count + 10 * (this.props.count - 1) + 'px' } },
+	                _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    _react2.default.createElement(
+	                        'span',
+	                        null,
+	                        this.props.char
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return MarkerComponent;
+	}(_react2.default.Component);
+
+	exports.default = MarkerComponent;
 
 /***/ }
 /******/ ]);

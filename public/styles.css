@@ -6232,6 +6232,15 @@ h6, .h6 {
 
 @media (min-width: 992px) {
   .item-line {
+    width: 570px;
+  }
+  .item-line .left {
+    width: 316px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .item-line {
     width: 776px;
   }
   .item-line .left {
@@ -6442,6 +6451,7 @@ h6, .h6 {
 
 .item-box.selectable .item .selection-mask {
   position: absolute;
+  z-index: 100;
   top: 5px;
   bottom: 5px;
   left: 5px;
@@ -7101,9 +7111,71 @@ a, button {
   text-align: center;
 }
 
+.content .work-zone header .order-forms {
+  text-align: center;
+  margin: 0  auto 35px auto;
+}
+
+.content .work-zone header .order-forms span {
+  color: #666666;
+}
+
+.content .work-zone header .order-forms a {
+  color: white;
+}
+
+.content .work-zone header .order-forms a.dropdown-toggle:after {
+  border-top: solid 4px;
+  border-right: solid 3px transparent;
+  border-left: solid 3px transparent;
+}
+
+.content .work-zone header .order-forms .dropdown-menu {
+  min-width: 64px !important;
+  width: 64px !important;
+  right: 0;
+  left: 0;
+  background-color: rgba(10, 16, 26, 0.9);
+  box-shadow: inset 0 1px 0 #ffffff;
+  border-radius: 0;
+  text-align: center;
+  color: #73DDDB;
+  margin: 5px auto;
+}
+
+.content .work-zone header .order-forms .dropdown-menu:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0;
+  right: 0;
+  top: -8px;
+  margin: auto;
+  border-top: solid 4px transparent;
+  border-bottom: solid 4px white;
+  border-left: solid 4px transparent;
+  border-right: solid 4px transparent;
+}
+
+.content .work-zone header .order-forms .dropdown-menu li {
+  cursor: pointer;
+}
+
+.content .work-zone header .order-forms .dropdown-menu li:hover {
+  color: #ffffff;
+}
+
+.content .work-zone header .order-forms .dropdown-menu li.active {
+  color: white;
+}
+
+.content .work-zone header .order-forms .dropdown-menu li + li {
+  border-top: solid 1px rgba(255, 255, 255, 0.05);
+}
+
 .content .work-zone header .search-field {
   width: 100%;
-  float: right;
   margin-bottom: 30px;
 }
 
@@ -7113,8 +7185,18 @@ a, button {
     float: left;
     margin: 35px 0;
   }
+  .content .work-zone header .order-forms {
+    float: right;
+    margin: 35px 20px 35px 0;
+  }
+  .content .work-zone header .order-forms .dropdown-menu {
+    min-width: 64px;
+    right: 0;
+    left: auto;
+  }
   .content .work-zone header .search-field {
-    width: 330px;
+    width: 250px;
+    float: right;
     margin: 30px 0;
   }
 }
@@ -7124,7 +7206,21 @@ a, button {
     margin: 33px 0;
   }
   .content .work-zone header .search-field {
-    width: 474px;
+    width: 400px;
+  }
+  .content .work-zone .items-container {
+    width: 570px;
+    margin: auto;
+    position: relative;
+  }
+}
+
+@media (min-width: 1200px) {
+  .content .work-zone header .search-field {
+    width: 472px;
+  }
+  .content .work-zone .items-container {
+    width: 776px;
   }
 }
 
@@ -7338,4 +7434,43 @@ a, button {
   #modal-delete .modal-dialog .modal-content .modal-body .btn + .btn, #modal-mass-delete .modal-dialog .modal-content .modal-body .btn + .btn {
     margin-left: 40px;
   }
+}
+
+.markers {
+  position: absolute;
+  left: -180px;
+  width: 150px;
+}
+
+.markers .marker {
+  width: 100%;
+  border-right: solid 3px #131B1F;
+  display: table;
+}
+
+.markers .marker.marker-date p span {
+  width: 85px;
+  padding-right: 5px;
+  border-radius: 5px 25px 25px 5px;
+}
+
+.markers .marker + .marker {
+  margin-top: 10px;
+}
+
+.markers .marker p {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.markers .marker p span {
+  width: 30px;
+  height: 30px;
+  background-color: #131B1F;
+  display: block;
+  margin: 0 20px 0 auto;
+  padding: 3px 0;
+  border-radius: 50%;
+  color: #666666;
 }

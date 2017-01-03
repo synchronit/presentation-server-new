@@ -239,6 +239,14 @@
   }
 
   @media (min-width: 992px) {
+    width: 570px;
+
+    .left {
+      width: 316px;
+    }
+  }
+
+  @media (min-width: 1200px) {
     width: 776px;
 
     .left {

@@ -23,12 +23,32 @@ class ContentComponent extends React.Component {
     filterList() {
         var name = '';
 
-        return this.props.formList.filter((item) => {
+        var filteredList = this.props.formList.filter((item) => {
             var patt = new RegExp(this.props.searchQuery, 'i')
             var result = (item[0] !== name && patt.test(item[0]))
             name = item[0]
             return result
         })
+
+        switch (this.props.orderForms) {
+            case 'A-Z':
+                filteredList = filteredList.sort((a, b) => {
+                    var x = a[0].toLowerCase(), y = b[0].toLowerCase();
+                    return x < y ? -1 : x > y ? 1 : 0;
+                })
+                break
+            case 'Z-A':
+                filteredList = filteredList.sort((a, b) => {
+                    var x = a[0].toLowerCase(), y = b[0].toLowerCase();
+                    return x > y ? -1 : x < y ? 1 : 0;
+                })
+                break
+            case 'Recent':
+                filteredList = filteredList.sort((a, b) => { return a-b })
+                break
+        }
+
+        return filteredList
     }
 
     render() {
@@ -36,7 +56,11 @@ class ContentComponent extends React.Component {
 
         switch (this.props.view) {
             case 'LIST_VIEW':
-                component = <ItemsLineList forms={this.filterList()} massFormsSelection={this.props.massFormsSelection}/>
+                component = <ItemsLineList
+                    forms={this.filterList()}
+                    massFormsSelection={this.props.massFormsSelection}
+                    orderForms={this.props.orderForms}
+                />
                 break
             case 'BOXES_VIEW':
                 component = <ItemsBoxList forms={this.filterList()} massFormsSelection={this.props.massFormsSelection}/>
@@ -67,7 +91,8 @@ const mapStateToProps = (state) => {
         view: state.view,
         form: state.confirmDeleteForm,
         isFetching: state.fetchForms.isFetching,
-        massFormsSelection: state.massFormsSelection
+        massFormsSelection: state.massFormsSelection,
+        orderForms: state.orderForms
     }
 }
 

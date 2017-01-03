@@ -52,3 +52,8 @@ export const deleteFormToSelection = (form) => ({
     type: 'DELETE_FORM_TO_SELECTION',
     form
 })
+
+export const orderForms = (order) => ({
+    type: 'ORDER_FORMS',
+    order
+})
