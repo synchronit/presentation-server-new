@@ -2167,6 +2167,8 @@ const initialState = {
 const fetchForms = (state = initialState, action) => {
     switch (action.type) {
         case 'FETCH_FORMS_REQUEST':
+            return Object.assign({}, state, {isFetching: false})
+        case 'FETCH_DELETE_FORMS_REQUEST':
             return Object.assign({}, state, {isFetching: true})
         case 'FETCH_FORMS_SUCCESS':
             return Object.assign({}, state, {isFetching: false, request: action.request})
@@ -2184,7 +2186,7 @@ const fetchForms = (state = initialState, action) => {
             newState.request.message = newState.request.resultSet.rows.length + " forms found."
             return newState
         case 'FETCH_FORMS_ERROR':
-            return Object.assign({}, state, {isFetching: false, request: initialState.request, error: action.error})
+            return Object.assign({}, state, {isFetching: false, error: action.error})
         default:
             return state
     }

@@ -18,7 +18,7 @@ class AppComponent extends React.Component {
 
     render() {
         return <div>
-                <Loader loading={this.props.loading}/>
+                <Loader />
                 <TopBar />
                 <Content />
                 <BottomBar />
@@ -29,10 +29,4 @@ class AppComponent extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-    loading: state.loading
-})
-
-const App = connect(mapStateToProps)(AppComponent)
-
-export default App
+export default AppComponent

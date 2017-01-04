@@ -25,13 +25,13 @@ class ItemCarouselComponent extends React.Component {
             classes += ' selectable'
         }
         if(this.isSelected()) {
-            classes += ' selected slick-slide slick-current slick-active slick-center'
+            $(this.carouselElement).addClass('selected')
         } else {
-            classes += ' slick-slide slick-current slick-active slick-center'
+            $(this.carouselElement).removeClass('selected')
         }
 
         return (
-            <div className={"item-carousel" + classes}>
+            <div className={"item-carousel" + classes} ref={carouselElement=>this.carouselElement = carouselElement}>
                 <div className="item">
                     <header>
                         <span className="name">{this.props.form[0]}</span>
@@ -57,7 +57,8 @@ class ItemCarouselComponent extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    formSelection: state.formSelection
+    formSelection: state.formSelection,
+    massFormsSelection: state.massFormsSelection
 })
 
 const ItemCarousel = connect(mapStateToProps)(ItemCarouselComponent)

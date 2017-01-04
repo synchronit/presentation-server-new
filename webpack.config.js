@@ -18,6 +18,14 @@ module.exports = {
             "window.jQuery": "jquery",
             "window.Tether": "tether",
             "fetch": "isomorphic-fetch"
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            },
+            output: {
+                comments: false
+            }
         })
     ]
 };

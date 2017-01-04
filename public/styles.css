@@ -1,5 +1,6 @@
 @charset "UTF-8";
 /*! normalize.css v4.0.0 | MIT License | github.com/necolas/normalize.css */
+@import 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700';
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -5618,11 +5619,11 @@ a.text-danger:focus, a.text-danger:hover {
                                ooo0  0ooo
 /------------------------------(  )--(  )--------------------------------------/
 /*                             (_)    (_)                                     */
+/*
 @font-face {
-  font-family: 'Roboto Condensed';
-  src: url(fonts/RobotoCondensed-Regular.ttf);
-}
-
+    font-family: 'Roboto Condensed';
+    src: url(fonts/RobotoCondensed-Regular.ttf)
+}*/
 /*                               ()_()
                                  (. .)
 /----------------------------oo0--(_)--0oo-------------------------------------/
@@ -6569,7 +6570,6 @@ h6, .h6 {
 
 .items-carousel-list .slick-list .item-carousel {
   height: 419px;
-  max-height: calc(100vh - 140px);
   padding: 5px;
   border: solid 1px #6A676E;
   border-radius: 3px;
@@ -6771,7 +6771,6 @@ h6, .h6 {
   }
   .items-carousel-list .slick-list .item-carousel {
     height: 345px;
-    max-height: calc(100vh - 195px);
     margin: 0 5px;
   }
   .items-carousel-list .slick-list .item-carousel.slick-active {
@@ -6779,7 +6778,6 @@ h6, .h6 {
   }
   .items-carousel-list .slick-list .item-carousel.slick-current {
     height: 400px;
-    max-height: calc(100vh - 140px);
     margin-top: -30px;
     opacity: 1;
   }
@@ -6823,7 +6821,7 @@ h6, .h6 {
   position: absolute;
   z-index: 10;
   top: 0;
-  bottom: 0;
+  bottom: 30px;
   margin: auto;
   background: none;
   border: none;
@@ -6837,7 +6835,7 @@ h6, .h6 {
 }
 
 .items-carousel-list .arrow.next {
-  right: 10px;
+  right: -15px;
 }
 
 .items-carousel-list .arrow.next:hover:after {
@@ -6858,7 +6856,7 @@ h6, .h6 {
 }
 
 .items-carousel-list .arrow.prev {
-  left: 10px;
+  left: -15px;
 }
 
 .items-carousel-list .arrow.prev:hover:after {
@@ -7212,6 +7210,7 @@ a, button {
 .content .work-zone {
   padding-top: 70px;
   position: relative;
+  overflow-x: hidden;
 }
 
 .content .work-zone header h1 {
@@ -7390,7 +7389,7 @@ a, button {
 }
 
 .bottombar .mass-form-delete {
-  width: 40px;
+  width: 70px;
   height: 40px;
   position: absolute;
   background: none;

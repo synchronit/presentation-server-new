@@ -13,9 +13,7 @@ class ItemsLineListComponent extends React.Component {
         var filteredList = this.props.forms
 
         this.props.forms.forEach((form, index) => {
-            items.push(
-                <ItemLine form={form} key={index} id={index} massFormsSelection={this.props.massFormsSelection} />
-            )
+            items.push(<ItemLine form={form} key={index}/>)
         })
 
         switch (this.props.orderForms) {

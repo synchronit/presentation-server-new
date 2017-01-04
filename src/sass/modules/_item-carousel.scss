@@ -17,7 +17,6 @@
 
     .item-carousel {
       height: 419px;
-      max-height: calc(100vh - 140px);
       padding: 5px;
       border: solid 1px #6A676E;
       border-radius: 3px;
@@ -235,7 +234,6 @@
 
       .item-carousel {
         height: 345px;
-        max-height: calc(100vh - 195px);
         margin: 0 5px;
 
         &.slick-active {
@@ -244,7 +242,6 @@
 
         &.slick-current {
           height: 400px;
-          max-height: calc(100vh - 140px);
           margin-top: -30px;
           opacity: 1;
         }
@@ -291,7 +288,7 @@
     position: absolute;
     z-index: 10;
     top: 0;
-    bottom: 0;
+    bottom: 30px;
     margin: auto;
     background: none;
     border: none;
@@ -304,7 +301,7 @@
     }
 
     &.next {
-      right: 10px;
+      right: -15px;
 
       &:hover:after {
         display: block;
@@ -325,7 +322,7 @@
     }
 
     &.prev {
-      left: 10px;
+      left: -15px;
 
       &:hover:after {
         display: block;

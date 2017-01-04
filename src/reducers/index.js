@@ -7,7 +7,6 @@ import confirmDeleteForm from './confirmDeleteForm.js'
 import massFormsSelection from './massFormsSelection.js'
 import formSelection from './formSelection.js'
 import orderForms from './orderForms.js'
-import loading from './loading.js'
 
 const reducer = combineReducers({
     fetchForms,
@@ -16,8 +15,7 @@ const reducer = combineReducers({
     confirmDeleteForm,
     massFormsSelection,
     formSelection,
-    orderForms,
-    loading
+    orderForms
 })
 
 export default reducer

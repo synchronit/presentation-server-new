@@ -49,9 +49,7 @@ class ItemsCarouselListComponent extends React.Component {
         var items = [];
 
         this.props.forms.forEach((form, index) => {
-            items.push(
-                <ItemCarousel form={form} key={index} id={index} massFormsSelection={this.props.massFormsSelection} />
-            )
+            items.push(<ItemCarousel form={form} key={index}/>)
         })
 
         return (

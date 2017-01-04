@@ -13,7 +13,7 @@ export function fetchForms() {
 
 export function deleteForm(form) {
     return dispatch => {
-        dispatch({type: 'FETCH_FORMS_REQUEST'});
+        dispatch({type: 'FETCH_DELETE_FORMS_REQUEST'});
         return fetch("http://dev.synchronit.com/appbase-webconsole/json?command=delete form " + form, {})
             .then(resp => resp.json())
             .then(json => {
@@ -56,8 +56,4 @@ export const deleteFormToSelection = (form) => ({
 export const orderForms = (order) => ({
     type: 'ORDER_FORMS',
     order
-})
-
-export const loading = () => ({
-    type: 'LOADING'
 })

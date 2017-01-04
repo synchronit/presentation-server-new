@@ -44,7 +44,8 @@ class ItemLineComponent extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    formSelection: state.formSelection
+    formSelection: state.formSelection,
+    massFormsSelection: state.massFormsSelection
 })
 
 const ItemLine = connect(mapStateToProps)(ItemLineComponent)
