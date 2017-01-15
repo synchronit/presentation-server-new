@@ -1,0 +1,33 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/----     TOOLTIPS     TOOLTIPS     TOOLTIPS      TOOLTIPS      TOOLTIPS    ---/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.tooltip {
+  font-family: $tooltip-font-family;
+
+  .tooltip-inner {
+    border-radius: 0;
+    font-size: 14px;
+    border: solid 1px #ffffff;
+  }
+
+  .tooltip-arrow {
+    bottom: -1px!important;
+    margin-left: -7px!important;
+    box-shadow: 0 -1px 0 black;
+    border-width: 7px 7px 0!important;
+    border-top-color: white!important;
+
+    &:after {
+      @include triangle-bottom-center(6px,6px,6px,6px,black);
+      top: -16px;
+      left: -6px;
+      z-index: 1;
+    }
+  }
+}

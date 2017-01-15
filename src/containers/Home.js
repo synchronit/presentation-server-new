@@ -2,14 +2,14 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import { fetchForms, loading } from '../actions'
-import Header from './Header.js'
+import HomeHeader from './HomeHeader.js'
 import ItemsLineList from './ItemsLineList.js'
 import ItemsBoxList from './ItemsBoxList.js'
 import ItemsCarouselList from './ItemsCarouselList.js'
 
-import '../../node_modules/jquery.nicescroll/jquery.nicescroll.js'
+import 'jquery.nicescroll/jquery.nicescroll.js'
 
-class ContentComponent extends React.Component {
+class HomeComponent extends React.Component {
 
     componentDidMount() {
         this.props.dispatch(fetchForms())
@@ -68,11 +68,12 @@ class ContentComponent extends React.Component {
         }
 
         return (
-            <article className="content boxed">
+            <article className={"content " + this.props.layout}>
                 <div className="background"></div>
                 <div className="work-zone">
-                    <Header />
+                    <HomeHeader />
                     {component}
+                    <span className={"up icon-chevron-up" + (this.props.view == 'CAROUSEL_VIEW' ? ' invisible' : '')}></span>
                 </div>
             </article>
         );
@@ -80,7 +81,7 @@ class ContentComponent extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    //console.log(state)
+    console.log(state.skinSettings.layout)
     return {
         formList: state.fetchForms.request.resultSet.rows,
         searchQuery: state.searchQuery,
@@ -89,12 +90,11 @@ const mapStateToProps = (state) => {
         isFetching: state.fetchForms.isFetching,
         massFormsSelection: state.massFormsSelection,
         orderForms: state.orderForms,
-        loading: state.loading
+        loading: state.loading,
+        layout: state.skinSettings.layout
     }
 }
 
-const Content = connect(
-    mapStateToProps
-)(ContentComponent)
+const Home = connect(mapStateToProps)(HomeComponent)
 
-export default Content
+export default Home

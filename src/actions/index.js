@@ -1,12 +1,12 @@
 export function fetchForms() {
     return dispatch => {
-        dispatch({ type: 'FETCH_FORMS_REQUEST' });
+        dispatch({type: 'FETCH_FORMS_REQUEST'});
         return fetch("http://dev.synchronit.com/appbase-webconsole/json?command=show forms", {})
             .then(resp => resp.json())
             .then(json => {
-                return dispatch({ type: 'FETCH_FORMS_SUCCESS', request: json })
+                return dispatch({type: 'FETCH_FORMS_SUCCESS', request: json})
             }).catch(error => {
-                dispatch({ type: 'FETCH_FORMS_ERROR', error: 'Oops something is wrong' })
+                dispatch({type: 'FETCH_FORMS_ERROR', error: 'Oops something is wrong'})
             });
     }
 }
@@ -24,10 +24,10 @@ export function deleteForm(form) {
     }
 }
 
- export const confirmDeleteForm = (form) => ({
-     type: 'CONFIRM_DELETE_FORM',
-     form
- })
+export const confirmDeleteForm = (form) => ({
+    type: 'CONFIRM_DELETE_FORM',
+    form
+})
 
 export const searchForm = (searchQuery) => ({
     type: 'SEARCH_FORM',
@@ -56,4 +56,9 @@ export const deleteFormToSelection = (form) => ({
 export const orderForms = (order) => ({
     type: 'ORDER_FORMS',
     order
+})
+
+export const changeSkinLayout = (layout) => ({
+    type: 'CHANGE_SKIN_LAYOUT',
+    layout
 })

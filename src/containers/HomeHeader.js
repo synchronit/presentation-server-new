@@ -5,7 +5,7 @@ import OrderForms from '../components/OrderForms.js'
 import SearchField from '../components/SearchField'
 import { orderForms } from '../actions'
 
-class HeaderComponent extends React.Component {
+class HomeHeaderComponent extends React.Component {
 
     orderAZ = (e) => {
         this.props.dispatch(orderForms('A-Z'))
@@ -26,7 +26,7 @@ class HeaderComponent extends React.Component {
     render() {
         return (
             <header className="container">
-                <Heading title="MY FORMS" subtitle={this.props.message} />
+                <Heading title="MY FORMS" subtitle={"(" + this.props.message + ")"} />
                 <SearchField />
                 <OrderForms
                     orderForms={this.props.orderForms}
@@ -47,6 +47,6 @@ const mapStateToProps = (state) => {
     }
 }
 
-const Header = connect(mapStateToProps)(HeaderComponent)
+const HomeHeader = connect(mapStateToProps)(HomeHeaderComponent)
 
-export default Header
+export default HomeHeader

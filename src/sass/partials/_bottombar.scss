@@ -135,4 +135,25 @@
       }
     }
   }
+
+  .go-back {
+    padding: 6px 0;
+    float: right;
+    color: #73DDDB;
+
+    &:hover {
+      color: #ffffff;
+    }
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .icon-chevron-left {
+      font-size: 56px;
+      margin-right: -15px;
+      line-height: 0;
+    }
+  }
 }

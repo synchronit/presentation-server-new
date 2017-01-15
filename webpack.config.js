@@ -16,9 +16,11 @@ module.exports = {
             $: "jquery",
             jQuery: "jquery",
             "window.jQuery": "jquery",
+            "Tether": "tether",
             "window.Tether": "tether",
             "fetch": "isomorphic-fetch"
         }),
+        /*
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false
@@ -26,6 +28,6 @@ module.exports = {
             output: {
                 comments: false
             }
-        })
+        })*/
     ]
 };

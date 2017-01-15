@@ -9,7 +9,7 @@ class LoaderComponent extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state)
+    //console.log(state)
     return {
         isFetching: state.fetchForms.isFetching
     }

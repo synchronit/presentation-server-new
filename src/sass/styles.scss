@@ -9,17 +9,18 @@
 @import "mixins/triangles";
 
 //modules
-@import "modules/fonts";
-@import "modules/icons";
-@import "modules/headings";
-@import "modules/buttons";
 @import "modules/badges";
+@import "modules/buttons";
+@import "modules/fonts";
 @import "modules/forms";
-@import "modules/modal";
+@import "modules/headings";
+@import "modules/icons";
 @import "modules/item-line";
 @import "modules/item-box";
 @import "modules/item-carousel";
 @import "modules/loader";
+@import "modules/modal";
+@import "modules/tooltip";
 
 //partials
 @import "partials/base";

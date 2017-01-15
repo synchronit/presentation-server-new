@@ -1,11 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router'
+import { connect } from 'react-redux'
 
 class TopBarComponent extends React.Component {
+
     render() {
         return (
-            <nav className="topbar boxed">
+            <nav className={"topbar " + this.props.layout}>
                 <div className="container">
-                    <a className="logo" href="" title=""><img src="images/logo.svg" alt=""/></a>
+                    <Link to="/" className="logo"><img src="images/logo.svg" alt=""/></Link>
                     <div className="user dropdown">
                         <a className="dropdown-toggle" href="#" title="" data-toggle="dropdown">
                             <span className="hidden-xs-down">Hi, Jhon Doe</span>
@@ -20,7 +23,7 @@ class TopBarComponent extends React.Component {
                             </div>
                             <div className="dropdown-menu-footer">
                                 <button className="btn">LOGOUT</button>
-                                <button className="btn btn-primary">MY ACCOUNT</button>
+                                <Link to="/settings/skins" className="btn btn-primary">SETTINGS</Link>
                             </div>
                         </div>
                     </div>
@@ -29,11 +32,17 @@ class TopBarComponent extends React.Component {
                         <span className="hidden-sm-down">NOTIFICATIONS</span>
                         <span className="badge">3</span>
                     </a>
-                    <a className="btn btn-icon" href="" title=""><span className="icon-home"></span></a>
+                    <Link to="/" className="btn btn-icon"><span className="icon-home"></span></Link>
                 </div>
             </nav>
         )
     }
 }
 
-export default TopBarComponent
+const mapStateToProps = (state) => ({
+    layout: state.skinSettings.layout
+})
+
+const TopBar = connect(mapStateToProps)(TopBarComponent)
+
+export default TopBar
