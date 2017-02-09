@@ -52,6 +52,7 @@ class HomeComponent extends React.Component {
         switch (this.props.view) {
             case 'LIST_VIEW':
                 component = <ItemsLineList
+                    skin={this.props.skin}
                     forms={this.filterList()}
                     massFormsSelection={this.props.massFormsSelection}
                 orderForms
@@ -81,7 +82,6 @@ class HomeComponent extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state.skinSettings.layout)
     return {
         formList: state.fetchForms.request.resultSet.rows,
         searchQuery: state.searchQuery,
@@ -91,6 +91,7 @@ const mapStateToProps = (state) => {
         massFormsSelection: state.massFormsSelection,
         orderForms: state.orderForms,
         loading: state.loading,
+        skin: state.skinSettings.skin,
         layout: state.skinSettings.layout
     }
 }

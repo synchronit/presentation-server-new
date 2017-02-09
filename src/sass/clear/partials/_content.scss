@@ -1,0 +1,53 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/---  CONTENT   CONTENT   CONTENT   CONTENT   CONTENT   CONTENT   CONTENT   ---/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.clear .content {
+  .background {
+    background: linear-gradient(120deg, #DFEAE5 0%, #F1ECE6 45%, #F1ECE6 50%, #F3DDD6 100%);
+  }
+
+  .work-zone {
+    header {
+      .order-forms {
+        span {
+          color: #A6A4A1;
+        }
+
+        a {
+          color: #0A101A;
+        }
+
+        .dropdown-menu {
+          background-color: rgba(255, 255, 255, .9);
+          color: #22ACA7;
+          border: solid 3px white;
+          margin: 0 auto;
+          padding: 0;
+
+          &:before {
+            @include triangle-top-center(7px, 7px, 7px, 7px, white);
+          }
+
+          li {
+            background-color: #F8F5F2;
+
+            &:hover, &.active {
+              color: #ffffff;
+              background-color: #22ACA7;
+            }
+
+            + li {
+              border-top: solid 1px #DBD7D2;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/----     BASE STYLES      BASE STYLES      BASE STYLES      BASE STYLES    ---/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.base {
+  min-height: 100vh;
+  font-family: $body-font!important;
+  font-size: $body-font-size;
+}
+
+a, button {
+  outline: 0!important;
+  text-decoration: none!important;
+}
+
+.container {
+  max-width: 1296px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+svg {
+  shape-rendering:geometricPrecision;
+  text-rendering:geometricPrecision;
+  image-rendering:optimizeQuality;
+  fill-rule:evenodd;
+  clip-rule:evenodd;
+}
+
+@media (min-width: 544px) {
+  .container {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+}
+
+@media (min-width: 768px) {
+  .boxed {
+    padding-left: 35px!important;
+    padding-right: 35px!important;
+  }
+}

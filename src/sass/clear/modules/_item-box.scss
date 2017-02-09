@@ -1,0 +1,103 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/---  ITEM BOX    ITEM BOX    ITEM BOX    ITEM BOX    ITEM BOX    ITEM BOX  ---/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.clear .item-box {
+  .item {
+    border: solid 1px #F9F6F4;
+    background: linear-gradient(to right, #ffffff, #F9F6F4) no-repeat,
+    linear-gradient(to bottom, #F9F6F4, #ffffff) no-repeat,
+    linear-gradient(to left, #ffffff, #F9F6F4) no-repeat,
+    linear-gradient(to top, #F9F6F4, #ffffff) no-repeat;
+    background-position: top left, top right, bottom left, top left;
+    background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+
+    &:hover {
+      border: solid 1px #17A7A2;
+      background: none;
+      box-shadow: inset 1px 1px 0 #17A7A2, inset -1px -1px 0 #17A7A2;
+    }
+
+    .body {
+      background-color: white;
+
+      [class^="icon-"], [class*=" icon-"] {
+        color: rgba(0, 0, 0, .05);
+      }
+    }
+
+    .footer {
+      background-color: white;
+
+      span {
+        &:first-child {
+          box-shadow: inset -1px 0 0 rgba(0,0,0,.2);
+        }
+
+        &:last-child {
+          box-shadow: inset 1px 0 0 rgba(0,0,0,.2);
+        }
+      }
+    }
+
+    .options {
+      background-color: rgba(23, 167, 162, .85);
+
+      li {
+        a {
+          color: #CBEBEA;
+
+          &:hover {
+            color: white;
+          }
+        }
+
+        &:nth-child(2), &:nth-child(4) {
+          border-left: solid 2px #42A09C;
+          box-shadow: inset 1px 0 0 #A7DFDD;
+        }
+
+        &:nth-child(3), &:nth-child(4) {
+          border-top: solid 2px #42A09C;
+          box-shadow: inset 0 1px 0 #A7DFDD;
+        }
+
+        &:nth-child(4) {
+          box-shadow: inset 1px 1px 0 #A7DFDD;
+        }
+      }
+    }
+  }
+
+  &.selectable {
+    .item {
+      box-shadow: none;
+      background: none;
+      border-style: dotted;
+      border-color: #B1AEAB;
+
+      &.selected {
+        color: white;
+
+        .body, .footer {
+          background-color: #2AAFAA;
+        }
+      }
+
+      &:before, &:after {
+        border: solid 2px #24ACA7;
+      }
+
+      .selection-mask {
+        &:before, &:after {
+          border: solid 2px #24ACA7;
+        }
+      }
+    }
+  }
+}

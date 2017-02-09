@@ -1,0 +1,29 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/----    FORMS    FORMS    FORMS     FORMS     FORMS     FORMS     FORMS    ---/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.futurist .form-control {
+  background-color: #111218;
+  border: solid 1px #111218;
+  border-bottom: solid 2px #090B0F;
+
+  &:focus {
+    background-color: #111218;
+    border-color: #090B0F;
+  }
+}
+
+.futurist .input-group {
+  background: linear-gradient(to right, #7B7D83 0%, #3E3B44 15%, #3E3B44 85%,#73DDDB 100%) no-repeat;
+  background-position: top left;
+  background-size: 100% 3px;
+
+  .input-group-addon {
+    color: #73DDDB;
+  }
+}

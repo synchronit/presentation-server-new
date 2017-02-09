@@ -1,0 +1,91 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/----  TOPBAR    TOPBAR    TOPBAR    TOPBAR    TOPBAR    TOPBAR    TOPBAR  ----/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.vintage .topbar {
+  background-color: #F7F3E9;
+  border-bottom: solid 2px white;
+
+  &:after {
+    content: '';
+    width: 100%;
+    height: 20px;
+    background: url(../images/vintage/topbar.svg) no-repeat;
+    background-size: calc(100% + 100px) 100%;
+    background-position: -50px 0px;
+    position: absolute;
+    bottom: -22px;
+  }
+
+  .logo {
+    svg {
+      .fil0 {
+        fill: #999999;
+      }
+      .fil1 {
+        fill: #0A101A;
+      }
+    }
+  }
+
+  .container > .btn {
+    margin-top: 12px;
+    background-color: #ffffff;
+    border: solid 2px #D9D4CF;
+    color: #0A101A;
+
+    &:hover {
+      color: #FF5E54;
+    }
+  }
+
+  .user {
+    a {
+      span {
+        color: black!important;
+      }
+
+      &:focus {
+        .image-container {
+          border: solid 2px #E9E5DC;
+        }
+      }
+    }
+
+    .dropdown-menu {
+      background-color: rgba(255,255,255,.9);
+      box-shadow: inset 0 3px 0 #FF5E54;
+      border: none;
+      border-bottom: solid 3px white;
+
+      &:before {
+        @include triangle-top-right(5px, 5px, 5px, 5px, #FF5E54);
+      }
+
+      img {
+        background-color: white;
+        border: solid 1px white;
+      }
+
+      p {
+        small {
+          color: #666666;
+        }
+      }
+
+      .dropdown-menu-footer {
+        border-top: solid 2px #DBD6D1;
+        box-shadow: inset 0 1px 0 white;
+
+        .btn-primary {
+          color: white;
+        }
+      }
+    }
+  }
+}

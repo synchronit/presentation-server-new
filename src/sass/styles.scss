@@ -1,32 +1,5 @@
-//vendors
-@import "vendors/bootstrap-custom";
-@import "vendors/slick-custom";
-
-//variables
-@import "partials/variables";
-
-//mixins
-@import "mixins/triangles";
-
-//modules
-@import "modules/badges";
-@import "modules/buttons";
-@import "modules/fonts";
-@import "modules/forms";
-@import "modules/headings";
-@import "modules/icons";
-@import "modules/item-line";
-@import "modules/item-box";
-@import "modules/item-carousel";
-@import "modules/loader";
-@import "modules/modal";
-@import "modules/tooltip";
-
-//partials
-@import "partials/base";
-@import "partials/topbar";
-@import "partials/content";
-@import "partials/bottombar";
-@import "partials/modal-notifications";
-@import "partials/modal-delete";
-@import "partials/markers";
+//skins
+@import "base/base";
+@import "futurist/futurist";
+@import "clear/clear";
+@import "vintage/vintage";

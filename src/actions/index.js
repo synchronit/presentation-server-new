@@ -58,7 +58,16 @@ export const orderForms = (order) => ({
     order
 })
 
+export const changeSkin = (skin) => ({
+    type: 'CHANGE_SKIN',
+    skin
+})
+
 export const changeSkinLayout = (layout) => ({
     type: 'CHANGE_SKIN_LAYOUT',
     layout
+})
+
+export const resetDefaultStyles = () => ({
+    type: 'RESET_DEFAULT_STYLES'
 })

@@ -1,0 +1,79 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/----   ITEM LINE  ITEM LINE  ITEM LINE  ITEM LINE  ITEM LINE  ITEM LINE   ----/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.clear .item-line {
+  border: solid 1px #F9F6F4;
+  background: linear-gradient(-90deg, #F9F6F4 85%, #ffffff 100%) no-repeat,
+  linear-gradient(0deg, #ffffff 70%, #F9F6F4 100%) no-repeat,
+  linear-gradient(90deg, #F9F6F4 85%, #ffffff 100%) no-repeat,
+  linear-gradient(180deg, #ffffff 70%, #F9F6F4 100%) no-repeat;
+  background-position: top left, top right, bottom left, top left;
+  background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+
+  &:hover {
+    border: solid 1px #17A7A2;
+    background: none;
+    box-shadow: inset 1px 1px 0 #17A7A2, inset -1px -1px 0 #17A7A2;
+  }
+
+  &.selectable {
+    box-shadow: none;
+    border-color: #B1AEAB;
+
+    &.selected {
+      color: white;
+
+      .left, .right {
+        background-color: #2AAFAA;
+      }
+    }
+
+    .selection-mask {
+      &:before, &:after {
+        border: solid 2px #17A7A2;
+      }
+    }
+  }
+
+  .left {
+    background-color: white;
+  }
+
+  .options {
+    background-color: rgba(23, 167, 162, .85);
+
+    li {
+      a {
+        color: #CBEBEA;
+
+        &:hover {
+          color: white;
+        }
+      }
+
+      + li {
+        border-left: solid 2px #328683;
+        box-shadow: inset 1px 0 0 #77CCC8;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+
+    .right {
+      background-color: white;
+
+      span {
+        &:last-child {
+          border-left: solid 2px rgba(0,0,0,.2);
+        }
+      }
+    }
+  }
+}

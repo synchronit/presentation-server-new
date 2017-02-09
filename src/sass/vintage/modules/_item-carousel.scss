@@ -1,0 +1,196 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/----   ITEM CAROUSEL    ITEM CAROUSEL    ITEM CAROUSEL    ITEM CAROUSEL   ----/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.vintage .items-carousel-list {
+  position: relative;
+  top: -20px;
+
+  .slick-list {
+    padding-bottom: 0 !important;
+
+    .item-carousel {
+      padding: 0;
+      background: url(../images/vintage/item-carousel.png) no-repeat !important;
+      background-size: 100% 100% !important;
+      position: relative;
+
+      &:before {
+        content: '';
+        width: 74px;
+        height: 76px;
+        background: url(../images/vintage/clip.png) no-repeat;
+        position: absolute;
+        top: 200px;
+        left: 5px;
+        z-index: 10;
+      }
+
+      &.slick-current {
+        .item {
+          .options {
+            display: block;
+          }
+        }
+      }
+
+      .item {
+        color: #0A101A;
+        margin: 17px 25px 0 25px;
+        height: calc(100% - 50px);
+        position: relative;
+
+        &:after {
+          content: '';
+          height: 2px;
+          background-color: #CBC6B1;
+          position: absolute;
+          bottom: 0;
+          left: 20px;
+          right: 15px;
+          border-radius: 0 0 3px 3px;
+        }
+
+        header {
+          font-family: 'Kalam', cursive;
+        }
+
+        .row {
+          .stats {
+            > div {
+              border: solid 2px #CCAC63;
+              font-size: 12px;
+            }
+          }
+        }
+
+        img {
+          width: calc(100% + 22px);
+          margin-left: -15px;
+        }
+
+        .options {
+          bottom: 12px;
+          left: 10px;
+          right: 5px;
+          background-color: #22ACA7;
+          display: none;
+
+          &:before, &:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: solid 5px transparent;
+            bottom: -10px;
+          }
+
+          &:before {
+            border-top-color: #177673;
+            border-right-color: #177673;
+            left: 0;
+          }
+
+          &:after {
+            border-top-color: #177673;
+            border-left-color: #177673;
+            right: 0;
+          }
+
+          li {
+            a {
+              color: #CBEBEA;
+
+              &:hover {
+                color: white;
+              }
+            }
+
+            + li {
+              border-left: solid 2px #329A96;
+              box-shadow: inset 1px 0 0 #77CCC8;
+            }
+          }
+        }
+      }
+
+      &.selectable {
+        border: none !important;
+
+        &.slick-active {
+          opacity: .7;
+        }
+
+        .item {
+          .options {
+            display: none;
+          }
+        }
+
+        &.selected {
+          opacity: 1;
+
+          .selection-mask {
+            background-color: rgba(34,172,167,.3);
+          }
+        }
+
+        &:before, &:after {
+          border: none;
+        }
+
+        .selection-mask {
+          border: dotted 2px #0A101A;
+          top: 30px;
+          bottom: 22px;
+          left: 32px;
+          right: 28px;
+
+          &:before, &:after {
+            border: none;
+          }
+        }
+      }
+
+      @media(min-width: 1200px) {
+        height: calc(100vh - 265px);
+
+        .item {
+          img {
+            width: calc(100% + 25px);
+            margin-left: -18px;
+          }
+        }
+
+        &.slick-current {
+          height: calc(100vh - 205px);
+        }
+      }
+    }
+  }
+
+  .arrow {
+    color: white;
+
+    &:hover {
+      color: #000000;
+    }
+
+    &.next {
+      &:after {
+        background-color: #000000;
+      }
+    }
+
+    &.prev {
+      &:after {
+        background-color: #000000;
+      }
+    }
+  }
+}

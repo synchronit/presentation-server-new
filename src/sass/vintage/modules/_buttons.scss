@@ -1,0 +1,44 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/----    BUTTONS    BUTTONS    BUTTONS    BUTTONS    BUTTONS    BUTTONS     ---/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.vintage .btn {
+  color: white;
+  background-color: #020407;
+
+  &:hover, &:focus {
+    color: #73DDDB;
+  }
+
+  &.btn-primary {
+    background-color: #73DDDB;
+    color: #0A101A;
+
+    &:hover {
+      background-color: #FF5E54;
+    }
+  }
+
+  &.btn-primary-2 {
+    background-color: darken(#73DDDB, 20%);
+    color: white;
+
+    &:hover {
+      background-color: darken(#73DDDB, 30%);
+    }
+  }
+
+  &.btn-secundary {
+    background-color: #874A4A;
+    color: white;
+
+    &:hover {
+      background-color: #633636;
+    }
+  }
+}

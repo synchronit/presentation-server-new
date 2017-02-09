@@ -1,0 +1,121 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/---  ITEM BOX    ITEM BOX    ITEM BOX    ITEM BOX    ITEM BOX    ITEM BOX  ---/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.vintage .item-box {
+  padding: 0;
+  height: 184px;
+  margin-top: -15px;
+  color: #0A101A;
+
+  .item {
+    padding: 0;
+    background: url(../images/vintage/item-box.png) no-repeat;
+    background-size: 100% 184px;
+
+    &:hover {
+      .body, .footer {
+        opacity: .4;
+      }
+    }
+
+    .body {
+      font-family: 'Kalam', cursive;
+      width: calc(100% - 30px);
+      margin: 0 15px;
+      top: 25px;
+
+      [class^="icon-"], [class*=" icon-"] {
+        color: rgba(164, 139, 80, .27);
+      }
+    }
+
+    .footer {
+      width: calc(100% - 40px);
+      margin: 20px 15px 0 25px;
+
+      span {
+        &:first-child {
+          box-shadow: inset -1px 0 0 rgba(0,0,0,.2);
+        }
+
+        &:last-child {
+          box-shadow: inset 1px 0 0 rgba(0,0,0,.2);
+        }
+      }
+    }
+
+    .options {
+      margin: 28px 20px 22px 28px;
+
+      li {
+        a {
+          color: #22ACA7;
+
+          &:hover {
+            color: #197E7A;
+          }
+        }
+
+        &:nth-child(1), &:nth-child(2) {
+          a {
+            position: relative;
+            top: -5px;
+          }
+        }
+
+        &:nth-child(2), &:nth-child(4) {
+          border-left: solid 2px #CDC2AE;
+        }
+
+        &:nth-child(3), &:nth-child(4) {
+          border-top: solid 2px #CDC2AE;
+        }
+      }
+    }
+  }
+
+  &.selectable {
+    .item {
+      background: url(../images/vintage/item-box.png) no-repeat;
+      background-size: 100% 184px;
+      border: none!important;
+      opacity: .7;
+
+      &:hover {
+        .body, .footer {
+          opacity: 1;
+        }
+      }
+
+      &.selected {
+        opacity: 1;
+
+        .selection-mask {
+          background-color: rgba(34,172,167,.3);
+        }
+      }
+
+      .selection-mask {
+        border: dotted 2px #0A101A;
+        top: 30px;
+        bottom: 22px;
+        left: 32px;
+        right: 22px;
+
+        &:before, &:after {
+          border: none;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 544px) {
+    margin-bottom: 20px;
+  }
+}

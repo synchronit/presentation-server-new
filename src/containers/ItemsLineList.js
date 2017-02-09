@@ -34,10 +34,10 @@ class ItemsLineListComponent extends React.Component {
         filteredList.forEach((form, index) => {
             var temp = form[0].charAt(0)
             if (this.props.orderForms == "Recent" || this.props.orderForms == "Older") {
-                markers.push(<Marker className=" marker-date" char="JAN, 2017" count={1} key={index} />)
+                markers.push(<Marker className=" marker-date" char="JAN, 2017" count={1} key={index} skin={this.props.skin}/>)
             } else if(char.toLowerCase() != temp.toLowerCase()) {
                 if (!first) {
-                    markers.push(<Marker char={char.toUpperCase()} count={count} key={index - 1} />)
+                    markers.push(<Marker char={char.toUpperCase()} count={count} key={index - 1} skin={this.props.skin}/>)
                     count = 1
                 }
                 if (char == "") {
@@ -50,7 +50,7 @@ class ItemsLineListComponent extends React.Component {
                 count++
             }
             if (index == filteredList.length - 1 && this.props.orderForms != "Recent" && this.props.orderForms != "Older") {
-                markers.push(<Marker char={temp.toUpperCase()} count={count} key={index} />)
+                markers.push(<Marker char={temp.toUpperCase()} count={count} key={index} skin={this.props.skin}/>)
             }
         })
 

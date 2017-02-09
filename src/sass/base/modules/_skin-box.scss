@@ -1,0 +1,119 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/----    SKIN BOX   SKIN BOX   SKIN BOX   SKIN BOX   SKIN BOX   SKIN BOX   ----/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.skin-boxes {
+  padding-bottom: 40px;
+
+  .skin-box {
+    margin-bottom: 30px;
+    padding: 5px;
+    border-radius: 3px;
+
+    &.active {
+      .skin-box-header {
+        button {
+          cursor: not-allowed;
+        }
+      }
+    }
+
+    &.config {
+      .skin-box-body {
+        .edit-config-details {
+          display: block;
+        }
+
+        img {
+          filter: blur(2px);
+        }
+      }
+    }
+
+    .skin-box-header {
+      padding-bottom: 5px;
+      overflow: hidden;
+
+      h4 {
+        font-weight: normal;
+        display: inline-block;
+        vertical-align: middle;
+        padding-left: 5px;
+        margin: 0;
+      }
+
+      .btn-icon {
+        float: right;
+        padding-left: 6px;
+        padding-right: 6px;
+
+        i {
+          font-size: 14px;
+          padding-right: 7px;
+        }
+
+        + .btn-icon {
+          margin-right: 5px;
+        }
+      }
+    }
+
+    .skin-box-body {
+      border-radius: 3px;
+      padding: 15px;
+      position: relative;
+
+      .edit-config-details {
+        display: none;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border-radius: 3px;
+
+        i {
+          line-height: 100%;
+          height: 30px;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          text-align: center;
+          margin: auto;
+        }
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    @media(min-width: 544px) {
+      .skin-box-header {
+        button {
+          i {
+            display: none;
+          }
+        }
+      }
+    }
+
+    @media(min-width: 992px) {
+      .skin-box-header {
+        button {
+          i {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}

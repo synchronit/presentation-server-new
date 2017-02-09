@@ -1,0 +1,126 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/----   ITEM CAROUSEL    ITEM CAROUSEL    ITEM CAROUSEL    ITEM CAROUSEL   ----/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.clear .items-carousel-list {
+  .slick-list {
+    .item-carousel {
+      border: solid 1px #F9F6F4;
+      background: linear-gradient(to right, #ffffff 0%, #F9F6F4 30%) no-repeat,
+      linear-gradient(0deg, #ffffff 0%, #F9F6F4 30%) no-repeat,
+      linear-gradient(to right, #F9F6F4 70%, #ffffff 100%) no-repeat,
+      linear-gradient(180deg, #ffffff 0%, #F9F6F4 30%) no-repeat;
+      background-position: top left, top right, bottom left, top left;
+      background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+
+      &.slick-current {
+        .item {
+          .options {
+            background-color: rgba(23, 167, 162, .85);
+          }
+        }
+      }
+
+      .item {
+        background-color: white;
+
+        .row {
+          .stats {
+            > div {
+              border: solid 1px #E2E1E0;
+              background: linear-gradient(to right, #22ACA7 0%, #E2E1E0 50%) no-repeat,
+              linear-gradient(0deg, #FF5E54 0%, #E2E1E0 50%) no-repeat,
+              linear-gradient(to right, #E2E1E0 50%, #FF5E54 100%) no-repeat,
+              linear-gradient(180deg, #22ACA7 0%, #E2E1E0 50%) no-repeat;
+              background-position: top left, top right, bottom left, top left;
+              background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+            }
+          }
+        }
+
+        .options {
+          background-color: rgba(23, 167, 162, .85);
+
+          li {
+            a {
+              color: #CBEBEA;
+
+              &:hover {
+                color: white;
+              }
+            }
+
+            + li {
+              border-left: solid 2px #329A96;
+              box-shadow: inset 1px 0 0 #77CCC8;
+            }
+          }
+        }
+      }
+
+      &.selectable {
+        border-color: #B1AEAB;
+
+        &.selected {
+          .item {
+            background-color: #22ACA7!important;
+            color: white;
+
+            .row {
+              .stats {
+                > div {
+                  border: solid 1px #6CC8C5;
+                  background: linear-gradient(to right, #FFFFFF 0%, #6CC8C5 50%) no-repeat,
+                  linear-gradient(0deg, #FFFFFF 0%, #6CC8C5 50%) no-repeat,
+                  linear-gradient(to right, #6CC8C5 50%, #FFFFFF 100%) no-repeat,
+                  linear-gradient(180deg, #FFFFFF 0%, #6CC8C5 50%) no-repeat;
+                  background-position: top left, top right, bottom left, top left;
+                  background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+                }
+              }
+            }
+
+            .options {
+              background-color: rgba(25, 126, 122, .85);
+            }
+          }
+        }
+
+        &:before, &:after {
+          border: solid 2px #22ACA7;
+        }
+
+        .selection-mask {
+          &:before, &:after {
+            border: solid 2px #22ACA7;
+          }
+        }
+      }
+    }
+  }
+
+  .arrow {
+    color: #22ACA7;
+
+    &:hover {
+      color: #FF5E54;
+    }
+
+    &.next {
+      &:after {
+        background-color: #FF5E54;
+      }
+    }
+
+    &.prev {
+      &:after {
+        background-color: #FF5E54;
+      }
+    }
+  }
+}

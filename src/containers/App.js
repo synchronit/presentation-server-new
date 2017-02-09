@@ -24,7 +24,8 @@ class AppComponent extends React.Component {
 
     initPlugins() {
         $('[data-toggle="tooltip"]').tooltip({
-            trigger: 'hover'
+            trigger: 'hover',
+            template: '<div class="tooltip '+ this.props.skin +'-tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'
         })
 
         $('.up').click(() => {
@@ -33,7 +34,7 @@ class AppComponent extends React.Component {
     }
 
     render() {
-        return <div>
+        return <div id="base" className={"base " + this.props.skin}>
                     <Loader />
                     <TopBar />
                     {this.props.children}
@@ -41,8 +42,15 @@ class AppComponent extends React.Component {
                     <Modal id="modal-notifications" title="NOTIFICATIONS" icon="icon-notification"/>
                     <Modal id="modal-delete" title="Do you really want to delete this form?" icon="icon-delete"/>
                     <Modal id="modal-mass-delete" title="Do you really want to delete all this forms?" icon="icon-delete"/>
+                    <Modal id="modal-reset-styles" title="Do you really want to reset to default styles?" icon="icon-delete"/>
                </div>
     }
 }
 
-export default AppComponent
+const mapStateToProps = (state) => ({
+    skin: state.skinSettings.skin
+})
+
+const App = connect(mapStateToProps)(AppComponent)
+
+export default App

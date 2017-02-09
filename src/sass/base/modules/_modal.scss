@@ -1,0 +1,93 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/----   MODAL     MODAL     MODAL     MODAL     MODAL     MODAL     MODAL   ---/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.modal {
+  background-color: rgba(0, 0, 0, .7);
+
+  .icon-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #73DDDB;
+    font-size: 25px;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  .modal-dialog {
+    border-radius: 3px;
+    border: solid 1px #2F2F32;
+    padding: 5px;
+    margin-top: 80px;
+    background: linear-gradient(to right, #ffffff 0%, #2F2F32 10%, #2F2F32 25%, #ffffff 40%, #ffffff 60%, #2F2F32 75%, #2F2F32 90%, #ffffff 100%) no-repeat,
+    linear-gradient(to bottom, #ffffff 0%, #2F2F32 20%, #2F2F32 50%, #ffffff 100%) no-repeat,
+    linear-gradient(to right, #ffffff 0%, #2F2F32 20%, #2F2F32 80%, #ffffff 100%) no-repeat,
+    linear-gradient(to bottom, #ffffff 0%, #2F2F32 20%, #2F2F32 50%, #ffffff 100%) no-repeat;
+    background-position: top left, top right, bottom left, top left;
+    background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+
+    .modal-content {
+      height: 100%;
+      border-radius: 0 0 3px 3px;
+      color: #000000;
+
+      > [class^="icon-"], > [class*=" icon-"] {
+        width: 60px;
+        height: 60px;
+        border: solid 1px;
+        border-radius: 50%;
+        text-align: center;
+        padding: 10px 0;
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        right: 0;
+        top: -35px;
+        margin: auto;
+        color: #ffffff;
+        font-size: 36px;
+        background-color: rgba(0, 0, 0, .95);
+      }
+
+      .modal-header {
+        background-color: #EBEBEB;
+        padding: 45px 15px 20px 15px;
+        position: relative;
+        overflow: hidden;
+
+        &:before {
+          content: '';
+          width: 70px;
+          height: 70px;
+          background-color: rgba(0, 0, 0, .95);
+          position: absolute;
+          border-radius: 50%;
+          top: -40px;
+          left: 0;
+          right: 0;
+          margin: auto;
+        }
+
+        h4 {
+          text-align: center;
+          color: #000000;
+          font-weight: normal;
+        }
+      }
+
+      .modal-body {
+
+      }
+    }
+  }
+}

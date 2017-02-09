@@ -1,0 +1,28 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/----    FORMS    FORMS    FORMS     FORMS     FORMS     FORMS     FORMS    ---/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.clear .form-control {
+  background-color: #D9D4CF;
+  border: solid 1px #D9D4CF;
+  border-top: solid 1px #F5F0EC;
+  border-bottom: solid 2px #C3BFBA;
+
+  &::-webkit-input-placeholder { color: white; } /* WebKit */
+  &:-moz-placeholder { color: white; } /* Firefox 18- */
+  &::-moz-placeholder { color: white; } /* Firefox 19+ */
+  &:-ms-input-placeholder { color: white; } /* IE 10+ */
+}
+
+.clear .input-group {
+  background: none;
+
+  .input-group-addon {
+    color: white;
+  }
+}

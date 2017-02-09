@@ -7,6 +7,9 @@ class SettingsHeaderComponent extends React.Component {
         return (
             <header className="container">
                 <Heading title={this.props.title} subtitle={this.props.subtitle} />
+                <button id="reset-styles" className="btn btn-secundary" data-toggle="modal" data-target="#modal-reset-styles">
+                    RESET TO DEFAULT STYLES
+                </button>
             </header>
         );
     }

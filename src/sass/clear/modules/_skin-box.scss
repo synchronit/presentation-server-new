@@ -1,0 +1,67 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/----    SKIN BOX   SKIN BOX   SKIN BOX   SKIN BOX   SKIN BOX   SKIN BOX   ----/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.clear .skin-box {
+  border: solid 1px #F9F6F4;
+  background: linear-gradient(to right, #ffffff, #F9F6F4) no-repeat,
+  linear-gradient(to bottom, #F9F6F4, #ffffff) no-repeat,
+  linear-gradient(to left, #ffffff, #F9F6F4) no-repeat,
+  linear-gradient(to top, #F9F6F4, #ffffff) no-repeat;
+  background-position: top left, top right, bottom left, top left;
+  background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+
+  &.active {
+    .skin-box-header {
+      button {
+        background-color: #484644;
+        color: white;
+      }
+    }
+  }
+
+  &.config {
+    border: solid 1px #5EBEBA;
+    background: linear-gradient(to right, #30AEAC, #5EBEBA) no-repeat,
+    linear-gradient(to bottom, #5EBEBA, #30AEAC) no-repeat,
+    linear-gradient(to left, #30AEAC, #5EBEBA) no-repeat,
+    linear-gradient(to top, #5EBEBA, #30AEAC) no-repeat;
+    background-position: top left, top right, bottom left, top left;
+    background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+  }
+
+  .skin-box-header {
+    button {
+      background-color: #C3BFBA;
+      color: #F1ECE6;
+
+      &:hover {
+        background-color: #484644;
+        color: #white;
+      }
+    }
+
+    a {
+      background-color: #89CCC7;
+
+      &:hover {
+        background-color: #30AEAC;
+        color: #ffffff;
+      }
+    }
+  }
+
+  .skin-box-body {
+    background-color: white;
+
+    .edit-config-details {
+      background-color: rgba(34,172,167,.7);
+      color: #ffffff;
+    }
+  }
+}

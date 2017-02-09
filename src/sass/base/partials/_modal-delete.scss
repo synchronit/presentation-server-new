@@ -1,0 +1,45 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/----    MODAL DELETE     MODAL DELETE     MODAL DELETE     MODAL DELETE    ---/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+#modal-delete, #modal-mass-delete, #modal-reset-styles {
+
+  .modal-dialog {
+    .modal-content {
+
+      .modal-body {
+        padding: 40px 15px;
+        text-align: center;
+
+        .btn {
+          width: 115px;
+        }
+
+        .btn + .btn {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+
+  @media(min-width: 544px) {
+    .modal-dialog {
+      .modal-content {
+        .modal-body {
+          .btn {
+            width: 160px;
+          }
+
+          .btn + .btn {
+            margin-left: 40px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/---  CONTENT   CONTENT   CONTENT   CONTENT   CONTENT   CONTENT   CONTENT   ---/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.futurist .content {
+  .background {
+    background: linear-gradient(120deg, #273740 0%, #1E232D 45%, #1E232D 50%, #432C33 100%);
+  }
+
+  .work-zone {
+    header {
+      .order-forms {
+        span {
+          color: #666666;
+        }
+
+        a {
+          color: white;
+        }
+
+        .dropdown-menu {
+          box-shadow: inset 0 1px 0 #ffffff;
+          background-color: rgba(10,16,26,.9);
+          color: #73DDDB;
+
+          &:before {
+            @include triangle-top-center(4px, 4px, 4px, 4px, white);
+          }
+
+          li {
+            &:hover, &.active {
+              color: #ffffff;
+            }
+
+            + li {
+              border-top: solid 1px rgba(255,255,255,.05);
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,107 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/----   ITEM CAROUSEL    ITEM CAROUSEL    ITEM CAROUSEL    ITEM CAROUSEL   ----/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.futurist .items-carousel-list {
+  .slick-list {
+    .item-carousel {
+      border: solid 1px #6A676E;
+      background: linear-gradient(to right, #ffffff 0%, #6A676E 30%) no-repeat,
+      linear-gradient(0deg, #ffffff 0%, #6A676E 30%) no-repeat,
+      linear-gradient(to right, #6A676E 70%, #ffffff 100%) no-repeat,
+      linear-gradient(180deg, #ffffff 0%, #6A676E 30%) no-repeat;
+      background-position: top left, top right, bottom left, top left;
+      background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+
+      &.slick-current {
+        .item {
+          .options {
+            background-color: rgba(40, 77, 98, .9);
+          }
+        }
+      }
+
+      .item {
+        background-color: rgba(255, 255, 255, .1);
+
+        .row {
+          .stats {
+            > div {
+              border: solid 1px #6A676E;
+              background: linear-gradient(to right, #ffffff 0%, #6A676E 30%) no-repeat,
+              linear-gradient(0deg, #ffffff 0%, #6A676E 30%) no-repeat,
+              linear-gradient(to right, #6A676E 70%, #ffffff 100%) no-repeat,
+              linear-gradient(180deg, #ffffff 0%, #6A676E 30%) no-repeat;
+              background-position: top left, top right, bottom left, top left;
+              background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+            }
+          }
+        }
+
+        .options {
+          background-color: rgba(40, 77, 98, .8);
+
+          li {
+            a {
+              color: #73DDDB;
+
+              &:hover {
+                color: white;
+              }
+            }
+
+            + li {
+              border-left: solid 2px #263945;
+              box-shadow: inset 1px 0 0 #6B7E8A;
+            }
+          }
+        }
+      }
+
+      &.selectable {
+        border-color: #6A676E;
+
+        &.selected {
+          .item {
+            background-color: rgba(40, 77, 98, .65)!important;
+          }
+        }
+
+        &:before, &:after {
+          border: solid 2px #73DDDB;
+        }
+
+        .selection-mask {
+          &:before, &:after {
+            border: solid 2px #73DDDB;
+          }
+        }
+      }
+    }
+  }
+
+  .arrow {
+    color: #73DDDB;
+
+    &:hover {
+      color: #FF5E54;
+    }
+
+    &.next {
+      &:after {
+        background-color: #FF5E54;
+      }
+    }
+
+    &.prev {
+      &:after {
+        background-color: #FF5E54;
+      }
+    }
+  }
+}

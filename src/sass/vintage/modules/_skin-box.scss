@@ -1,0 +1,149 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/----    SKIN BOX   SKIN BOX   SKIN BOX   SKIN BOX   SKIN BOX   SKIN BOX   ----/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.vintage .skin-boxes {
+  margin-right: -20px;
+  margin-left: -20px;
+  position: relative;
+  top: -25px;
+
+  [class^="col-"], [class*=" col-"] {
+    padding: 0;
+
+    .skin-box {
+      padding: 50px 45px 45px 60px;
+      margin: 0 auto;
+      background: url(../images/vintage/skin-box.png) no-repeat;
+      background-size: 100% 100%;
+
+      &.active {
+        .skin-box-header {
+          button {
+            background-color: #484644;
+            color: white;
+          }
+        }
+      }
+
+      .skin-box-header {
+        h4 {
+          font-family: 'Kalam', cursive;
+          color: #0A101A;
+        }
+
+        button {
+          background-color: rgba(167, 153, 119, .7);
+          color: #ECE9E1;
+
+          &:hover {
+            background-color: rgba(0, 0, 0, .6);
+            color: #white;
+          }
+
+          i {
+            display: none;
+          }
+        }
+
+        a {
+          background-color: rgba(34, 172, 167, .65);
+          color: #ffffff;
+
+          &:hover {
+            background-color: #22ACA7;
+            color: #ffffff;
+          }
+        }
+      }
+
+      .skin-box-body {
+        padding: 0;
+        margin-top: 3px;
+
+        .edit-config-details {
+          background-color: rgba(34, 172, 167, .7);
+          color: #ffffff;
+        }
+
+        img {
+          border: solid 1px #BEB499;
+        }
+      }
+    }
+    @media(min-width: 410px) {
+      width: 100%;
+
+      .skin-box {
+        width: 420px;
+
+        .skin-box-header {
+          button {
+            i {
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+
+    @media(min-width: 768px) {
+      width: 50%;
+
+      .skin-box {
+        width: 100%;
+
+        .skin-box-header {
+          button {
+            i {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    @media(min-width: 800px) {
+      .skin-box {
+        .skin-box-header {
+          button {
+            i {
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+
+    @media(min-width: 992px) {
+      width: 33.3%;
+
+      .skin-box {
+        .skin-box-header {
+          button {
+            i {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    @media(min-width: 1200px) {
+      .skin-box {
+        .skin-box-header {
+          button {
+            i {
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
+}

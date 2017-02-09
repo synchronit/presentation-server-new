@@ -47,7 +47,7 @@ class ItemCarouselComponent extends React.Component {
                             <div><span className="icon-fields"></span>15 FIELDS</div>
                         </div>
                     </div>
-                    <img src="images/form.png" alt="" />
+                    <img src={"images/" + this.props.skin + "/form.png"} alt="" />
                     <ItemOptions form={this.props.form[0]}/>
                 </div>
                 <div className="selection-mask" onClick={this.handleOnClick}></div>
@@ -58,7 +58,8 @@ class ItemCarouselComponent extends React.Component {
 
 const mapStateToProps = (state) => ({
     formSelection: state.formSelection,
-    massFormsSelection: state.massFormsSelection
+    massFormsSelection: state.massFormsSelection,
+    skin: state.skinSettings.skin
 })
 
 const ItemCarousel = connect(mapStateToProps)(ItemCarouselComponent)

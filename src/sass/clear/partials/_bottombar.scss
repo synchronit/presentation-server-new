@@ -1,0 +1,76 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/--  BOTTOMBAR   BOTTOMBAR   BOTTOMBAR   BOTTOMBAR   BOTTOMBAR   BOTTOMBAR  ---/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.clear .bottombar {
+  background-color: white;
+  color: black;
+  box-shadow: 0 -2px 0 rgba(0,0,0,.1);
+
+  .views {
+    li {
+      a {
+        color: #A8A5A1;
+
+        &:hover {
+          color: #6E6D6A;
+        }
+
+        &.active {
+          color: #FF5E54;
+        }
+      }
+    }
+  }
+
+  .mass-form-delete {
+    color: #A8A5A1;
+
+    &:hover {
+      color: #6E6D6A;
+    }
+
+    &.selected {
+      color: #17A7A2;
+
+      &:hover {
+        color: #FF5E54;
+      }
+    }
+  }
+
+  .create-new-form {
+    .icon-arrow {
+      color: #A8A5A1;
+    }
+
+    #add-form {
+      background-color: rgba(255, 255, 255, .3);
+
+      &:hover {
+        span {
+          background-color: #FF5E54;
+        }
+      }
+
+      span {
+        background-color: #22ACA7;
+        color: white;
+        box-shadow: 0 4px 0 rgba(0, 0, 0, .1);
+      }
+    }
+  }
+
+  .go-back {
+    color: #22ACA7;
+
+    &:hover {
+      color: #197E7A;
+    }
+  }
+}

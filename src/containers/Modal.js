@@ -2,6 +2,7 @@ import React from 'react'
 import ModalNotifications from './ModalNotifications.js'
 import ModalDelete from './ModalDelete.js'
 import ModalMassDelete from './ModalMassDelete.js'
+import ModalResetStyles from './ModalResetStyles.js'
 
 class ModalComponent extends React.Component {
 
@@ -17,6 +18,9 @@ class ModalComponent extends React.Component {
                 break
             case 'modal-mass-delete':
                 content = <ModalMassDelete />
+                break
+            case 'modal-reset-styles':
+                content = <ModalResetStyles />
                 break
         }
 

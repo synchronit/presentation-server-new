@@ -1,0 +1,218 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/----   ITEM LINE  ITEM LINE  ITEM LINE  ITEM LINE  ITEM LINE  ITEM LINE   ----/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.item-line {
+  width: 100%;
+  height: 38px;
+  margin: auto;
+  padding: 5px;
+  border-radius: 3px;
+  position: relative;
+
+  &:hover {
+    .left, .right {
+      filter: blur(2px);
+    }
+
+    .options {
+      display: block;
+    }
+  }
+
+  &.selectable {
+    background: none!important;
+    border-style: dotted!important;
+
+    .left, .right {
+      filter: blur(0);
+    }
+
+    .options {
+      display: none;
+    }
+
+    .selection-mask {
+      position: absolute;
+      top: 5px;
+      bottom: 5px;
+      left: 5px;
+      right: 5px;
+      border-radius: 3px;
+
+      &:before, &:after {
+        content: '';
+        width: 80px;
+        position: absolute;
+        top: -6px;
+        bottom: -6px;
+        margin: auto;
+      }
+
+      &:before {
+        left: -6px;
+        border-right: none!important;
+        border-radius: 3px 0 0 3px;
+      }
+
+      &:after {
+        right: -6px;
+        border-left: none!important;
+        border-radius: 0 3px 3px 0;
+      }
+    }
+  }
+
+  + .item-line {
+    margin-top: 10px;
+  }
+
+  &:last-child {
+    margin-bottom: 30px;
+  }
+
+  .left {
+    border-radius: 2px;
+    padding: 1px 5px;
+    width: 100%;
+  }
+
+  .options {
+    padding: 3px 0;
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    margin: auto;
+    display: none;
+    text-align: center;
+
+    li {
+      height: 100%;
+      display: inline-block;
+
+      a {
+        position: relative;
+        top: -3px;
+        font-size: 14px;
+
+        &:hover {
+          [class^="icon-"], [class*=" icon-"] {
+            transform: scale(1.1);
+          }
+        }
+
+        [class^="icon-"], [class*=" icon-"] {
+          font-size: 30px;
+          display: inline-block;
+          vertical-align: middle;
+          position: relative;
+          top: -2px;
+        }
+
+        i {
+          display: none;
+        }
+      }
+
+      + li {
+        margin-left: 20px;
+        padding-left: 15px;
+      }
+    }
+  }
+
+  @media (min-width: 544px) {
+    .options {
+      li {
+        a {
+          i {
+            display: inline-block;
+            span {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    width: 628px;
+
+    &.selectable {
+      .selection-mask {
+        &:before, &:after {
+          width: 125px;
+        }
+      }
+    }
+
+    .left {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      float: left;
+      width: 374px;
+      margin-right: 2px;
+    }
+
+    .right {
+      height: 26px;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+      float: left;
+
+      span {
+        font-size: 14px;
+        position: relative;
+        text-align: center;
+        display: inline-block;
+        padding: 0 10px 0 33px;
+        margin-bottom: 2px;
+        width: 120px;
+
+        [class^="icon-"], [class*=" icon-"] {
+          font-size: 30px;
+          position: absolute;
+          top: -5px;
+          left: 12px;
+        }
+      }
+    }
+
+    .options {
+      li {
+        a {
+          i {
+            display: inline-block;
+            span {
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 992px) {
+    width: 570px;
+
+    .left {
+      width: 316px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    width: 776px;
+
+    .left {
+      width: 522px;
+    }
+  }
+}

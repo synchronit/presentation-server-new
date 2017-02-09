@@ -1,0 +1,31 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/----   MODAL     MODAL     MODAL     MODAL     MODAL     MODAL     MODAL   ---/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.vintage .modal {
+  .modal-dialog {
+    .modal-content {
+      .modal-header {
+        background: url(../images/vintage/modal-header-sand.svg) no-repeat, #CCAC63;
+        background-position: center bottom;
+        background-size: 100%;
+
+        h4 {
+          font-family: 'Kalam', cursive;
+          color: #ffffff;
+        }
+      }
+
+      .modal-body {
+        background: url(../images/vintage/modal-body-sand.svg) no-repeat, white;
+        background-position: center top;
+        background-size: 100%;
+      }
+    }
+  }
+}

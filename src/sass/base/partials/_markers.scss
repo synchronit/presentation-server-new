@@ -1,0 +1,48 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/---  MARKERS   MARKERS   MARKERS   MARKERS   MARKERS   MARKERS   MARKERS   ---/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.markers {
+  position: absolute;
+  left: -180px;
+  width: 150px;
+
+  .marker {
+    width: 100%;
+    display: table;
+
+    &.marker-date {
+      p {
+        span {
+          width: 85px;
+          padding-right: 5px;
+          border-radius: 5px 25px 25px 5px;
+        }
+      }
+    }
+
+    + .marker {
+      margin-top: 10px;
+    }
+
+    p {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+
+      span {
+        width: 30px;
+        height: 30px;
+        display: block;
+        margin: 0 20px 0 auto;
+        padding: 3px 0;
+        border-radius: 50%;
+      }
+    }
+  }
+}

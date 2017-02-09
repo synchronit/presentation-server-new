@@ -1,0 +1,23 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/----     TOOLTIPS     TOOLTIPS     TOOLTIPS      TOOLTIPS      TOOLTIPS    ---/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.vintage-tooltip.tooltip {
+  .tooltip-inner {
+    background-color: #ffffff;
+    color: #CCAC63;
+  }
+
+  .tooltip-arrow {
+    box-shadow: 0 -1px 0 white;
+
+    &:after {
+      border-top-color: white;
+    }
+  }
+}

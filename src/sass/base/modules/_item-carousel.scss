@@ -1,0 +1,339 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/----   ITEM CAROUSEL    ITEM CAROUSEL    ITEM CAROUSEL    ITEM CAROUSEL   ----/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.items-carousel-list {
+  padding-bottom: 55px;
+
+  .slick-list {
+    width: 320px;
+    margin: auto;
+    padding: 0 0 !important;
+
+    .item-carousel {
+      height: 419px;
+      padding: 5px;
+      border-radius: 3px;
+      margin: 0 15px;
+      opacity: .1;
+
+      &.slick-active {
+        opacity: 1;
+      }
+
+      &.slick-current {
+        .item {
+          .options {
+            bottom: 0;
+          }
+        }
+      }
+
+      &.slick-cloned {
+        opacity: 0!important;
+      }
+
+      .item {
+        height: 100%;
+        text-align: center;
+        padding: 0 15px;
+        overflow: hidden;
+        position: relative;
+
+        header {
+          height: 60px;
+          display: table;
+          width: 100%;
+
+          span {
+            display: table-cell;
+            vertical-align: middle;
+          }
+        }
+
+        .row {
+          margin: 0 -5px;
+
+          .stats {
+            padding: 0 5px;
+
+            > div {
+              font-size: 14px;
+              padding: 7px 2px 10px 2px;
+              border-radius: 3px;
+
+              span {
+                font-size: 36px;
+                display: block;
+              }
+            }
+          }
+        }
+
+        img {
+          width: calc(100% + 18px);
+          margin-left: -18px;
+          margin-top: 18px;
+        }
+
+        .options {
+          position: absolute;
+          bottom: -59px;
+          left: 0;
+          right: 0;
+          margin: auto;
+          padding: 8px 0;
+
+          li {
+            display: block;
+            float: left;
+            width: 25%;
+
+            a {
+              font-size: 14px;
+              display: block;
+
+              &:hover {
+                [class^="icon-"], [class*=" icon-"] {
+                  transform: scale(1.1);
+                }
+              }
+
+              [class^="icon-"], [class*=" icon-"] {
+                font-size: 40px;
+                display: block;
+                margin: -5px 0;
+              }
+
+              i {
+                span {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &.selectable {
+        background: none!important;
+        border-style: dotted!important;
+        position: relative;
+
+        &.slick-current {
+          .item {
+            .options {
+              bottom: -59px;
+            }
+          }
+        }
+
+        &:before, &:after {
+          content: '';
+          width: 70px;
+          height: 70px;
+          position: absolute;
+          top: -2px;
+          margin: auto;
+          border-bottom: none!important;
+        }
+
+        &:before {
+          left: -2px;
+          border-right: none!important;
+          border-radius: 3px 0 0 0;
+        }
+
+        &:after {
+          right: -2px;
+          border-left: none!important;
+          border-radius: 0 3px 0 0;
+        }
+
+        .selection-mask {
+          position: absolute;
+          z-index: 100;
+          top: 5px;
+          bottom: 5px;
+          left: 5px;
+          right: 5px;
+          border-radius: 3px;
+
+          &:before, &:after {
+            content: '';
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            bottom: -7px;
+            margin: auto;
+            border-top: none!important;
+          }
+
+          &:before {
+            left: -7px;
+            border-right: none!important;
+            border-radius: 0 0 0 3px;
+          }
+
+          &:after {
+            right: -7px;
+            border-left: none!important;
+            border-radius: 0 0 3px 0;
+          }
+        }
+      }
+    }
+  }
+
+  @media(min-width: 544px) {
+    margin: 0 -160px;
+    padding-bottom: 30px;
+
+    .slick-list {
+      width: 100%;
+      padding: 30px 0 !important;
+
+      .item-carousel {
+        height: 345px;
+        margin: 0 5px;
+
+        &.slick-active {
+          opacity: .1;
+        }
+
+        &.slick-current {
+          height: 400px;
+          margin-top: -30px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  @media(min-width: 768px) {
+    margin: 0 -100px;
+  }
+
+  @media(min-width: 992px) {
+    margin: 0;
+
+    .slick-list {
+      padding: 30px 25px !important;
+
+      .item-carousel {
+        &.slick-active {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  @media(min-width: 1200px) {
+    margin: 0;
+
+    .slick-list {
+      padding: 32px 120px !important;
+
+      .item-carousel {
+        height: calc(100vh - 285px);
+        margin: 0 10px;
+
+        &.slick-current {
+          height: calc(100vh - 235px);
+        }
+      }
+    }
+  }
+
+  .arrow {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    bottom: 30px;
+    margin: auto;
+    background: none;
+    border: none;
+    font-size: 50px;
+    height: 30px;
+
+    &.next {
+      right: -15px;
+
+      &:hover:after {
+        display: block;
+      }
+
+      &:after {
+        content: '';
+        width: 34px;
+        height: 2px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        display: none;
+      }
+    }
+
+    &.prev {
+      left: -15px;
+
+      &:hover:after {
+        display: block;
+      }
+
+      &:after {
+        content: '';
+        width: 34px;
+        height: 2px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        display: none;
+      }
+    }
+
+    [class^="icon-"], [class*=" icon-"] {
+      position: relative;
+      top: -18px;
+    }
+
+    @media(min-width: 544px) {
+      &.next {
+        right: 170px;
+      }
+
+      &.prev {
+        left: 170px;
+      }
+    }
+
+    @media(min-width: 768px) {
+      &.next {
+        right: 110px;
+      }
+
+      &.prev {
+        left: 110px;
+      }
+    }
+
+    @media(min-width: 992px) {
+      &.next {
+        right: 10px;
+      }
+
+      &.prev {
+        left: 10px;
+      }
+    }
+  }
+}

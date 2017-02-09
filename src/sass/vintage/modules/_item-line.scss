@@ -1,0 +1,94 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/----   ITEM LINE  ITEM LINE  ITEM LINE  ITEM LINE  ITEM LINE  ITEM LINE   ----/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.vintage .item-line {
+  background: url(../images/vintage/item-line.png) no-repeat;
+  background-size: 100% 56px;
+  background-position: left -4px;
+  height: 52px;
+  color: #0A101A;
+
+  &:hover {
+    .left, .right {
+      opacity: .4;
+    }
+  }
+
+  &.selectable {
+    background: url(../images/vintage/item-line.png) no-repeat!important;
+    background-size: 100% 56px!important;
+    background-position: left -4px!important;
+    border: none!important;
+    opacity: .7;
+
+    &:hover {
+      .left, .right {
+        opacity: 1;
+      }
+    }
+
+    &.selected {
+      opacity: 1;
+
+      .selection-mask {
+        background-color: rgba(34,172,167,.3);
+      }
+    }
+
+    .selection-mask {
+      border: dotted 2px #0A101A;
+      top: 14px;
+      bottom: 14px;
+      left: 15px;
+      right: 15px;
+
+      &:before, &:after {
+        border: none;
+      }
+    }
+  }
+
+  .left {
+    padding-left: 20px;
+    margin-top: 8px;
+    font-family: 'Kalam', cursive;
+  }
+
+  .options {
+    height: 26px;
+
+    li {
+      a {
+        color: #22ACA7;
+
+        &:hover {
+          color: #197E7A;
+        }
+      }
+
+      + li {
+        border-left: solid 2px #CDC2AE;
+        box-shadow: none;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+
+    .right {
+      margin-top: 8px;
+
+      span {
+        &:last-child {
+          border-left: solid 2px rgba(0,0,0,.2);
+        }
+      }
+    }
+  }
+}
