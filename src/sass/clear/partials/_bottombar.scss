@@ -7,70 +7,106 @@
                                ooo0  0ooo
 /------------------------------(  )--(  )--------------------------------------/
 /*                             (_)    (_)                                     */
-.clear .bottombar {
-  background-color: white;
-  color: black;
-  box-shadow: 0 -2px 0 rgba(0,0,0,.1);
+.clear {
 
-  .views {
-    li {
-      a {
-        color: #A8A5A1;
-
-        &:hover {
-          color: #6E6D6A;
+  //Main colors
+  @each $name-color, $color in $main-colors {
+    &.#{$name-color} {
+      .bottombar {
+        .mass-form-delete {
+          &.selected {
+            color: $color;
+          }
         }
-
-        &.active {
-          color: #FF5E54;
+        .create-new-form {
+          #add-form {
+            span {
+              background-color: $color;
+            }
+          }
+        }
+        .go-back {
+          color: $color;
+          &:hover {
+            color: darken($color, 10%);
+          }
         }
       }
     }
   }
 
-  .mass-form-delete {
-    color: #A8A5A1;
-
-    &:hover {
-      color: #6E6D6A;
-    }
-
-    &.selected {
-      color: #17A7A2;
-
-      &:hover {
-        color: #FF5E54;
+  //Secundary colors
+  @each $name-color, $color in $secundary-colors {
+    &.#{$name-color} {
+      .bottombar {
+        .views {
+          li {
+            a {
+              &.active {
+                color: $color;
+              }
+            }
+          }
+        }
+        .mass-form-delete {
+          &.selected {
+            &:hover {
+              color: $color;
+            }
+          }
+        }
+        .create-new-form {
+          #add-form {
+            &:hover {
+              span {
+                background-color: $color;
+              }
+            }
+          }
+        }
       }
     }
   }
 
-  .create-new-form {
-    .icon-arrow {
+  //Basic colors
+  .bottombar {
+    background-color: white;
+    color: black;
+    box-shadow: 0 -2px 0 rgba(0,0,0,.1);
+
+    .views {
+      li {
+        a {
+          color: #A8A5A1;
+
+          &:hover {
+            color: #6E6D6A;
+          }
+        }
+      }
+    }
+
+    .mass-form-delete {
       color: #A8A5A1;
-    }
-
-    #add-form {
-      background-color: rgba(255, 255, 255, .3);
 
       &:hover {
-        span {
-          background-color: #FF5E54;
-        }
-      }
-
-      span {
-        background-color: #22ACA7;
-        color: white;
-        box-shadow: 0 4px 0 rgba(0, 0, 0, .1);
+        color: #6E6D6A;
       }
     }
-  }
 
-  .go-back {
-    color: #22ACA7;
+    .create-new-form {
+      .icon-arrow {
+        color: #A8A5A1;
+      }
 
-    &:hover {
-      color: #197E7A;
+      #add-form {
+        background-color: rgba(255, 255, 255, .3);
+
+        span {
+          color: white;
+          box-shadow: 0 4px 0 rgba(0, 0, 0, .1);
+        }
+      }
     }
   }
 }

@@ -7,74 +7,88 @@
                                ooo0  0ooo
 /------------------------------(  )--(  )--------------------------------------/
 /*                             (_)    (_)                                     */
-.futurist .item-line {
-  border: solid 1px #6A676E;
-  background: linear-gradient(-90deg, #6A676E 85%, #ffffff 100%) no-repeat,
-  linear-gradient(0deg, #ffffff 70%, #6A676E 100%) no-repeat,
-  linear-gradient(90deg, #6A676E 85%, #ffffff 100%) no-repeat,
-  linear-gradient(180deg, #ffffff 70%, #6A676E 100%) no-repeat;
-  background-position: top left, top right, bottom left, top left;
-  background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+.futurist {
 
-  &:hover {
-    border: solid 1px #405D63;
-    background: linear-gradient(-90deg, #405D63 85%, #73DDDB 100%) no-repeat,
-    linear-gradient(0deg, #73DDDB 70%, #405D63 100%) no-repeat,
-    linear-gradient(90deg, #405D63 85%, #73DDDB 100%) no-repeat,
-    linear-gradient(180deg, #73DDDB 70%, #405D63 100%) no-repeat;
-    background-position: top left, top right, bottom left, top left;
-    background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
-  }
-
-  &.selectable {
-    border-color: #6A676E;
-
-    &.selected {
-      .left, .right {
-        background-color: rgba(40, 77, 98, .65);
-      }
-    }
-
-    .selection-mask {
-      &:before, &:after {
-        border: solid 2px #73DDDB;
-      }
-    }
-  }
-
-  .left {
-    background-color: rgba(255, 255, 255, .2);
-  }
-
-  .options {
-    background-color: rgba(40, 77, 98, .65);
-
-    li {
-      a {
-        color: #73DDDB;
-
+  //Main colors
+  @each $name-color, $color in $main-colors {
+    &.#{$name-color} {
+      .item-line {
         &:hover {
-          color: white;
+          border: solid 1px darken(rgba($color, .5), 30%);
+          background: linear-gradient(-90deg, darken(rgba($color, .5), 30%) 85%, $color 100%) no-repeat,
+          linear-gradient(0deg, $color 70%, darken(rgba($color, .5), 30%) 100%) no-repeat,
+          linear-gradient(90deg, darken(rgba($color, .5), 30%) 85%, $color 100%) no-repeat,
+          linear-gradient(180deg, $color 70%, darken(rgba($color, .5), 30%) 100%) no-repeat;
+          background-position: top left, top right, bottom left, top left;
+          background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+        }
+        &.selectable {
+          .selection-mask {
+            &:before, &:after {
+              border: solid 2px $color;
+            }
+          }
+          &.selected {
+            .left, .right {
+              background-color: darken(rgba($color, .65), 40%);
+            }
+          }
+        }
+        .options {
+          background-color: darken(rgba($color, .65), 40%);
+          li {
+            a {
+              color: $color;
+            }
+          }
         }
       }
-
-      + li {
-        border-left: solid 2px #263945;
-        box-shadow: inset 1px 0 0 #6B7E8A;
-      }
     }
   }
 
-  @media (min-width: 768px) {
+  //Basic Colors
+  .item-line {
+    border: solid 1px #6A676E;
+    background: linear-gradient(-90deg, #6A676E 85%, #ffffff 100%) no-repeat,
+    linear-gradient(0deg, #ffffff 70%, #6A676E 100%) no-repeat,
+    linear-gradient(90deg, #6A676E 85%, #ffffff 100%) no-repeat,
+    linear-gradient(180deg, #ffffff 70%, #6A676E 100%) no-repeat;
+    background-position: top left, top right, bottom left, top left;
+    background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
 
-    .right {
+    &.selectable, &.selectable:hover {
+      border-color: #6A676E;
+    }
+
+    .left {
       background-color: rgba(255, 255, 255, .2);
-      box-shadow: inset 1px 0 0 #7B7C82;
+    }
 
-      span {
-        &:last-child {
-          border-left: solid 2px #3B3A40;
-          box-shadow: inset 1px 0 0 #7B7C82;
+    .options {
+      li {
+        a {
+          &:hover {
+            color: white;
+          }
+        }
+
+        + li {
+          border-left: solid 2px rgba(0, 0, 0, .27);
+          box-shadow: inset 1px 0 0 rgba(255, 255, 255, .27);
+        }
+      }
+    }
+
+    @media (min-width: 768px) {
+      .right {
+        background-color: rgba(255, 255, 255, .2);
+        box-shadow: inset 1px 0 0 rgba(255,255,255,.27);
+
+        span {
+          &:last-child {
+            border-left: solid 2px rgba(0, 0, 0, .27);
+            box-shadow: inset 1px 0 0 rgba(255,255,255,.27);
+          }
         }
       }
     }

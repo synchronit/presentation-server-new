@@ -7,38 +7,62 @@
                                ooo0  0ooo
 /------------------------------(  )--(  )--------------------------------------/
 /*                             (_)    (_)                                     */
-.clear .btn {
-  color: white;
-  background-color: #020407;
+.clear {
 
-  &:hover, &:focus {
-    color: #73DDDB;
-  }
+  //Main colors
+  @each $name-color, $color in $main-colors {
+    &.#{$name-color} {
+      .btn {
+        &:hover, &:focus {
+          color: $color;
+        }
+        &.btn-primary {
+          background-color: $color;
+        }
+        &.btn-primary-2 {
+          background-color: darken($color, 20%);
+          color: white;
 
-  &.btn-primary {
-    background-color: #73DDDB;
-    color: #0A101A;
-
-    &:hover {
-      background-color: #FF5E54;
+          &:hover {
+            background-color: darken($color, 30%);
+          }
+        }
+      }
     }
   }
 
-  &.btn-primary-2 {
-    background-color: darken(#73DDDB, 20%);
-    color: white;
-
-    &:hover {
-      background-color: darken(#73DDDB, 30%);
+  //Secundary colors
+  @each $name-color, $color in $secundary-colors {
+    &.#{$name-color} {
+      .btn {
+        &.btn-primary {
+          &:hover {
+            background-color: $color;
+          }
+        }
+      }
     }
   }
 
-  &.btn-secundary {
-    background-color: #874A4A;
+  .btn {
     color: white;
+    background-color: #020407;
 
-    &:hover {
-      background-color: #633636;
+    &.btn-primary {
+      color: #0A101A;
+
+      &:hover {
+        color: #0A101A;
+      }
+    }
+
+    &.btn-secundary {
+      background-color: #874A4A;
+      color: white!important;
+
+      &:hover {
+        background-color: #633636;
+      }
     }
   }
 }

@@ -7,43 +7,80 @@
                                ooo0  0ooo
 /------------------------------(  )--(  )--------------------------------------/
 /*                             (_)    (_)                                     */
-.clear .content {
-  .background {
-    background: linear-gradient(120deg, #DFEAE5 0%, #F1ECE6 45%, #F1ECE6 50%, #F3DDD6 100%);
+.clear {
+
+  &.degraded {
+    .background {
+      background: linear-gradient(120deg, #DFEAE5 0%, #F1ECE6 45%, #F1ECE6 50%, #F3DDD6 100%);
+    }
   }
 
-  .work-zone {
-    header {
-      .order-forms {
-        span {
-          color: #A6A4A1;
+  &.plain {
+    .background {
+      background: #F1ECE6;
+    }
+  }
+
+  //Main colors
+  @each $name-color, $color in $main-colors {
+    &.#{$name-color} {
+      .content {
+        .work-zone {
+          header {
+            .order-forms {
+              .dropdown-menu {
+                color: $color;
+                li {
+                  &:hover, &.active {
+                    background-color: $color;
+                  }
+                }
+              }
+            }
+          }
+          .up {
+            color: $color;
+            &:hover {
+              color: darken($color, 10%);
+            }
+          }
         }
+      }
+    }
+  }
 
-        a {
-          color: #0A101A;
-        }
-
-        .dropdown-menu {
-          background-color: rgba(255, 255, 255, .9);
-          color: #22ACA7;
-          border: solid 3px white;
-          margin: 0 auto;
-          padding: 0;
-
-          &:before {
-            @include triangle-top-center(7px, 7px, 7px, 7px, white);
+  .content {
+    .work-zone {
+      header {
+        .order-forms {
+          span {
+            color: #A6A4A1;
           }
 
-          li {
-            background-color: #F8F5F2;
+          a {
+            color: #0A101A;
+          }
 
-            &:hover, &.active {
-              color: #ffffff;
-              background-color: #22ACA7;
+          .dropdown-menu {
+            background-color: rgba(255, 255, 255, .9);
+            border: solid 3px white;
+            margin: 0 auto;
+            padding: 0;
+
+            &:before {
+              @include triangle-top-center(7px, 7px, 7px, 7px, white);
             }
 
-            + li {
-              border-top: solid 1px #DBD7D2;
+            li {
+              background-color: #F8F5F2;
+
+              &:hover, &.active {
+                color: #ffffff;
+              }
+
+              + li {
+                border-top: solid 1px #DBD7D2;
+              }
             }
           }
         }

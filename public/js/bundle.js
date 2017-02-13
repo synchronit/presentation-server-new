@@ -51972,7 +51972,11 @@
 	var initialState = {
 	    skin: 'futurist',
 	    layout: 'boxed',
-	    background: 'degraded'
+	    background: 'degraded',
+	    workspace: 'workspace-color2',
+	    header: 'dark',
+	    mainColor: 'main-color1',
+	    secundaryColor: 'secundary-color1'
 	};
 
 	var skinSettings = function skinSettings() {
@@ -51988,6 +51992,16 @@
 	            return Object.assign({}, state, { skin: action.skin, layout: layout, background: 'degraded' });
 	        case 'CHANGE_SKIN_LAYOUT':
 	            return Object.assign({}, state, { layout: action.layout });
+	        case 'CHANGE_SKIN_BACKGROUND':
+	            return Object.assign({}, state, { background: action.background });
+	        case 'CHANGE_SKIN_HEADER':
+	            return Object.assign({}, state, { header: action.header });
+	        case 'CHANGE_SKIN_WORKSPACE':
+	            return Object.assign({}, state, { workspace: action.workspace });
+	        case 'CHANGE_SKIN_MAIN_COLOR':
+	            return Object.assign({}, state, { mainColor: action.mainColor });
+	        case 'CHANGE_SKIN_SECUNDARY_COLOR':
+	            return Object.assign({}, state, { secundaryColor: action.secundaryColor });
 	        case 'RESET_DEFAULT_STYLES':
 	            return initialState;
 	        default:
@@ -52081,15 +52095,20 @@
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                { id: 'base', className: "base " + this.props.skin },
+	                { id: 'base', className: "base " + this.props.skin + " " + this.props.layout + " " + this.props.header + " " + this.props.background + " " + this.props.workspace + " " + this.props.mainColor + " " + this.props.secundaryColor },
 	                _react2.default.createElement(_Loader2.default, null),
 	                _react2.default.createElement(_TopBar2.default, null),
-	                this.props.children,
+	                _react2.default.createElement(
+	                    'article',
+	                    { className: 'content' },
+	                    _react2.default.createElement('div', { className: 'background' }),
+	                    this.props.children
+	                ),
 	                _react2.default.createElement(_BottomBar2.default, { path: this.props.location.pathname }),
 	                _react2.default.createElement(_Modal2.default, { id: 'modal-notifications', title: 'NOTIFICATIONS', icon: 'icon-notification' }),
 	                _react2.default.createElement(_Modal2.default, { id: 'modal-delete', title: 'Do you really want to delete this form?', icon: 'icon-delete' }),
 	                _react2.default.createElement(_Modal2.default, { id: 'modal-mass-delete', title: 'Do you really want to delete all this forms?', icon: 'icon-delete' }),
-	                _react2.default.createElement(_Modal2.default, { id: 'modal-reset-styles', title: 'Do you really want to reset to default styles?', icon: 'icon-delete' })
+	                _react2.default.createElement(_Modal2.default, { id: 'modal-reset-styles', title: 'Do you really want to reset to default styles?', icon: 'icon-reset' })
 	            );
 	        }
 	    }]);
@@ -52099,7 +52118,13 @@
 
 	var mapStateToProps = function mapStateToProps(state) {
 	    return {
-	        skin: state.skinSettings.skin
+	        skin: state.skinSettings.skin,
+	        layout: state.skinSettings.layout,
+	        background: state.skinSettings.background,
+	        workspace: state.skinSettings.workspace,
+	        header: state.skinSettings.header,
+	        mainColor: state.skinSettings.mainColor,
+	        secundaryColor: state.skinSettings.secundaryColor
 	    };
 	};
 
@@ -52126,8 +52151,6 @@
 
 	var _reactRouter = __webpack_require__(478);
 
-	var _reactRedux = __webpack_require__(554);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -52150,7 +52173,7 @@
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'nav',
-	                { className: "topbar " + this.props.layout },
+	                { className: 'topbar' },
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: 'container' },
@@ -52254,15 +52277,7 @@
 	    return TopBarComponent;
 	}(_react2.default.Component);
 
-	var mapStateToProps = function mapStateToProps(state) {
-	    return {
-	        layout: state.skinSettings.layout
-	    };
-	};
-
-	var TopBar = (0, _reactRedux.connect)(mapStateToProps)(TopBarComponent);
-
-	exports.default = TopBar;
+	exports.default = TopBarComponent;
 
 /***/ },
 /* 573 */
@@ -52336,8 +52351,6 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactRedux = __webpack_require__(554);
-
 	var _HomeBottomBar = __webpack_require__(575);
 
 	var _HomeBottomBar2 = _interopRequireDefault(_HomeBottomBar);
@@ -52379,7 +52392,7 @@
 
 	            return _react2.default.createElement(
 	                'nav',
-	                { className: "bottombar " + this.props.layout },
+	                { className: 'bottombar' },
 	                component
 	            );
 	        }
@@ -52388,15 +52401,7 @@
 	    return BottomBarComponent;
 	}(_react2.default.Component);
 
-	var mapStateToProps = function mapStateToProps(state) {
-	    return {
-	        layout: state.skinSettings.layout
-	    };
-	};
-
-	var BottomBar = (0, _reactRedux.connect)(mapStateToProps)(BottomBarComponent);
-
-	exports.default = BottomBar;
+	exports.default = BottomBarComponent;
 
 /***/ },
 /* 575 */
@@ -52803,6 +52808,41 @@
 	    return {
 	        type: 'CHANGE_SKIN_LAYOUT',
 	        layout: layout
+	    };
+	};
+
+	var changeSkinBackground = exports.changeSkinBackground = function changeSkinBackground(background) {
+	    return {
+	        type: 'CHANGE_SKIN_BACKGROUND',
+	        background: background
+	    };
+	};
+
+	var changeSkinHeader = exports.changeSkinHeader = function changeSkinHeader(header) {
+	    return {
+	        type: 'CHANGE_SKIN_HEADER',
+	        header: header
+	    };
+	};
+
+	var changeSkinWorkspace = exports.changeSkinWorkspace = function changeSkinWorkspace(workspace) {
+	    return {
+	        type: 'CHANGE_SKIN_WORKSPACE',
+	        workspace: workspace
+	    };
+	};
+
+	var changeMainColor = exports.changeMainColor = function changeMainColor(mainColor) {
+	    return {
+	        type: 'CHANGE_SKIN_MAIN_COLOR',
+	        mainColor: mainColor
+	    };
+	};
+
+	var changeSecundaryColor = exports.changeSecundaryColor = function changeSecundaryColor(secundaryColor) {
+	    return {
+	        type: 'CHANGE_SKIN_SECUNDARY_COLOR',
+	        secundaryColor: secundaryColor
 	    };
 	};
 
@@ -53903,7 +53943,7 @@
 	                        skin: this.props.skin,
 	                        forms: this.filterList(),
 	                        massFormsSelection: this.props.massFormsSelection,
-	                        orderForms: true
+	                        orderForms: this.props.orderForms
 	                    });
 	                    break;
 	                case 'BOXES_VIEW':
@@ -53917,16 +53957,11 @@
 	            }
 
 	            return _react2.default.createElement(
-	                'article',
-	                { className: "content " + this.props.layout },
-	                _react2.default.createElement('div', { className: 'background' }),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'work-zone' },
-	                    _react2.default.createElement(_HomeHeader2.default, null),
-	                    component,
-	                    _react2.default.createElement('span', { className: "up icon-chevron-up" + (this.props.view == 'CAROUSEL_VIEW' ? ' invisible' : '') })
-	                )
+	                'div',
+	                { className: 'work-zone' },
+	                _react2.default.createElement(_HomeHeader2.default, null),
+	                component,
+	                _react2.default.createElement('span', { className: "up icon-chevron-up" + (this.props.view == 'CAROUSEL_VIEW' ? ' invisible' : '') })
 	            );
 	        }
 	    }]);
@@ -53944,8 +53979,7 @@
 	        massFormsSelection: state.massFormsSelection,
 	        orderForms: state.orderForms,
 	        loading: state.loading,
-	        skin: state.skinSettings.skin,
-	        layout: state.skinSettings.layout
+	        skin: state.skinSettings.skin
 	    };
 	};
 
@@ -61792,14 +61826,9 @@
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
-	                'article',
-	                { className: "content " + this.props.layout },
-	                _react2.default.createElement('div', { className: 'background' }),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'work-zone' },
-	                    this.props.children
-	                )
+	                'div',
+	                { className: 'work-zone' },
+	                this.props.children
 	            );
 	        }
 	    }]);
@@ -61809,7 +61838,8 @@
 
 	var mapStateToProps = function mapStateToProps(state) {
 	    return {
-	        layout: state.skinSettings.layout
+	        layout: state.skinSettings.layout,
+	        background: state.skinSettings.background
 	    };
 	};
 
@@ -62119,6 +62149,26 @@
 
 	var _SettingsHeader2 = _interopRequireDefault(_SettingsHeader);
 
+	var _SkinConfigColorsBox = __webpack_require__(611);
+
+	var _SkinConfigColorsBox2 = _interopRequireDefault(_SkinConfigColorsBox);
+
+	var _SkinConfigWorkSpaceBox = __webpack_require__(612);
+
+	var _SkinConfigWorkSpaceBox2 = _interopRequireDefault(_SkinConfigWorkSpaceBox);
+
+	var _SkinConfigHeaderBox = __webpack_require__(608);
+
+	var _SkinConfigHeaderBox2 = _interopRequireDefault(_SkinConfigHeaderBox);
+
+	var _SkinConfigBackgroudBox = __webpack_require__(609);
+
+	var _SkinConfigBackgroudBox2 = _interopRequireDefault(_SkinConfigBackgroudBox);
+
+	var _SkinConfigLayoutBox = __webpack_require__(610);
+
+	var _SkinConfigLayoutBox2 = _interopRequireDefault(_SkinConfigLayoutBox);
+
 	var _actions = __webpack_require__(579);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -62143,12 +62193,18 @@
 	            args[_key] = arguments[_key];
 	        }
 
-	        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = SkinConfigurationsComponent.__proto__ || Object.getPrototypeOf(SkinConfigurationsComponent)).call.apply(_ref, [this].concat(args))), _this), _this.changeSkinLayoutToBoxed = function (e) {
-	            e.preventDefault();
-	            _this.props.dispatch((0, _actions.changeSkinLayout)('boxed'));
-	        }, _this.changeSkinLayoutToFluid = function (e) {
-	            e.preventDefault();
-	            _this.props.dispatch((0, _actions.changeSkinLayout)('fluid'));
+	        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = SkinConfigurationsComponent.__proto__ || Object.getPrototypeOf(SkinConfigurationsComponent)).call.apply(_ref, [this].concat(args))), _this), _this.handleChangeMainColor = function (e) {
+	            _this.props.dispatch((0, _actions.changeMainColor)(e.target.value));
+	        }, _this.handleChangeSecundaryColor = function (e) {
+	            _this.props.dispatch((0, _actions.changeSecundaryColor)(e.target.value));
+	        }, _this.handleChangelayout = function (e) {
+	            _this.props.dispatch((0, _actions.changeSkinLayout)(e.target.value));
+	        }, _this.handleChangeBackground = function (e) {
+	            _this.props.dispatch((0, _actions.changeSkinBackground)(e.target.value));
+	        }, _this.handleChangeHeader = function (e) {
+	            _this.props.dispatch((0, _actions.changeSkinHeader)(e.target.value));
+	        }, _this.handleChangeWorkspace = function (e) {
+	            _this.props.dispatch((0, _actions.changeSkinWorkspace)(e.target.value));
 	        }, _temp), _possibleConstructorReturn(_this, _ret);
 	    }
 
@@ -62162,53 +62218,31 @@
 	                _react2.default.createElement(
 	                    'section',
 	                    { className: 'container' },
-	                    _react2.default.createElement(
-	                        'h2',
-	                        null,
-	                        'LAYOUT'
-	                    ),
-	                    _react2.default.createElement(
-	                        'a',
-	                        { href: '#', onClick: this.changeSkinLayoutToBoxed },
-	                        'Boxed'
-	                    ),
-	                    _react2.default.createElement(
-	                        'a',
-	                        { href: '#', onClick: this.changeSkinLayoutToFluid },
-	                        ' Fluid'
-	                    ),
-	                    _react2.default.createElement(
-	                        'h2',
-	                        null,
-	                        'BACKGROUND'
-	                    ),
-	                    _react2.default.createElement(
-	                        'a',
-	                        { href: '' },
-	                        'Degraded'
-	                    ),
-	                    ' ',
-	                    _react2.default.createElement(
-	                        'a',
-	                        { href: '' },
-	                        'Plain'
-	                    ),
-	                    _react2.default.createElement(
-	                        'h2',
-	                        null,
-	                        'HEADER'
-	                    ),
-	                    _react2.default.createElement(
-	                        'a',
-	                        { href: '' },
-	                        'Dark'
-	                    ),
-	                    ' ',
-	                    _react2.default.createElement(
-	                        'a',
-	                        { href: '' },
-	                        'Light'
-	                    )
+	                    _react2.default.createElement(_SkinConfigColorsBox2.default, {
+	                        mainColor: this.props.skinSettings.mainColor,
+	                        secundaryColor: this.props.skinSettings.secundaryColor,
+	                        handleChangeMainColor: this.handleChangeMainColor,
+	                        handleChangeSecundaryColor: this.handleChangeSecundaryColor
+	                    }),
+	                    this.props.skinSettings.skin == 'vintage' && _react2.default.createElement(_SkinConfigWorkSpaceBox2.default, {
+	                        value: this.props.skinSettings.workspace,
+	                        handleChangeWorkspace: this.handleChangeWorkspace
+	                    }),
+	                    this.props.skinSettings.skin != 'vintage' && _react2.default.createElement(_SkinConfigHeaderBox2.default, {
+	                        skin: this.props.skinSettings.skin,
+	                        value: this.props.skinSettings.header,
+	                        handleChangeHeader: this.handleChangeHeader
+	                    }),
+	                    this.props.skinSettings.skin != 'vintage' && _react2.default.createElement(_SkinConfigBackgroudBox2.default, {
+	                        skin: this.props.skinSettings.skin,
+	                        value: this.props.skinSettings.background,
+	                        handleChangeBackground: this.handleChangeBackground
+	                    }),
+	                    _react2.default.createElement(_SkinConfigLayoutBox2.default, {
+	                        skin: this.props.skinSettings.skin,
+	                        value: this.props.skinSettings.layout,
+	                        handleChangelayout: this.handleChangelayout
+	                    })
 	                )
 	            );
 	        }
@@ -62217,9 +62251,617 @@
 	    return SkinConfigurationsComponent;
 	}(_react2.default.Component);
 
-	var SkinConfigurations = (0, _reactRedux.connect)()(SkinConfigurationsComponent);
+	var mapStateToProps = function mapStateToProps(state) {
+	    return {
+	        skinSettings: state.skinSettings
+	    };
+	};
+
+	var SkinConfigurations = (0, _reactRedux.connect)(mapStateToProps)(SkinConfigurationsComponent);
 
 	exports.default = SkinConfigurations;
+
+/***/ },
+/* 608 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(302);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SkinConfigHeaderBoxComponent = function (_React$Component) {
+	    _inherits(SkinConfigHeaderBoxComponent, _React$Component);
+
+	    function SkinConfigHeaderBoxComponent() {
+	        _classCallCheck(this, SkinConfigHeaderBoxComponent);
+
+	        return _possibleConstructorReturn(this, (SkinConfigHeaderBoxComponent.__proto__ || Object.getPrototypeOf(SkinConfigHeaderBoxComponent)).apply(this, arguments));
+	    }
+
+	    _createClass(SkinConfigHeaderBoxComponent, [{
+	        key: "render",
+	        value: function render() {
+
+	            return _react2.default.createElement(
+	                "div",
+	                { className: "config-box col-xs-12 col-lg-6" },
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "item config-header" },
+	                    _react2.default.createElement(
+	                        "h3",
+	                        null,
+	                        "HEADER:"
+	                    ),
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "left" },
+	                        _react2.default.createElement(
+	                            "label",
+	                            null,
+	                            _react2.default.createElement("input", {
+	                                type: "radio",
+	                                name: "header",
+	                                value: "dark",
+	                                checked: this.props.value == 'dark',
+	                                onChange: this.props.handleChangeHeader
+	                            }),
+	                            "Dark"
+	                        ),
+	                        _react2.default.createElement("img", {
+	                            src: "images/" + this.props.skin + "/header-dark.png",
+	                            className: this.props.value == 'dark' ? "selected" : ""
+	                        })
+	                    ),
+	                    _react2.default.createElement(
+	                        "span",
+	                        { className: "or" },
+	                        "OR"
+	                    ),
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "right" },
+	                        _react2.default.createElement(
+	                            "label",
+	                            null,
+	                            _react2.default.createElement("input", {
+	                                type: "radio",
+	                                name: "header",
+	                                value: "light",
+	                                checked: this.props.value == 'light',
+	                                onChange: this.props.handleChangeHeader
+	                            }),
+	                            "Light"
+	                        ),
+	                        _react2.default.createElement("img", {
+	                            src: "images/" + this.props.skin + "/header-light.png",
+	                            className: this.props.value == 'light' ? "selected" : ""
+	                        })
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return SkinConfigHeaderBoxComponent;
+	}(_react2.default.Component);
+
+	exports.default = SkinConfigHeaderBoxComponent;
+
+/***/ },
+/* 609 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(302);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SkinConfigBackgroudBoxComponent = function (_React$Component) {
+	    _inherits(SkinConfigBackgroudBoxComponent, _React$Component);
+
+	    function SkinConfigBackgroudBoxComponent() {
+	        _classCallCheck(this, SkinConfigBackgroudBoxComponent);
+
+	        return _possibleConstructorReturn(this, (SkinConfigBackgroudBoxComponent.__proto__ || Object.getPrototypeOf(SkinConfigBackgroudBoxComponent)).apply(this, arguments));
+	    }
+
+	    _createClass(SkinConfigBackgroudBoxComponent, [{
+	        key: "render",
+	        value: function render() {
+
+	            return _react2.default.createElement(
+	                "div",
+	                { className: "config-box col-xs-12 col-lg-6" },
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "item config-background" },
+	                    _react2.default.createElement(
+	                        "h3",
+	                        null,
+	                        "BACKGROUND:"
+	                    ),
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "left" },
+	                        _react2.default.createElement(
+	                            "label",
+	                            null,
+	                            _react2.default.createElement("input", {
+	                                type: "radio",
+	                                name: "background",
+	                                value: "degraded",
+	                                checked: this.props.value == 'degraded',
+	                                onChange: this.props.handleChangeBackground
+	                            }),
+	                            "Degraded"
+	                        ),
+	                        _react2.default.createElement("img", {
+	                            src: "images/" + this.props.skin + "/background-degraded.png",
+	                            className: this.props.value == 'degraded' ? "selected" : ""
+	                        })
+	                    ),
+	                    _react2.default.createElement(
+	                        "span",
+	                        { className: "or" },
+	                        "OR"
+	                    ),
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "right" },
+	                        _react2.default.createElement(
+	                            "label",
+	                            null,
+	                            _react2.default.createElement("input", {
+	                                type: "radio",
+	                                name: "background",
+	                                value: "plain",
+	                                checked: this.props.value == 'plain',
+	                                onChange: this.props.handleChangeBackground
+	                            }),
+	                            "Plain"
+	                        ),
+	                        _react2.default.createElement("img", {
+	                            src: "images/" + this.props.skin + "/background-plain.png",
+	                            className: this.props.value == 'plain' ? "selected" : ""
+	                        })
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return SkinConfigBackgroudBoxComponent;
+	}(_react2.default.Component);
+
+	exports.default = SkinConfigBackgroudBoxComponent;
+
+/***/ },
+/* 610 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(302);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SkinConfigLayoutBoxComponent = function (_React$Component) {
+	    _inherits(SkinConfigLayoutBoxComponent, _React$Component);
+
+	    function SkinConfigLayoutBoxComponent() {
+	        _classCallCheck(this, SkinConfigLayoutBoxComponent);
+
+	        return _possibleConstructorReturn(this, (SkinConfigLayoutBoxComponent.__proto__ || Object.getPrototypeOf(SkinConfigLayoutBoxComponent)).apply(this, arguments));
+	    }
+
+	    _createClass(SkinConfigLayoutBoxComponent, [{
+	        key: "render",
+	        value: function render() {
+
+	            return _react2.default.createElement(
+	                "div",
+	                { className: "config-box col-xs-12 col-lg-6" },
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "item config-layout" },
+	                    _react2.default.createElement(
+	                        "h3",
+	                        null,
+	                        "LAYOUT:"
+	                    ),
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "left" },
+	                        _react2.default.createElement(
+	                            "label",
+	                            null,
+	                            _react2.default.createElement("input", {
+	                                type: "radio",
+	                                name: "layout",
+	                                value: "boxed",
+	                                checked: this.props.value == 'boxed',
+	                                onChange: this.props.handleChangelayout
+	                            }),
+	                            "Boxed"
+	                        ),
+	                        _react2.default.createElement("img", {
+	                            src: "images/" + this.props.skin + "/layout-boxed.png",
+	                            className: this.props.value == 'boxed' ? "selected" : ""
+	                        })
+	                    ),
+	                    _react2.default.createElement(
+	                        "span",
+	                        { className: "or" },
+	                        "OR"
+	                    ),
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "right" },
+	                        _react2.default.createElement(
+	                            "label",
+	                            null,
+	                            _react2.default.createElement("input", {
+	                                type: "radio",
+	                                name: "layout",
+	                                value: "fluid",
+	                                checked: this.props.value == 'fluid',
+	                                onChange: this.props.handleChangelayout
+	                            }),
+	                            "Fluid"
+	                        ),
+	                        _react2.default.createElement("img", {
+	                            src: "images/" + this.props.skin + "/layout-fluid.png",
+	                            className: this.props.value == 'fluid' ? "selected" : ""
+	                        })
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return SkinConfigLayoutBoxComponent;
+	}(_react2.default.Component);
+
+	exports.default = SkinConfigLayoutBoxComponent;
+
+/***/ },
+/* 611 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(302);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SkinConfigColorsBoxComponent = function (_React$Component) {
+	    _inherits(SkinConfigColorsBoxComponent, _React$Component);
+
+	    function SkinConfigColorsBoxComponent() {
+	        _classCallCheck(this, SkinConfigColorsBoxComponent);
+
+	        return _possibleConstructorReturn(this, (SkinConfigColorsBoxComponent.__proto__ || Object.getPrototypeOf(SkinConfigColorsBoxComponent)).apply(this, arguments));
+	    }
+
+	    _createClass(SkinConfigColorsBoxComponent, [{
+	        key: "render",
+	        value: function render() {
+
+	            return _react2.default.createElement(
+	                "div",
+	                { className: "config-box col-xs-12 col-lg-6" },
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "item config-colors" },
+	                    _react2.default.createElement(
+	                        "h3",
+	                        null,
+	                        "ELEMENTS COLORS:"
+	                    ),
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "left" },
+	                        _react2.default.createElement(
+	                            "label",
+	                            null,
+	                            "Main"
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "color main-color1 " + (this.props.mainColor == 'main-color1' ? " selected" : "") },
+	                            _react2.default.createElement("input", {
+	                                type: "radio",
+	                                value: "main-color1",
+	                                name: "main-color",
+	                                checked: this.props.mainColor == 'main-color1',
+	                                onChange: this.props.handleChangeMainColor
+	                            }),
+	                            _react2.default.createElement("span", null)
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "color main-color2 " + (this.props.mainColor == 'main-color2' ? " selected" : "") },
+	                            _react2.default.createElement("input", {
+	                                type: "radio",
+	                                value: "main-color2",
+	                                name: "main-color",
+	                                checked: this.props.mainColor == 'main-color2',
+	                                onChange: this.props.handleChangeMainColor
+	                            }),
+	                            _react2.default.createElement("span", null)
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "color main-color3 " + (this.props.mainColor == 'main-color3' ? " selected" : "") },
+	                            _react2.default.createElement("input", {
+	                                type: "radio",
+	                                value: "main-color3",
+	                                name: "main-color",
+	                                checked: this.props.mainColor == 'main-color3',
+	                                onChange: this.props.handleChangeMainColor
+	                            }),
+	                            _react2.default.createElement("span", null)
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "color main-color4 " + (this.props.mainColor == 'main-color4' ? " selected" : "") },
+	                            _react2.default.createElement("input", {
+	                                type: "radio",
+	                                value: "main-color4",
+	                                name: "main-color",
+	                                checked: this.props.mainColor == 'main-color4',
+	                                onChange: this.props.handleChangeMainColor
+	                            }),
+	                            _react2.default.createElement("span", null)
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "color main-color5 " + (this.props.mainColor == 'main-color5' ? " selected" : "") },
+	                            _react2.default.createElement("input", {
+	                                type: "radio",
+	                                value: "main-color5",
+	                                name: "main-color",
+	                                checked: this.props.mainColor == 'main-color5',
+	                                onChange: this.props.handleChangeMainColor
+	                            }),
+	                            _react2.default.createElement("span", null)
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "right" },
+	                        _react2.default.createElement(
+	                            "label",
+	                            null,
+	                            "Secundary"
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "color secundary-color1 " + (this.props.secundaryColor == 'secundary-color1' ? " selected" : "") },
+	                            _react2.default.createElement("input", {
+	                                type: "radio",
+	                                value: "secundary-color1",
+	                                name: "secundary-color",
+	                                checked: this.props.secundaryColor == 'secundary-color1',
+	                                onChange: this.props.handleChangeSecundaryColor
+	                            }),
+	                            _react2.default.createElement("span", null)
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "color secundary-color2 " + (this.props.secundaryColor == 'secundary-color2' ? " selected" : "") },
+	                            _react2.default.createElement("input", {
+	                                type: "radio",
+	                                value: "secundary-color2",
+	                                name: "secundary-color",
+	                                checked: this.props.secundaryColor == 'secundary-color2',
+	                                onChange: this.props.handleChangeSecundaryColor
+	                            }),
+	                            _react2.default.createElement("span", null)
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "color secundary-color3 " + (this.props.secundaryColor == 'secundary-color3' ? " selected" : "") },
+	                            _react2.default.createElement("input", {
+	                                type: "radio",
+	                                value: "secundary-color3",
+	                                name: "secundary-color",
+	                                checked: this.props.secundaryColor == 'secundary-color3',
+	                                onChange: this.props.handleChangeSecundaryColor
+	                            }),
+	                            _react2.default.createElement("span", null)
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "color secundary-color4 " + (this.props.secundaryColor == 'secundary-color4' ? " selected" : "") },
+	                            _react2.default.createElement("input", {
+	                                type: "radio",
+	                                value: "secundary-color4",
+	                                name: "secundary-color",
+	                                checked: this.props.secundaryColor == 'secundary-color4',
+	                                onChange: this.props.handleChangeSecundaryColor
+	                            }),
+	                            _react2.default.createElement("span", null)
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "color secundary-color5 " + (this.props.secundaryColor == 'secundary-color5' ? " selected" : "") },
+	                            _react2.default.createElement("input", {
+	                                type: "radio",
+	                                value: "secundary-color5",
+	                                name: "secundary-color",
+	                                checked: this.props.secundaryColor == 'secundary-color5',
+	                                onChange: this.props.handleChangeSecundaryColor
+	                            }),
+	                            _react2.default.createElement("span", null)
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return SkinConfigColorsBoxComponent;
+	}(_react2.default.Component);
+
+	exports.default = SkinConfigColorsBoxComponent;
+
+/***/ },
+/* 612 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(302);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SkinConfigWorkSpaceBoxComponent = function (_React$Component) {
+	    _inherits(SkinConfigWorkSpaceBoxComponent, _React$Component);
+
+	    function SkinConfigWorkSpaceBoxComponent() {
+	        _classCallCheck(this, SkinConfigWorkSpaceBoxComponent);
+
+	        return _possibleConstructorReturn(this, (SkinConfigWorkSpaceBoxComponent.__proto__ || Object.getPrototypeOf(SkinConfigWorkSpaceBoxComponent)).apply(this, arguments));
+	    }
+
+	    _createClass(SkinConfigWorkSpaceBoxComponent, [{
+	        key: "render",
+	        value: function render() {
+
+	            return _react2.default.createElement(
+	                "div",
+	                { className: "config-box col-xs-12 col-lg-6" },
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "item config-colors" },
+	                    _react2.default.createElement(
+	                        "h3",
+	                        null,
+	                        "BACKGROUND:"
+	                    ),
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "left" },
+	                        _react2.default.createElement(
+	                            "label",
+	                            null,
+	                            "Workspace Color"
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "color workspace-color1" + (this.props.value == 'workspace-color1' ? " selected" : "") },
+	                            _react2.default.createElement("input", { type: "radio", value: "workspace-color1", name: "workspace-color", onChange: this.props.handleChangeWorkspace }),
+	                            _react2.default.createElement("span", null)
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "color workspace-color2" + (this.props.value == 'workspace-color2' ? " selected" : "") },
+	                            _react2.default.createElement("input", { type: "radio", value: "workspace-color2", name: "workspace-color", onChange: this.props.handleChangeWorkspace }),
+	                            _react2.default.createElement("span", null)
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "color workspace-color3" + (this.props.value == 'workspace-color3' ? " selected" : "") },
+	                            _react2.default.createElement("input", { type: "radio", value: "workspace-color3", name: "workspace-color", onChange: this.props.handleChangeWorkspace }),
+	                            _react2.default.createElement("span", null)
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "color workspace-color4" + (this.props.value == 'workspace-color4' ? " selected" : "") },
+	                            _react2.default.createElement("input", { type: "radio", value: "workspace-color4", name: "workspace-color", onChange: this.props.handleChangeWorkspace }),
+	                            _react2.default.createElement("span", null)
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "color workspace-color5" + (this.props.value == 'workspace-color5' ? " selected" : "") },
+	                            _react2.default.createElement("input", { type: "radio", value: "workspace-color5", name: "workspace-color", onChange: this.props.handleChangeWorkspace }),
+	                            _react2.default.createElement("span", null)
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return SkinConfigWorkSpaceBoxComponent;
+	}(_react2.default.Component);
+
+	exports.default = SkinConfigWorkSpaceBoxComponent;
 
 /***/ }
 /******/ ]);

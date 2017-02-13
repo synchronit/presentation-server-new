@@ -55,7 +55,7 @@ class HomeComponent extends React.Component {
                     skin={this.props.skin}
                     forms={this.filterList()}
                     massFormsSelection={this.props.massFormsSelection}
-                orderForms
+                    orderForms={this.props.orderForms}
                 />
                 break
             case 'BOXES_VIEW':
@@ -69,14 +69,11 @@ class HomeComponent extends React.Component {
         }
 
         return (
-            <article className={"content " + this.props.layout}>
-                <div className="background"></div>
-                <div className="work-zone">
-                    <HomeHeader />
-                    {component}
-                    <span className={"up icon-chevron-up" + (this.props.view == 'CAROUSEL_VIEW' ? ' invisible' : '')}></span>
-                </div>
-            </article>
+            <div className="work-zone">
+                <HomeHeader />
+                {component}
+                <span className={"up icon-chevron-up" + (this.props.view == 'CAROUSEL_VIEW' ? ' invisible' : '')}></span>
+            </div>
         );
     }
 }
@@ -91,8 +88,7 @@ const mapStateToProps = (state) => {
         massFormsSelection: state.massFormsSelection,
         orderForms: state.orderForms,
         loading: state.loading,
-        skin: state.skinSettings.skin,
-        layout: state.skinSettings.layout
+        skin: state.skinSettings.skin
     }
 }
 

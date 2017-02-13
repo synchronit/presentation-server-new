@@ -18,12 +18,20 @@
   }
 }
 
-.futurist .input-group {
-  background: linear-gradient(to right, #7B7D83 0%, #3E3B44 15%, #3E3B44 85%,#73DDDB 100%) no-repeat;
-  background-position: top left;
-  background-size: 100% 3px;
+.futurist {
 
-  .input-group-addon {
-    color: #73DDDB;
+  //Main colors
+  @each $name-color, $color in $main-colors {
+    &.#{$name-color} {
+      .input-group {
+        background: linear-gradient(to right, #7B7D83 0%, #3E3B44 15%, #3E3B44 85%, $color 100%) no-repeat;
+        background-position: top left;
+        background-size: 100% 3px;
+
+        .input-group-addon {
+          color: $color;
+        }
+      }
+    }
   }
 }

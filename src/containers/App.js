@@ -34,21 +34,37 @@ class AppComponent extends React.Component {
     }
 
     render() {
-        return <div id="base" className={"base " + this.props.skin}>
+        return <div id="base" className={
+                    "base " + this.props.skin +
+                    " " + this.props.layout +
+                    " " + this.props.header +
+                    " " + this.props.background +
+                    " " + this.props.workspace +
+                    " " + this.props.mainColor +
+                    " " + this.props.secundaryColor }>
                     <Loader />
                     <TopBar />
-                    {this.props.children}
+                    <article className="content">
+                        <div className="background"></div>
+                        {this.props.children}
+                    </article>
                     <BottomBar path={this.props.location.pathname} />
                     <Modal id="modal-notifications" title="NOTIFICATIONS" icon="icon-notification"/>
                     <Modal id="modal-delete" title="Do you really want to delete this form?" icon="icon-delete"/>
                     <Modal id="modal-mass-delete" title="Do you really want to delete all this forms?" icon="icon-delete"/>
-                    <Modal id="modal-reset-styles" title="Do you really want to reset to default styles?" icon="icon-delete"/>
+                    <Modal id="modal-reset-styles" title="Do you really want to reset to default styles?" icon="icon-reset"/>
                </div>
     }
 }
 
 const mapStateToProps = (state) => ({
-    skin: state.skinSettings.skin
+    skin: state.skinSettings.skin,
+    layout: state.skinSettings.layout,
+    background: state.skinSettings.background,
+    workspace: state.skinSettings.workspace,
+    header: state.skinSettings.header,
+    mainColor: state.skinSettings.mainColor,
+    secundaryColor: state.skinSettings.secundaryColor
 })
 
 const App = connect(mapStateToProps)(AppComponent)

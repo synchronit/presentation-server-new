@@ -1,0 +1,156 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/---   CONFIG BOX    CONFIG BOX    CONFIG BOX    CONFIG BOX    CONFIG BOX   ---/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.vintage .config-box {
+  padding: 0;
+
+  &:last-child {
+    .item {
+      height: 375px;
+    }
+  }
+
+  .item {
+    background: url(../images/vintage/config-box.png) no-repeat;
+    background-size: 100% 100%;
+    height: 255px;
+    color: #0A101A;
+    padding: 30px 30px 35px 30px;
+
+    h3 {
+      margin: 10px 0 10px 0 !important;
+    }
+
+    .or {
+      color: #808080;
+    }
+
+    img {
+      &.selected {
+        border: solid 2px #0A101A;
+      }
+    }
+
+    .color {
+      &.selected {
+        border: solid 2px #0A101A;
+      }
+
+      &.main-color1 {
+        span {
+          background-color: #30AEAC;
+        }
+      }
+      &.main-color2 {
+        span {
+          background-color: #2C9974;
+        }
+      }
+      &.main-color3 {
+        span {
+          background-color: #993366;
+        }
+      }
+      &.main-color4 {
+        span {
+          background-color: #CF2013;
+        }
+      }
+      &.main-color5 {
+        span {
+          background-color: #5636A1;
+        }
+      }
+      &.secundary-color1 {
+        span {
+          background-color: #FF5E54;
+        }
+      }
+      &.secundary-color2 {
+        span {
+          background-color: #FFA600;
+        }
+      }
+      &.secundary-color3 {
+        span {
+          background-color: #33CC33;
+        }
+      }
+      &.secundary-color4 {
+        span {
+          background-color: #4477DD;
+        }
+      }
+      &.secundary-color5 {
+        span {
+          background-color: #ED129A;
+        }
+      }
+      &.workspace-color1 {
+        span {
+          background-color: #C6B186;
+        }
+      }
+      &.workspace-color2 {
+        span {
+          background-color: #CCAC63;
+        }
+      }
+      &.workspace-color3 {
+        span {
+          background-color: #527974;
+        }
+      }
+      &.workspace-color4 {
+        span {
+          background-color: #5C6375;
+        }
+      }
+      &.workspace-color5 {
+        span {
+          background-color: #7D514F;
+        }
+      }
+    }
+  }
+
+  @media(min-width: 544px) {
+    &:last-child {
+      .item {
+        height: 220px;
+      }
+    }
+
+    .item {
+      width: 460px;
+      margin: 0 auto;
+      height: 180px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .item {
+      background-size: calc(100% + 10px) 100%;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .item {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    &:last-child {
+      .item {
+        height: 180px;
+      }
+    }
+  }
+}

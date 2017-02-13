@@ -7,67 +7,96 @@
                                ooo0  0ooo
 /------------------------------(  )--(  )--------------------------------------/
 /*                             (_)    (_)                                     */
-.vintage .content {
-  .background {
-    background: #CCAC63;
+.vintage {
+
+  &.workspace-color1 {
+    .background {
+      background: #C6B186;
+    }
   }
 
-  .work-zone {
-    header {
-      h1 {
-        font-family: 'Kalam', cursive;
-        font-weight: normal;
+  &.workspace-color2 {
+    .background {
+      background: #CCAC63;
+    }
+  }
 
-        small {
-          font-family: 'Roboto Condensed';
+  &.workspace-color3 {
+    .background {
+      background: #527974;
+    }
+  }
+
+  &.workspace-color4 {
+    .background {
+      background: #5C6375;
+    }
+  }
+
+  &.workspace-color5 {
+    .background {
+      background: #7D514F;
+    }
+  }
+
+  .content {
+    .work-zone {
+      header {
+        h1 {
+          font-family: 'Kalam', cursive;
+          font-weight: normal;
+
+          small {
+            font-family: 'Roboto Condensed';
+          }
+        }
+
+        .order-forms {
+          span {
+            color: rgba(0,0,0,.54);
+          }
+
+          a {
+            color: white;
+          }
+
+          .dropdown-menu {
+            background-color: rgba(255, 255, 255, .9);
+            color: #22ACA7;
+            border: solid 3px white;
+            margin: 0 auto;
+            padding: 0;
+
+            &:before {
+              @include triangle-top-center(7px, 7px, 7px, 7px, white);
+            }
+
+            li {
+              background-color: #F8F5F2;
+
+              &:hover, &.active {
+                color: #ffffff;
+                background-color: #22ACA7;
+              }
+
+              + li {
+                border-top: solid 1px #DBD7D2;
+              }
+            }
+          }
         }
       }
 
-      .order-forms {
-        span {
-          color: #5D4F2D;
-        }
-
-        a {
-          color: white;
-        }
-
-        .dropdown-menu {
-          background-color: rgba(255, 255, 255, .9);
-          color: #22ACA7;
-          border: solid 3px white;
-          margin: 0 auto;
-          padding: 0;
-
-          &:before {
-            @include triangle-top-center(7px, 7px, 7px, 7px, white);
-          }
-
-          li {
-            background-color: #F8F5F2;
-
-            &:hover, &.active {
-              color: #ffffff;
-              background-color: #22ACA7;
-            }
-
-            + li {
-              border-top: solid 1px #DBD7D2;
-            }
-          }
-        }
+      h3 {
+        margin-bottom: 20px;
       }
-    }
 
-    h3 {
-      margin-bottom: 20px;
-    }
+      .up {
+        color: white;
 
-    .up {
-      color: white;
-
-      &:hover {
-        color: #000000;
+        &:hover {
+          color: #000000;
+        }
       }
     }
   }

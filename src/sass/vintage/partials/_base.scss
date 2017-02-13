@@ -9,5 +9,45 @@
 /*                             (_)    (_)                                     */
 .vintage {
   color: white!important;
-  background-color: red;
+
+  &.boxed {
+    .content {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+
+      .background {
+        width: 100%;
+        margin: 0;
+      }
+    }
+
+    @media(min-width: 768px) {
+      &:before, &:after {
+        display: block;
+      }
+    }
+  }
+
+  &:before, &:after {
+    content: "";
+    width: 50px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    display: none;
+  }
+
+  &:before {
+    left: 0;
+    background: url(../images/vintage/background-boxed-left.svg) no-repeat;
+    background-size: 100% 100%;
+  }
+
+  &:after {
+    right: 0;
+    background: url(../images/vintage/background-boxed-right.svg) no-repeat;
+    background-size: 100% 100%;
+  }
 }

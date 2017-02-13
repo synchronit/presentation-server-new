@@ -1,0 +1,149 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/---   CONFIG BOX    CONFIG BOX    CONFIG BOX    CONFIG BOX    CONFIG BOX   ---/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.config-box {
+
+  &:last-child {
+    margin-bottom: 40px;
+  }
+
+  .item {
+    position: relative;
+
+    &.config-header {
+      .left {
+        label {
+          margin-right: 25px;
+        }
+      }
+    }
+
+    h3 {
+      margin: 10px 0;
+      text-align: center!important;
+    }
+
+    .or {
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+      margin-bottom: -5px;
+    }
+
+    .left, .right {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .right {
+      margin-top: 15px;
+    }
+
+    label {
+      margin-right: 15px;
+      cursor: pointer;
+      font-style: italic;
+      display: block;
+
+      input {
+        margin-right: 5px;
+      }
+    }
+
+    img {
+      width: 134px;
+      display: inline-block;
+      vertical-align: top;
+      position: relative;
+      top: 3px;
+
+      &.selected {
+        border-radius: 2px;
+        padding: 2px 0;
+      }
+    }
+
+    .color {
+      position: relative;
+      top: 5px;
+      display: inline-block;
+      vertical-align: top;
+
+      &.selected {
+         padding: 3px;
+         border-radius: 2px;
+         top: 0;
+       }
+
+      + .color {
+        margin-left: 10px;
+      }
+
+      input {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        cursor: pointer;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      span {
+        display: block;
+        background-color: white;
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+
+  @media(min-width: 544px) {
+    .item {
+      .or {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: 1;
+      }
+
+      .left {
+        float: left;
+      }
+
+      .right {
+        float: right;
+        margin-top: 0;
+      }
+    }
+  }
+
+  @media(min-width: 992px) {
+    &:last-child {
+      margin-bottom: 80px;
+    }
+  }
+
+  @media(min-width: 1200px) {
+    .item {
+      h3 {
+        text-align: left!important;
+      }
+
+      label {
+        display: inline-block;
+      }
+    }
+  }
+}

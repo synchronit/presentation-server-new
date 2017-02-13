@@ -1,12 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router'
-import { connect } from 'react-redux'
 
 class TopBarComponent extends React.Component {
 
     render() {
         return (
-            <nav className={"topbar " + this.props.layout}>
+            <nav className="topbar">
                 <div className="container">
                     <Link to="/" className="logo">
                         <svg
@@ -51,10 +50,4 @@ class TopBarComponent extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-    layout: state.skinSettings.layout
-})
-
-const TopBar = connect(mapStateToProps)(TopBarComponent)
-
-export default TopBar
+export default TopBarComponent

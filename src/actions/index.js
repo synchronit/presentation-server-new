@@ -68,6 +68,31 @@ export const changeSkinLayout = (layout) => ({
     layout
 })
 
+export const changeSkinBackground = (background) => ({
+    type: 'CHANGE_SKIN_BACKGROUND',
+    background
+})
+
+export const changeSkinHeader = (header) => ({
+    type: 'CHANGE_SKIN_HEADER',
+    header
+})
+
+export const changeSkinWorkspace = (workspace) => ({
+    type: 'CHANGE_SKIN_WORKSPACE',
+    workspace
+})
+
+export const changeMainColor = (mainColor) => ({
+    type: 'CHANGE_SKIN_MAIN_COLOR',
+    mainColor
+})
+
+export const changeSecundaryColor = (secundaryColor) => ({
+    type: 'CHANGE_SKIN_SECUNDARY_COLOR',
+    secundaryColor
+})
+
 export const resetDefaultStyles = () => ({
     type: 'RESET_DEFAULT_STYLES'
 })

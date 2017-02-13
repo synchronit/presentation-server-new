@@ -5,19 +5,17 @@ class SettingsComponent extends React.Component {
 
     render() {
         return (
-            <article className={"content " + this.props.layout}>
-                <div className="background"></div>
-                <div className="work-zone">
-                    {this.props.children}
-                </div>
-            </article>
+            <div className="work-zone">
+                {this.props.children}
+            </div>
         );
     }
 
 }
 
 const mapStateToProps = (state) => ({
-    layout: state.skinSettings.layout
+    layout: state.skinSettings.layout,
+    background: state.skinSettings.background
 })
 
 const Settings = connect(mapStateToProps)(SettingsComponent)

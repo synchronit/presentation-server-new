@@ -1,0 +1,66 @@
+/*                               ()_()
+                                 (. .)
+/----------------------------oo0--(_)--0oo-------------------------------------/
+
+/----  TOPBAR    TOPBAR    TOPBAR    TOPBAR    TOPBAR    TOPBAR    TOPBAR  ----/
+
+                               ooo0  0ooo
+/------------------------------(  )--(  )--------------------------------------/
+/*                             (_)    (_)                                     */
+.clear.light {
+
+  //Secundary colors
+  @each $name-color, $color in $secundary-colors {
+    &.#{$name-color} {
+      .topbar {
+        .container > .btn {
+          &:hover {
+            color: $color;
+          }
+        }
+      }
+    }
+  }
+
+  .topbar {
+    background-color: #ffffff;
+
+    .logo {
+      svg {
+        .fil0 {
+          fill: #999999;
+        }
+        .fil1 {
+          fill: #0A101A;
+        }
+      }
+    }
+
+    .container > .btn {
+      margin-top: 12px;
+      background-color: #ffffff;
+      border: solid 2px #D9D4CF;
+      color: #0A101A;
+
+      &.btn-badge {
+        .badge {
+          color: #ffffff;
+        }
+      }
+    }
+
+    .user {
+      a {
+        span {
+          color: black !important;
+        }
+
+        &:focus {
+          .image-container {
+            border: solid 2px #E9E5DC;
+          }
+        }
+      }
+    }
+  }
+}

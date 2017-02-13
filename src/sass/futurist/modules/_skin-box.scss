@@ -7,60 +7,80 @@
                                ooo0  0ooo
 /------------------------------(  )--(  )--------------------------------------/
 /*                             (_)    (_)                                     */
-.futurist .skin-box {
-  border: solid 1px #6A676E;
-  background: linear-gradient(to right, #ffffff, #6A676E) no-repeat,
-  linear-gradient(to bottom, #6A676E, #ffffff) no-repeat,
-  linear-gradient(to left, #ffffff, #6A676E) no-repeat,
-  linear-gradient(to top, #6A676E, #ffffff) no-repeat;
-  background-position: top left, top right, bottom left, top left;
-  background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+.futurist {
 
-  &.active {
-    .skin-box-header {
-      button {
-        background-color: #0A0D10;
-        color: #ffffff;
+  //Main colors
+  @each $name-color, $color in $main-colors {
+    &.#{$name-color} {
+      .skin-box {
+        &.config {
+          border: solid 1px $color;
+          background: linear-gradient(to right, $color, $color) no-repeat,
+          linear-gradient(to bottom, $color, $color) no-repeat,
+          linear-gradient(to left, $color, $color) no-repeat,
+          linear-gradient(to top, $color, $color) no-repeat;
+          background-position: top left, top right, bottom left, top left;
+          background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+        }
+        .skin-box-header {
+          &:hover {
+            color: $color;
+          }
+          a {
+            background-color: darken($color, 30%);
+            &:hover {
+              background-color: darken($color, 40%);
+              color: white;
+            }
+          }
+        }
+        .skin-box-body {
+          .edit-config-details {
+            background-color: darken(rgba($color, .65), 40%);
+          }
+        }
       }
     }
   }
 
-  &.config {
-    border: solid 1px #73DDDB;
-    background: linear-gradient(to right, #73DDDB, #73DDDB) no-repeat,
-    linear-gradient(to bottom, #73DDDB, #73DDDB) no-repeat,
-    linear-gradient(to left, #73DDDB, #73DDDB) no-repeat,
-    linear-gradient(to top, #73DDDB, #73DDDB) no-repeat;
+  //Basic Colors
+  .skin-box {
+    border: solid 1px #6A676E;
+    background: linear-gradient(to right, #ffffff, #6A676E) no-repeat,
+    linear-gradient(to bottom, #6A676E, #ffffff) no-repeat,
+    linear-gradient(to left, #ffffff, #6A676E) no-repeat,
+    linear-gradient(to top, #6A676E, #ffffff) no-repeat;
     background-position: top left, top right, bottom left, top left;
     background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
-  }
 
-  .skin-box-header {
-    button {
-      background-color: #16171D;
-      color: #4C4C4C;
-
-      &:hover {
-        background-color: #0A0D10;
-        color: #73DDDB;
+    &.active {
+      .skin-box-header {
+        button {
+          background-color: #0A0D10;
+          color: #ffffff;
+        }
       }
     }
 
-    a {
-      background-color: #3C666C;
+    .skin-box-header {
+      button {
+        background-color: #16171D;
+        color: #4C4C4C;
 
-      &:hover {
-        background-color: #54999C;
-        color: white;
+        &:hover {
+          background-color: #0A0D10;
+        }
+      }
+
+      a {
+        &:hover {
+          color: white;
+        }
       }
     }
-  }
 
-  .skin-box-body {
-    background-color: rgba(255, 255, 255, .2);
-
-    .edit-config-details {
-      background-color: rgba(40,77,98,.65);
+    .skin-box-body {
+      background-color: rgba(255, 255, 255, .2);
     }
   }
 }

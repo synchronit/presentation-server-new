@@ -7,68 +7,99 @@
                                ooo0  0ooo
 /------------------------------(  )--(  )--------------------------------------/
 /*                             (_)    (_)                                     */
-.futurist .bottombar {
-  background-color: rgba(10, 16, 26, .95);
+.futurist {
 
-  .views {
-    li {
-      a {
-        color: #808080;
-
-        &:hover {
-          color: white;
+  //Main colors
+  @each $name-color, $color in $main-colors {
+    &.#{$name-color} {
+      .bottombar {
+        .mass-form-delete {
+          &.selected {
+            color: $color;
+          }
         }
-
-        &.active {
-          color: #FF5E54;
+        .create-new-form {
+          #add-form {
+            span {
+              background-color: $color;
+            }
+          }
+        }
+        .go-back {
+          color: $color;
         }
       }
     }
   }
 
-  .mass-form-delete {
-    color: #808080;
-
-    &:hover {
-      color: white;
-    }
-
-    &.selected {
-      color: #73DDDB;
-
-      &:hover {
-        color: #FF5E54;
+  //Secundary colors
+  @each $name-color, $color in $secundary-colors {
+    &.#{$name-color} {
+      .bottombar {
+        .views {
+          li {
+            a {
+              &.active {
+                color: $color;
+              }
+            }
+          }
+        }
+        .mass-form-delete {
+          &.selected {
+            &:hover {
+              color: $color;
+            }
+          }
+        }
+        .create-new-form {
+          #add-form {
+            &:hover {
+              span {
+                background-color: $color;
+              }
+            }
+          }
+        }
       }
     }
   }
 
-  .create-new-form {
-    .icon-arrow {
+  //Basic Colors
+  .bottombar {
+    background-color: rgba(10, 16, 26, .95);
+    .views {
+      li {
+        a {
+          color: #808080;
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+    .mass-form-delete {
       color: #808080;
-    }
-
-    #add-form {
-      background-color: rgba(23, 28, 35, .3);
-
       &:hover {
+        color: white;
+      }
+    }
+    .create-new-form {
+      .icon-arrow {
+        color: #808080;
+      }
+      #add-form {
+        background-color: rgba(23, 28, 35, .3);
         span {
-          background-color: #FF5E54;
+          color: #0A101A;
+          box-shadow: 0 4px 0 rgba(0, 0, 0, .8);
         }
       }
-
-      span {
-        background-color: #73DDDB;
-        color: #0A101A;
-        box-shadow: 0 4px 0 rgba(0, 0, 0, .8);
-      }
     }
-  }
-
-  .go-back {
-    color: #73DDDB;
-
-    &:hover {
-      color: #ffffff;
+    .go-back {
+      &:hover {
+        color: #ffffff;
+      }
     }
   }
 }

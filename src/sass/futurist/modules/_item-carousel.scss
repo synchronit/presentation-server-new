@@ -7,100 +7,118 @@
                                ooo0  0ooo
 /------------------------------(  )--(  )--------------------------------------/
 /*                             (_)    (_)                                     */
-.futurist .items-carousel-list {
-  .slick-list {
-    .item-carousel {
-      border: solid 1px #6A676E;
-      background: linear-gradient(to right, #ffffff 0%, #6A676E 30%) no-repeat,
-      linear-gradient(0deg, #ffffff 0%, #6A676E 30%) no-repeat,
-      linear-gradient(to right, #6A676E 70%, #ffffff 100%) no-repeat,
-      linear-gradient(180deg, #ffffff 0%, #6A676E 30%) no-repeat;
-      background-position: top left, top right, bottom left, top left;
-      background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+.futurist {
 
-      &.slick-current {
-        .item {
-          .options {
-            background-color: rgba(40, 77, 98, .9);
-          }
-        }
-      }
-
-      .item {
-        background-color: rgba(255, 255, 255, .1);
-
-        .row {
-          .stats {
-            > div {
-              border: solid 1px #6A676E;
-              background: linear-gradient(to right, #ffffff 0%, #6A676E 30%) no-repeat,
-              linear-gradient(0deg, #ffffff 0%, #6A676E 30%) no-repeat,
-              linear-gradient(to right, #6A676E 70%, #ffffff 100%) no-repeat,
-              linear-gradient(180deg, #ffffff 0%, #6A676E 30%) no-repeat;
-              background-position: top left, top right, bottom left, top left;
-              background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
-            }
-          }
-        }
-
-        .options {
-          background-color: rgba(40, 77, 98, .8);
-
-          li {
-            a {
-              color: #73DDDB;
-
-              &:hover {
-                color: white;
+  //Main colors
+  @each $name-color, $color in $main-colors {
+    &.#{$name-color} {
+      .items-carousel-list {
+        .slick-list {
+          .item-carousel {
+            .item {
+              .options {
+                background-color: darken(rgba($color, .9), 40%);
+                li {
+                  a {
+                    color: $color;
+                  }
+                }
               }
             }
-
-            + li {
-              border-left: solid 2px #263945;
-              box-shadow: inset 1px 0 0 #6B7E8A;
+            &.selectable {
+              &.selected {
+                .item {
+                  background-color: darken(rgba($color, .65), 40%) !important;
+                }
+              }
+              &:before, &:after {
+                border: solid 2px $color;
+              }
+              .selection-mask {
+                &:before, &:after {
+                  border: solid 2px $color;
+                }
+              }
             }
           }
         }
+        .arrow {
+          color: $color;
+        }
       }
+    }
+  }
 
-      &.selectable {
-        border-color: #6A676E;
-
-        &.selected {
-          .item {
-            background-color: rgba(40, 77, 98, .65)!important;
+  //Secundary colors
+  @each $name-color, $color in $secundary-colors {
+    &.#{$name-color} {
+      .items-carousel-list {
+        .arrow {
+          &:hover {
+            color: $color;
           }
-        }
-
-        &:before, &:after {
-          border: solid 2px #73DDDB;
-        }
-
-        .selection-mask {
-          &:before, &:after {
-            border: solid 2px #73DDDB;
+          &.next {
+            &:after {
+              background-color: $color;
+            }
+          }
+          &.prev {
+            &:after {
+              background-color: $color;
+            }
           }
         }
       }
     }
   }
 
-  .arrow {
-    color: #73DDDB;
+  .items-carousel-list {
+    .slick-list {
+      .item-carousel {
+        border: solid 1px #6A676E;
+        background: linear-gradient(to right, #ffffff 0%, #6A676E 30%) no-repeat,
+        linear-gradient(0deg, #ffffff 0%, #6A676E 30%) no-repeat,
+        linear-gradient(to right, #6A676E 70%, #ffffff 100%) no-repeat,
+        linear-gradient(180deg, #ffffff 0%, #6A676E 30%) no-repeat;
+        background-position: top left, top right, bottom left, top left;
+        background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
 
-    &:hover {
-      color: #FF5E54;
-    }
+        .item {
+          background-color: rgba(255, 255, 255, .1);
 
-    &.next {
-      &:after {
-        background-color: #FF5E54;
-      }
-    }
+          .row {
+            .stats {
+              > div {
+                border: solid 1px #6A676E;
+                background: linear-gradient(to right, #ffffff 0%, #6A676E 30%) no-repeat,
+                linear-gradient(0deg, #ffffff 0%, #6A676E 30%) no-repeat,
+                linear-gradient(to right, #6A676E 70%, #ffffff 100%) no-repeat,
+                linear-gradient(180deg, #ffffff 0%, #6A676E 30%) no-repeat;
+                background-position: top left, top right, bottom left, top left;
+                background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+              }
+            }
+          }
 
-    &.prev {
-      &:after {
-        background-color: #FF5E54;
+          .options {
+            li {
+              a {
+                &:hover {
+                  color: white;
+                }
+              }
+
+              + li {
+                border-left: solid 2px rgba(0, 0, 0, .27);
+                box-shadow: inset 1px 0 0 rgba(255, 255, 255, .27);
+              }
+            }
+          }
+        }
+
+        &.selectable, &.selectable:hover {
+          border-color: #6A676E;
+        }
       }
     }
   }

@@ -9,13 +9,13 @@
 /*                             (_)    (_)                                     */
 .base {
   min-height: 100vh;
-  font-family: $body-font!important;
+  font-family: $body-font !important;
   font-size: $body-font-size;
 }
 
 a, button {
-  outline: 0!important;
-  text-decoration: none!important;
+  outline: 0 !important;
+  text-decoration: none !important;
 }
 
 .container {
@@ -25,11 +25,11 @@ a, button {
 }
 
 svg {
-  shape-rendering:geometricPrecision;
-  text-rendering:geometricPrecision;
-  image-rendering:optimizeQuality;
-  fill-rule:evenodd;
-  clip-rule:evenodd;
+  shape-rendering: geometricPrecision;
+  text-rendering: geometricPrecision;
+  image-rendering: optimizeQuality;
+  fill-rule: evenodd;
+  clip-rule: evenodd;
 }
 
 @media (min-width: 544px) {
@@ -41,7 +41,19 @@ svg {
 
 @media (min-width: 768px) {
   .boxed {
-    padding-left: 35px!important;
-    padding-right: 35px!important;
+    .topbar, .bottombar {
+      padding-left: 35px !important;
+      padding-right: 35px !important;
+    }
+
+    .content {
+      padding-left: 35px !important;
+      padding-right: 35px !important;
+
+      .background {
+        width: calc(100vw - 70px);
+        margin: 0 35px;
+      }
+    }
   }
 }

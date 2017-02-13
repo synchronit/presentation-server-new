@@ -9,9 +9,9 @@
 /*                             (_)    (_)                                     */
 .vintage .form-control {
   color: white;
-  background-color: #B79B59;
-  border: solid 1px #B79B59;
-  border-bottom: solid 2px #A48B50;
+  background-color: rgba(0,0,0,.1);
+  border: solid 1px rgba(0,0,0,.1);
+  border-bottom: solid 2px rgba(0,0,0,.2);
 
   &::-webkit-input-placeholder { color: white; } /* WebKit */
   &:-moz-placeholder { color: white; } /* Firefox 18- */
